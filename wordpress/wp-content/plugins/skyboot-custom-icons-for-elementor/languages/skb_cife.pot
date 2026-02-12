@@ -1,0 +1,272 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Skyboot - Custom Icons for Elementor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-24 10:28+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.4.0; wp-5.4.2"
+
+#: includes/class-base.php:131 includes/class-base.php:182
+#, php-format
+msgid "\"%1$s\" requires version %2$s or greater."
+msgstr ""
+
+#: includes/class-base.php:158
+msgid "Activate Elementor Now"
+msgstr ""
+
+#: settings-api/settings-fields.php:181
+msgid "Brands Icon"
+msgstr ""
+
+#: settings-api/settings-fields.php:153
+msgid "Devicons Icons"
+msgstr ""
+
+#: settings-api/settings-fields.php:89
+msgid "Elegant Icon"
+msgstr ""
+
+#: includes/class-base.php:183
+msgid "Elementor"
+msgstr ""
+
+#: settings-api/settings-fields.php:167
+msgid "Elusive Icons"
+msgstr ""
+
+#: settings-api/settings-fields.php:346
+msgid "Fix: Some minor issues fixed."
+msgstr ""
+
+#: settings-api/settings-fields.php:60
+msgid "General"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://skybootstrap.com"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://skybootstrap.com/custom-icons-for-elementor"
+msgstr ""
+
+#: settings-api/settings-fields.php:132
+#: classes/icons/class-icofont-icon.php:2468
+msgid "Icofont"
+msgstr ""
+
+#: classes/icons/class-icofont-icon.php:2482
+msgid "Icofont - Duotone"
+msgstr ""
+
+#: settings-api/settings-fields.php:160
+msgid "Icomoon Icons"
+msgstr ""
+
+#: settings-api/settings-fields.php:274
+msgid "Icon Name"
+msgstr ""
+
+#: settings-api/settings-fields.php:276
+msgid "Icon page"
+msgstr ""
+
+#: settings-api/settings-fields.php:174
+msgid "Iconic Icons"
+msgstr ""
+
+#: settings-api/settings-fields.php:345
+msgid "Improved: Code structure for maintainability and increase performance ."
+msgstr ""
+
+#: includes/class-base.php:167
+msgid "Install Elementor Now"
+msgstr ""
+
+#: settings-api/settings-fields.php:125
+msgid "Ionicons"
+msgstr ""
+
+#: settings-api/settings-fields.php:139
+msgid "Line Awesome"
+msgstr ""
+
+#: settings-api/settings-fields.php:117
+msgid "Line Icon"
+msgstr ""
+
+#: settings-api/settings-fields.php:96
+msgid "Linearicons"
+msgstr ""
+
+#: settings-api/settings-fields.php:64
+msgid "Manage Icons"
+msgstr ""
+
+#: settings-api/settings-fields.php:146
+msgid "Material Design Icons"
+msgstr ""
+
+#: settings-api/settings-fields.php:275
+msgid "Number of Icons"
+msgstr ""
+
+#: settings-api/settings-fields.php:188
+msgid "Open Iconic"
+msgstr ""
+
+#: settings-api/settings-fields.php:304
+msgid "Our SaaS Product - TLinky"
+msgstr ""
+
+#: includes/class-base.php:132
+msgid "PHP"
+msgstr ""
+
+#: settings-api/settings-fields.php:311
+msgid "Rate us on wordpress.org"
+msgstr ""
+
+#: settings-api/settings-fields.php:45 settings-api/settings-fields.php:46
+msgid "Settings"
+msgstr ""
+
+#: settings-api/settings-fields.php:110
+msgid "Simple Line Icon"
+msgstr ""
+
+#: includes/class-base.php:157
+msgid ""
+"Skyboot - Custom Icons for Elementor is not working because you need to "
+"activate the Elementor plugin."
+msgstr ""
+
+#: includes/class-base.php:166
+msgid ""
+"Skyboot - Custom Icons for Elementor is not working because you need to "
+"install the Elementor plugin."
+msgstr ""
+
+#: settings-api/settings-fields.php:205
+msgid "Skyboot - Custom Icons for Elementor Settings"
+msgstr ""
+
+#. Name of the plugin
+msgid "Skyboot Custom Icons for Elementor - Elementor Icons library"
+msgstr ""
+
+#: settings-api/settings-fields.php:270
+msgid "Skyboot Custom Icons for Elementor - More than 14,300+ icons includes."
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Skyboot custom icons for Elementor is a fantastic custom Elementor icons "
+"plugin for the Elementor page builder. Increase Elementor icons library "
+"using the plugin. it's a perfect Elementor custom icons plugin for website "
+"owners."
+msgstr ""
+
+#: settings-api/settings-fields.php:34 settings-api/settings-fields.php:35
+msgid "Skyboot Icons"
+msgstr ""
+
+#: classes/icons/class-brands-icon.php:975
+msgid "Skyboot:: Brands Icons"
+msgstr ""
+
+#: classes/icons/class-devicons-icon.php:231
+msgid "Skyboot:: Devicons Icons"
+msgstr ""
+
+#: classes/icons/class-elegant-icon.php:401
+msgid "Skyboot:: Elegant Icon"
+msgstr ""
+
+#: classes/icons/class-elusive-icon.php:343
+msgid "Skyboot:: Elusive Icons"
+msgstr ""
+
+#: classes/icons/class-icomoon-icon.php:531
+msgid "Skyboot:: Icomoon Icons"
+msgstr ""
+
+#: classes/icons/class-iconic-icon.php:212
+msgid "Skyboot:: Iconic Icons"
+msgstr ""
+
+#: classes/icons/class-ion-icon.php:737
+msgid "Skyboot:: Ionicons"
+msgstr ""
+
+#: classes/icons/class-lineawesome-icon.php:2046
+msgid "Skyboot:: Line Awesome"
+msgstr ""
+
+#: classes/icons/class-line-icon.php:552
+msgid "Skyboot:: Line Icon"
+msgstr ""
+
+#: classes/icons/class-linearicons-icon.php:210
+msgid "Skyboot:: Linearicons Icon"
+msgstr ""
+
+#: classes/icons/class-open-iconic-icon.php:265
+msgid "Skyboot:: Open Iconic Icon"
+msgstr ""
+
+#: classes/icons/class-simpleline-icon.php:230
+msgid "Skyboot:: Simple Line Icon"
+msgstr ""
+
+#: classes/icons/class-themify-icon.php:391
+msgid "Skyboot:: Themify Icon"
+msgstr ""
+
+#. Author of the plugin
+msgid "Skybootstrap"
+msgstr ""
+
+#: settings-api/settings-fields.php:216
+msgid "Successfully Settings Saved."
+msgstr ""
+
+#: settings-api/settings-fields.php:103
+msgid "Themify Icon"
+msgstr ""
+
+#: settings-api/settings-fields.php:307
+msgid "TLinky - Link Management Platform"
+msgstr ""
+
+#: settings-api/settings-fields.php:68
+msgid "Update Info"
+msgstr ""
+
+#: settings-api/settings-fields.php:302
+msgid ""
+"We are Skybootstrap, which specializes in WordPress plugins, HTML Templates, "
+"and provides high-quality blog posts for our readers. We recently launched "
+"our SaaS product named TLinky, offering URL Shortener, QR Code Generator, "
+"and Link In Bio Page Builder functionalities."
+msgstr ""
+
+#: settings-api/settings-fields.php:305
+msgid ""
+"We're excited to offer all our plugin users a 50% discount on all plans. "
+"Simply use the coupon code WP50 to get the discount."
+msgstr ""
+
+#: settings-api/settings-fields.php:301
+msgid "Who We Are"
+msgstr ""
