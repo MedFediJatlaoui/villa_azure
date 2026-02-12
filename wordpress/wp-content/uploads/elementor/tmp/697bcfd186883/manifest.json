@@ -1,0 +1,1860 @@
+{
+    "manifest_version": "1.0.23",
+    "title": "Luxora - Luxury Hotel & Resort Elementor Template Kit",
+    "page_builder": "elementor",
+    "kit_version": "1.0.0",
+    "templates": [
+        {
+            "name": "Global Kit Styles",
+            "screenshot": "screenshots\/global-kit-styles.jpg",
+            "source": "templates\/global.json",
+            "preview_url": "https:\/\/templates.heydenstd.com",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "global-styles",
+                "include_in_zip": "1",
+                "elementor_pro_required": null,
+                "additional_template_information": [
+                    "These are the global theme styles configured through the Elementor Theme Styles area."
+                ]
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Gallery",
+            "screenshot": "screenshots\/gallery.jpg",
+            "source": "templates\/gallery.json",
+            "preview_url": "https:\/\/templates.heydenstd.com\/luxora\/template-kit\/gallery\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Review",
+            "screenshot": "screenshots\/review.jpg",
+            "source": "templates\/review.json",
+            "preview_url": "https:\/\/templates.heydenstd.com\/luxora\/template-kit\/review\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "About",
+            "screenshot": "screenshots\/about.jpg",
+            "source": "templates\/about.json",
+            "preview_url": "https:\/\/templates.heydenstd.com\/luxora\/template-kit\/about\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Room Details",
+            "screenshot": "screenshots\/room-details.jpg",
+            "source": "templates\/room-details.json",
+            "preview_url": "https:\/\/templates.heydenstd.com\/luxora\/template-kit\/room-details\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Our Staff",
+            "screenshot": "screenshots\/our-staff.jpg",
+            "source": "templates\/our-staff.json",
+            "preview_url": "https:\/\/templates.heydenstd.com\/luxora\/template-kit\/our-staff\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Career",
+            "screenshot": "screenshots\/career.jpg",
+            "source": "templates\/career.json",
+            "preview_url": "https:\/\/templates.heydenstd.com\/luxora\/template-kit\/career\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Single Post",
+            "screenshot": "screenshots\/single-post.jpg",
+            "source": "templates\/single-post.json",
+            "preview_url": "https:\/\/templates.heydenstd.com\/luxora\/template-kit\/single-post\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-post",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Contact",
+            "screenshot": "screenshots\/contact.jpg",
+            "source": "templates\/contact.json",
+            "preview_url": "https:\/\/templates.heydenstd.com\/luxora\/template-kit\/contact\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Header",
+            "screenshot": "screenshots\/header.jpg",
+            "source": "templates\/header.json",
+            "preview_url": "https:\/\/templates.heydenstd.com\/luxora\/template-kit\/header\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-header",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Footer",
+            "screenshot": "screenshots\/footer.jpg",
+            "source": "templates\/footer.json",
+            "preview_url": "https:\/\/templates.heydenstd.com\/luxora\/template-kit\/footer\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-footer",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Notif Form Offer",
+            "screenshot": "screenshots\/notif-form-offer.jpg",
+            "source": "templates\/notif-form-offer.json",
+            "preview_url": "https:\/\/templates.heydenstd.com\/luxora\/template-kit\/notif-form-offer\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-other",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Reservation Form",
+            "screenshot": "screenshots\/reservation-form.jpg",
+            "source": "templates\/reservation-form.json",
+            "preview_url": "https:\/\/templates.heydenstd.com\/luxora\/template-kit\/reservation-form\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-other",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Review Form",
+            "screenshot": "screenshots\/review-form.jpg",
+            "source": "templates\/review-form.json",
+            "preview_url": "https:\/\/templates.heydenstd.com\/luxora\/template-kit\/review-form\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-other",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Home",
+            "screenshot": "screenshots\/home.jpg",
+            "source": "templates\/home.json",
+            "preview_url": "https:\/\/templates.heydenstd.com\/luxora\/template-kit\/home\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Rooms",
+            "screenshot": "screenshots\/rooms.jpg",
+            "source": "templates\/rooms.json",
+            "preview_url": "https:\/\/templates.heydenstd.com\/luxora\/template-kit\/rooms\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Reservation",
+            "screenshot": "screenshots\/reservation.jpg",
+            "source": "templates\/reservation.json",
+            "preview_url": "https:\/\/templates.heydenstd.com\/luxora\/template-kit\/reservation\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Amenities",
+            "screenshot": "screenshots\/amenities.jpg",
+            "source": "templates\/amenities.json",
+            "preview_url": "https:\/\/templates.heydenstd.com\/luxora\/template-kit\/amenities\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "FAQ",
+            "screenshot": "screenshots\/faq.jpg",
+            "source": "templates\/faq.json",
+            "preview_url": "https:\/\/templates.heydenstd.com\/luxora\/template-kit\/faq\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "404 Error",
+            "screenshot": "screenshots\/404-error.jpg",
+            "source": "templates\/404-error.json",
+            "preview_url": "https:\/\/templates.heydenstd.com\/luxora\/template-kit\/404-error\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Blog",
+            "screenshot": "screenshots\/blog.jpg",
+            "source": "templates\/blog.json",
+            "preview_url": "https:\/\/templates.heydenstd.com\/luxora\/template-kit\/blog\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "archive-blog",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Contact Form",
+            "screenshot": "screenshots\/contact-form.jpg",
+            "source": "templates\/contact-form.json",
+            "preview_url": "https:\/\/templates.heydenstd.com\/luxora\/template-kit\/contact-form\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-other",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Subscribe Form",
+            "screenshot": "screenshots\/subscribe-form.jpg",
+            "source": "templates\/subscribe-form.json",
+            "preview_url": "https:\/\/templates.heydenstd.com\/luxora\/template-kit\/subscribe-form\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-other",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        }
+    ],
+    "required_plugins": [
+        {
+            "name": "Elementor",
+            "version": "3.25.3",
+            "file": "elementor\/elementor.php",
+            "author": "Elementor.com"
+        },
+        {
+            "name": "ElementsKit Lite",
+            "version": "3.3.1",
+            "file": "elementskit-lite\/elementskit-lite.php",
+            "author": "Wpmet"
+        },
+        {
+            "name": "MetForm",
+            "version": "3.9.0",
+            "file": "metform\/metform.php",
+            "author": "Wpmet"
+        },
+        {
+            "name": "Gum Elementor Addon",
+            "version": "1.3.9",
+            "file": "gum-elementor-addon\/gum-elementor-addon.php",
+            "author": "TemeGUM"
+        },
+        {
+            "name": "Sticky Header Effects for Elementor",
+            "version": "1.7.2",
+            "file": "sticky-header-effects-for-elementor\/sticky-header-effects-for-elementor.php",
+            "author": "Rwattner"
+        }
+    ],
+    "images": [
+        {
+            "filename": "3d-rendering-modern-dining-room-and-living-room-wi-RKEPNV7.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/3d-rendering-modern-dining-room-and-living-room-wi-RKEPNV7-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/room-details.json",
+                    "name": "Room Details"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                },
+                {
+                    "source": "templates\/reservation.json",
+                    "name": "Reservation"
+                }
+            ],
+            "filesize": 156129,
+            "dimensions": [
+                1200,
+                800
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-RKEPNV7"
+        },
+        {
+            "filename": "luxury-5-star-hotel-pool-in-asia-a-couple-of-men-a-v2-93MSJGP.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/luxury-5-star-hotel-pool-in-asia-a-couple-of-men-a-v2-93MSJGP-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/room-details.json",
+                    "name": "Room Details"
+                },
+                {
+                    "source": "templates\/single-post.json",
+                    "name": "Single Post"
+                }
+            ],
+            "filesize": 240163,
+            "dimensions": [
+                1200,
+                800
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-93MSJGP"
+        },
+        {
+            "filename": "young-men-in-swimming-pool-during-sunset-luxury-s-MHFQVSL_11zon.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/young-men-in-swimming-pool-during-sunset-luxury-s-MHFQVSL_11zon-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/room-details.json",
+                    "name": "Room Details"
+                },
+                {
+                    "source": "templates\/single-post.json",
+                    "name": "Single Post"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                }
+            ],
+            "filesize": 118222,
+            "dimensions": [
+                1200,
+                800
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-MHFQVSL"
+        },
+        {
+            "filename": "young-man-sitting-in-a-luxurious-room-in-front-of-UYPWAP7.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/young-man-sitting-in-a-luxurious-room-in-front-of-UYPWAP7-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/room-details.json",
+                    "name": "Room Details"
+                },
+                {
+                    "source": "templates\/career.json",
+                    "name": "Career"
+                },
+                {
+                    "source": "templates\/single-post.json",
+                    "name": "Single Post"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 129790,
+            "dimensions": [
+                1200,
+                800
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-UYPWAP7"
+        },
+        {
+            "filename": "couple-enjoying-a-serene-moment-by-the-tranquil-wa-v2-G9H3NT4.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/couple-enjoying-a-serene-moment-by-the-tranquil-wa-v2-G9H3NT4-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 191853,
+            "dimensions": [
+                1200,
+                800
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-G9H3NT4"
+        },
+        {
+            "filename": "having-fun-young-european-man-have-vacation-and-e-7KKEE4P.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/having-fun-young-european-man-have-vacation-and-e-7KKEE4P-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 68154,
+            "dimensions": [
+                1200,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-7KKEE4P"
+        },
+        {
+            "filename": "woman-eating-breakfast-in-bed-fresh-croissant-bre-6DNPWVE.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/woman-eating-breakfast-in-bed-fresh-croissant-bre-6DNPWVE-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/room-details.json",
+                    "name": "Room Details"
+                },
+                {
+                    "source": "templates\/single-post.json",
+                    "name": "Single Post"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 95860,
+            "dimensions": [
+                1200,
+                800
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-6DNPWVE"
+        },
+        {
+            "filename": "resort-foyer-check-in-reception-sign-EG2MXT5.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/resort-foyer-check-in-reception-sign-EG2MXT5-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/room-details.json",
+                    "name": "Room Details"
+                },
+                {
+                    "source": "templates\/single-post.json",
+                    "name": "Single Post"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 61594,
+            "dimensions": [
+                1200,
+                800
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-EG2MXT5"
+        },
+        {
+            "filename": "parents-kids-and-grandparents-on-sofa-for-portrai-PGEWGLZ.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/parents-kids-and-grandparents-on-sofa-for-portrai-PGEWGLZ-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/review.json",
+                    "name": "Review"
+                },
+                {
+                    "source": "templates\/room-details.json",
+                    "name": "Room Details"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                }
+            ],
+            "filesize": 187695,
+            "dimensions": [
+                1200,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-PGEWGLZ"
+        },
+        {
+            "filename": "woman-at-spa-J3SFDRR.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/woman-at-spa-J3SFDRR-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/review.json",
+                    "name": "Review"
+                },
+                {
+                    "source": "templates\/room-details.json",
+                    "name": "Room Details"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                }
+            ],
+            "filesize": 108471,
+            "dimensions": [
+                1200,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-J3SFDRR"
+        },
+        {
+            "filename": "handsome-bearded-man-with-paper-cup-of-morning-cof-v3-JQTE2W7.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/handsome-bearded-man-with-paper-cup-of-morning-cof-v3-JQTE2W7-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/review.json",
+                    "name": "Review"
+                }
+            ],
+            "filesize": 121788,
+            "dimensions": [
+                1200,
+                800
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-JQTE2W7"
+        },
+        {
+            "filename": "handsome-bearded-man-with-paper-cup-of-morning-cof-JQTE2W7.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/handsome-bearded-man-with-paper-cup-of-morning-cof-JQTE2W7-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/review.json",
+                    "name": "Review"
+                }
+            ],
+            "filesize": 110547,
+            "dimensions": [
+                1200,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-JQTE2W7"
+        },
+        {
+            "filename": "young-man-at-a-rooftop-party-smiling-to-camera-PQWRG7P.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/young-man-at-a-rooftop-party-smiling-to-camera-PQWRG7P-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/review.json",
+                    "name": "Review"
+                },
+                {
+                    "source": "templates\/room-details.json",
+                    "name": "Room Details"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                }
+            ],
+            "filesize": 98398,
+            "dimensions": [
+                1200,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-PQWRG7P"
+        },
+        {
+            "filename": "portrait-of-elegant-senior-man-sitting-on-couch-in-7HFXFRG.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/portrait-of-elegant-senior-man-sitting-on-couch-in-7HFXFRG-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/review.json",
+                    "name": "Review"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/room-details.json",
+                    "name": "Room Details"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                }
+            ],
+            "filesize": 131005,
+            "dimensions": [
+                1200,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-7HFXFRG"
+        },
+        {
+            "filename": "pleased-patient-sitting-at-the-enquiry-counter-PC6HV3C.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/pleased-patient-sitting-at-the-enquiry-counter-PC6HV3C-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/review.json",
+                    "name": "Review"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/reservation.json",
+                    "name": "Reservation"
+                },
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                }
+            ],
+            "filesize": 77599,
+            "dimensions": [
+                1200,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-PC6HV3C"
+        },
+        {
+            "filename": "outdoor-portrait-of-mature-woman-in-hat-on-beach-w-RPEVRT7.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/outdoor-portrait-of-mature-woman-in-hat-on-beach-w-RPEVRT7-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/review.json",
+                    "name": "Review"
+                }
+            ],
+            "filesize": 110733,
+            "dimensions": [
+                1200,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-RPEVRT7"
+        },
+        {
+            "filename": "adult-man-and-beautiful-woman-take-selfie-in-lobby-v2-CAYT977.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/adult-man-and-beautiful-woman-take-selfie-in-lobby-v2-CAYT977-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 125739,
+            "dimensions": [
+                1200,
+                800
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-CAYT977"
+        },
+        {
+            "filename": "Telephone-VARA6FF.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Telephone-VARA6FF.png",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 1838,
+            "dimensions": [
+                80,
+                80
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-VARA6FF"
+        },
+        {
+            "filename": "Mirror-VARA6FF.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Mirror-VARA6FF.png",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 3458,
+            "dimensions": [
+                80,
+                80
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-VARA6FF"
+        },
+        {
+            "filename": "young-successful-hotel-manager-with-touchpad-H4T8S2J.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/young-successful-hotel-manager-with-touchpad-H4T8S2J-800x960.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 106713,
+            "dimensions": [
+                1000,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-H4T8S2J"
+        },
+        {
+            "filename": "happy-housemaid-smiling-near-handsome-receptionist-GY9DYFS.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/happy-housemaid-smiling-near-handsome-receptionist-GY9DYFS-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 91602,
+            "dimensions": [
+                1200,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-GY9DYFS"
+        },
+        {
+            "filename": "three-servers-wearing-classic-uniform-in-restauran-CDY4G2S-1.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/three-servers-wearing-classic-uniform-in-restauran-CDY4G2S-1-800x534.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/career.json",
+                    "name": "Career"
+                },
+                {
+                    "source": "templates\/contact.json",
+                    "name": "Contact"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                }
+            ],
+            "filesize": 133514,
+            "dimensions": [
+                1200,
+                801
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-CDY4G2S"
+        },
+        {
+            "filename": "hotel-assistance-with-friendly-staff-v2-25TFAXU.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/hotel-assistance-with-friendly-staff-v2-25TFAXU-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/reservation.json",
+                    "name": "Reservation"
+                }
+            ],
+            "filesize": 122088,
+            "dimensions": [
+                1200,
+                800
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-25TFAXU"
+        },
+        {
+            "filename": "young-hotel-manager-with-tablet-PAA54BC.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/young-hotel-manager-with-tablet-PAA54BC-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/our-staff.json",
+                    "name": "Our Staff"
+                }
+            ],
+            "filesize": 102527,
+            "dimensions": [
+                1200,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-PAA54BC"
+        },
+        {
+            "filename": "happy-hotel-receptionist-standing-in-a-lobby-and-l-PKLWDFB.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/happy-hotel-receptionist-standing-in-a-lobby-and-l-PKLWDFB-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/our-staff.json",
+                    "name": "Our Staff"
+                }
+            ],
+            "filesize": 94841,
+            "dimensions": [
+                1200,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-PKLWDFB"
+        },
+        {
+            "filename": "young-confident-head-manager-of-luxurious-hotel-lo-BUBDEK9.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/young-confident-head-manager-of-luxurious-hotel-lo-BUBDEK9-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/our-staff.json",
+                    "name": "Our Staff"
+                }
+            ],
+            "filesize": 86196,
+            "dimensions": [
+                1200,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-BUBDEK9"
+        },
+        {
+            "filename": "3d-rendering-luxury-classic-bedroom-suite-in-hotel-BSBWD5T.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/3d-rendering-luxury-classic-bedroom-suite-in-hotel-BSBWD5T-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/room-details.json",
+                    "name": "Room Details"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                },
+                {
+                    "source": "templates\/reservation.json",
+                    "name": "Reservation"
+                }
+            ],
+            "filesize": 129741,
+            "dimensions": [
+                1200,
+                800
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-BSBWD5T"
+        },
+        {
+            "filename": "hotel-room-with-bright-fresh-colors-in-bali-style-4QU67XT.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/hotel-room-with-bright-fresh-colors-in-bali-style-4QU67XT-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/room-details.json",
+                    "name": "Room Details"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                },
+                {
+                    "source": "templates\/reservation.json",
+                    "name": "Reservation"
+                }
+            ],
+            "filesize": 141470,
+            "dimensions": [
+                1200,
+                800
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-4QU67XT"
+        },
+        {
+            "filename": "a-gym-with-a-lot-of-exercise-equipment-and-windows-v2-MVWK4G7.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/a-gym-with-a-lot-of-exercise-equipment-and-windows-v2-MVWK4G7-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/room-details.json",
+                    "name": "Room Details"
+                },
+                {
+                    "source": "templates\/single-post.json",
+                    "name": "Single Post"
+                }
+            ],
+            "filesize": 203637,
+            "dimensions": [
+                1200,
+                800
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-MVWK4G7"
+        },
+        {
+            "filename": "Wifi-VARA6FF.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Wifi-VARA6FF.png",
+            "templates": [
+                {
+                    "source": "templates\/room-details.json",
+                    "name": "Room Details"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                },
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                }
+            ],
+            "filesize": 2392,
+            "dimensions": [
+                80,
+                80
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-VARA6FF"
+        },
+        {
+            "filename": "Spa-VARA6FF.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Spa-VARA6FF.png",
+            "templates": [
+                {
+                    "source": "templates\/room-details.json",
+                    "name": "Room Details"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                },
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                }
+            ],
+            "filesize": 2766,
+            "dimensions": [
+                80,
+                80
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-VARA6FF"
+        },
+        {
+            "filename": "Swimming-pool-VARA6FF.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Swimming-pool-VARA6FF.png",
+            "templates": [
+                {
+                    "source": "templates\/room-details.json",
+                    "name": "Room Details"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                },
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                }
+            ],
+            "filesize": 1831,
+            "dimensions": [
+                80,
+                80
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-VARA6FF"
+        },
+        {
+            "filename": "Room-service-VARA6FF.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Room-service-VARA6FF.png",
+            "templates": [
+                {
+                    "source": "templates\/room-details.json",
+                    "name": "Room Details"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                },
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                }
+            ],
+            "filesize": 2321,
+            "dimensions": [
+                80,
+                80
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-VARA6FF"
+        },
+        {
+            "filename": "Gym-VARA6FF.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Gym-VARA6FF.png",
+            "templates": [
+                {
+                    "source": "templates\/room-details.json",
+                    "name": "Room Details"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                },
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                }
+            ],
+            "filesize": 1190,
+            "dimensions": [
+                80,
+                80
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-VARA6FF"
+        },
+        {
+            "filename": "Coffee-maker-VARA6FF.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Coffee-maker-VARA6FF.png",
+            "templates": [
+                {
+                    "source": "templates\/room-details.json",
+                    "name": "Room Details"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                },
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                }
+            ],
+            "filesize": 2016,
+            "dimensions": [
+                80,
+                80
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-VARA6FF"
+        },
+        {
+            "filename": "big-comfortable-double-bed-in-elegant-classic-bedr-33BX4H9.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/big-comfortable-double-bed-in-elegant-classic-bedr-33BX4H9-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/room-details.json",
+                    "name": "Room Details"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                },
+                {
+                    "source": "templates\/reservation.json",
+                    "name": "Reservation"
+                }
+            ],
+            "filesize": 140204,
+            "dimensions": [
+                1200,
+                800
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-33BX4H9"
+        },
+        {
+            "filename": "3d-rendering-luxury-tropical-bedroom-suite-in-reso-TN6HHA8.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/3d-rendering-luxury-tropical-bedroom-suite-in-reso-TN6HHA8-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/room-details.json",
+                    "name": "Room Details"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                },
+                {
+                    "source": "templates\/reservation.json",
+                    "name": "Reservation"
+                },
+                {
+                    "source": "templates\/blog.json",
+                    "name": "Blog"
+                }
+            ],
+            "filesize": 165101,
+            "dimensions": [
+                1200,
+                800
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-TN6HHA8"
+        },
+        {
+            "filename": "three-servers-wearing-classic-uniform-in-restauran-CDY4G2S.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/three-servers-wearing-classic-uniform-in-restauran-CDY4G2S-800x534.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-staff.json",
+                    "name": "Our Staff"
+                }
+            ],
+            "filesize": 140498,
+            "dimensions": [
+                1440,
+                961
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-CDY4G2S"
+        },
+        {
+            "filename": "young-black-man-as-server-in-restaurant-holding-no-7PU25P8.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/young-black-man-as-server-in-restaurant-holding-no-7PU25P8-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-staff.json",
+                    "name": "Our Staff"
+                }
+            ],
+            "filesize": 124696,
+            "dimensions": [
+                1200,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-7PU25P8"
+        },
+        {
+            "filename": "young-successful-hotel-manager-with-touchpad-v2-H4T8S2J.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/young-successful-hotel-manager-with-touchpad-v2-H4T8S2J-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-staff.json",
+                    "name": "Our Staff"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                }
+            ],
+            "filesize": 94358,
+            "dimensions": [
+                1200,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-H4T8S2J"
+        },
+        {
+            "filename": "photo-realistic-digital-collage-of-happy-young-rec-JM4CY58.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/photo-realistic-digital-collage-of-happy-young-rec-JM4CY58-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-staff.json",
+                    "name": "Our Staff"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                }
+            ],
+            "filesize": 95306,
+            "dimensions": [
+                1200,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-JM4CY58"
+        },
+        {
+            "filename": "man-tourist-carrying-baggage-in-lobby-UAD6L6H.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/man-tourist-carrying-baggage-in-lobby-UAD6L6H-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/single-post.json",
+                    "name": "Single Post"
+                },
+                {
+                    "source": "templates\/contact.json",
+                    "name": "Contact"
+                }
+            ],
+            "filesize": 102895,
+            "dimensions": [
+                1200,
+                800
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-UAD6L6H"
+        },
+        {
+            "filename": "asian-employee-at-hotel-reception-desk-FBRL2C5.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/asian-employee-at-hotel-reception-desk-FBRL2C5-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/contact.json",
+                    "name": "Contact"
+                }
+            ],
+            "filesize": 92413,
+            "dimensions": [
+                1200,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-FBRL2C5"
+        },
+        {
+            "filename": "Luxora-White.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Luxora-White-800x327.png",
+            "templates": [
+                {
+                    "source": "templates\/header.json",
+                    "name": "Header"
+                }
+            ],
+            "filesize": 21939,
+            "dimensions": [
+                1559,
+                638
+            ],
+            "image_source": "self_created",
+            "image_urls": ""
+        },
+        {
+            "filename": "Luxora-Dark.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Luxora-Dark-800x327.png",
+            "templates": [
+                {
+                    "source": "templates\/footer.json",
+                    "name": "Footer"
+                }
+            ],
+            "filesize": 21933,
+            "dimensions": [
+                1559,
+                638
+            ],
+            "image_source": "self_created",
+            "image_urls": ""
+        },
+        {
+            "filename": "3d-rendering-luxury-bedroom-suite-in-resort-hotel-XTUDFD7.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/3d-rendering-luxury-bedroom-suite-in-resort-hotel-XTUDFD7-800x667.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                }
+            ],
+            "filesize": 120447,
+            "dimensions": [
+                1200,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-XTUDFD7"
+        },
+        {
+            "filename": "interior-of-modern-room-overlooking-the-sea-AT8NT89.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/interior-of-modern-room-overlooking-the-sea-AT8NT89-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                },
+                {
+                    "source": "templates\/reservation.json",
+                    "name": "Reservation"
+                }
+            ],
+            "filesize": 116083,
+            "dimensions": [
+                1200,
+                800
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-AT8NT89"
+        },
+        {
+            "filename": "neat-patio-with-sitting-area-PGMS4P4.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/neat-patio-with-sitting-area-PGMS4P4-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                },
+                {
+                    "source": "templates\/reservation.json",
+                    "name": "Reservation"
+                }
+            ],
+            "filesize": 176732,
+            "dimensions": [
+                1200,
+                800
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-PGMS4P4"
+        },
+        {
+            "filename": "a-living-room-with-a-couch-and-a-chair-on-AUENRHF.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/a-living-room-with-a-couch-and-a-chair-on-AUENRHF-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                },
+                {
+                    "source": "templates\/reservation.json",
+                    "name": "Reservation"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                }
+            ],
+            "filesize": 183089,
+            "dimensions": [
+                1200,
+                800
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-AUENRHF"
+        },
+        {
+            "filename": "portrait-of-handsome-man-posing-outdoors-RMG4FTV.jpg",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/portrait-of-handsome-man-posing-outdoors-RMG4FTV-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 161511,
+            "dimensions": [
+                1200,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-RMG4FTV"
+        },
+        {
+            "filename": "Dummy-UIlogos-09.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Dummy-UIlogos-09-800x340.png",
+            "templates": [
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                }
+            ],
+            "filesize": 42202,
+            "dimensions": [
+                2350,
+                1000
+            ],
+            "image_source": "cc0",
+            "image_urls": "https:\/\/uilogos.co\/"
+        },
+        {
+            "filename": "Dummy-UIlogos-08.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Dummy-UIlogos-08-800x340.png",
+            "templates": [
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                }
+            ],
+            "filesize": 27679,
+            "dimensions": [
+                2350,
+                1000
+            ],
+            "image_source": "cc0",
+            "image_urls": "https:\/\/uilogos.co\/"
+        },
+        {
+            "filename": "Dummy-UIlogos-07.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Dummy-UIlogos-07-800x340.png",
+            "templates": [
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                }
+            ],
+            "filesize": 30306,
+            "dimensions": [
+                2350,
+                1000
+            ],
+            "image_source": "cc0",
+            "image_urls": "https:\/\/uilogos.co\/"
+        },
+        {
+            "filename": "Dummy-UIlogos-06.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Dummy-UIlogos-06-800x340.png",
+            "templates": [
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                }
+            ],
+            "filesize": 32214,
+            "dimensions": [
+                2350,
+                1000
+            ],
+            "image_source": "cc0",
+            "image_urls": "https:\/\/uilogos.co\/"
+        },
+        {
+            "filename": "Dummy-UIlogos-05.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Dummy-UIlogos-05-800x340.png",
+            "templates": [
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                }
+            ],
+            "filesize": 35275,
+            "dimensions": [
+                2350,
+                1000
+            ],
+            "image_source": "cc0",
+            "image_urls": "https:\/\/uilogos.co\/"
+        },
+        {
+            "filename": "Dummy-UIlogos-04.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Dummy-UIlogos-04-800x340.png",
+            "templates": [
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                }
+            ],
+            "filesize": 39466,
+            "dimensions": [
+                2350,
+                1000
+            ],
+            "image_source": "cc0",
+            "image_urls": "https:\/\/uilogos.co\/"
+        },
+        {
+            "filename": "Dummy-UIlogos-03.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Dummy-UIlogos-03-800x340.png",
+            "templates": [
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                }
+            ],
+            "filesize": 36446,
+            "dimensions": [
+                2350,
+                1000
+            ],
+            "image_source": "cc0",
+            "image_urls": "https:\/\/uilogos.co\/"
+        },
+        {
+            "filename": "Dummy-UIlogos-02.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Dummy-UIlogos-02-800x340.png",
+            "templates": [
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                }
+            ],
+            "filesize": 32041,
+            "dimensions": [
+                2350,
+                1000
+            ],
+            "image_source": "cc0",
+            "image_urls": "https:\/\/uilogos.co\/"
+        },
+        {
+            "filename": "Dummy-UIlogos-01.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Dummy-UIlogos-01-800x340.png",
+            "templates": [
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                }
+            ],
+            "filesize": 38426,
+            "dimensions": [
+                2350,
+                1000
+            ],
+            "image_source": "cc0",
+            "image_urls": "https:\/\/uilogos.co\/"
+        },
+        {
+            "filename": "Dummy-UIlogos-10.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Dummy-UIlogos-10-800x340.png",
+            "templates": [
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                }
+            ],
+            "filesize": 32096,
+            "dimensions": [
+                2350,
+                1000
+            ],
+            "image_source": "cc0",
+            "image_urls": "https:\/\/uilogos.co\/"
+        },
+        {
+            "filename": "Safe-VARA6FF.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Safe-VARA6FF.png",
+            "templates": [
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                }
+            ],
+            "filesize": 2323,
+            "dimensions": [
+                80,
+                80
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-VARA6FF"
+        },
+        {
+            "filename": "Bed-VARA6FF.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Bed-VARA6FF.png",
+            "templates": [
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                }
+            ],
+            "filesize": 1730,
+            "dimensions": [
+                80,
+                80
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-VARA6FF"
+        },
+        {
+            "filename": "Heating-VARA6FF.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Heating-VARA6FF.png",
+            "templates": [
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                }
+            ],
+            "filesize": 2451,
+            "dimensions": [
+                80,
+                80
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-VARA6FF"
+        },
+        {
+            "filename": "Lift-VARA6FF.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Lift-VARA6FF.png",
+            "templates": [
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                }
+            ],
+            "filesize": 1120,
+            "dimensions": [
+                80,
+                80
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-VARA6FF"
+        },
+        {
+            "filename": "Ilustrasion-3EQ79MW.png",
+            "thumbnail_url": "https:\/\/templates.heydenstd.com\/luxora\/wp-content\/uploads\/sites\/25\/2024\/10\/Ilustrasion-3EQ79MW-800x498.png",
+            "templates": [
+                {
+                    "source": "templates\/404-error.json",
+                    "name": "404 Error"
+                }
+            ],
+            "filesize": 52043,
+            "dimensions": [
+                894,
+                557
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-3EQ79MW"
+        }
+    ]
+}

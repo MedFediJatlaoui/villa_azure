@@ -1,0 +1,836 @@
+{
+    "version": "0.4",
+    "title": "Global Kit Styles",
+    "type": "section",
+    "metadata": {
+        "template_type": "global-styles",
+        "include_in_zip": "1",
+        "elementor_pro_required": null,
+        "additional_template_information": [
+            "These are the global theme styles configured through the Elementor Theme Styles area."
+        ],
+        "wp_page_template": "default"
+    },
+    "content": [],
+    "page_settings": {
+        "system_colors": [
+            {
+                "_id": "primary",
+                "title": "Primary - 300",
+                "color": "#E9A668"
+            },
+            {
+                "_id": "secondary",
+                "title": "Secondary - 300",
+                "color": "#E38C3B"
+            },
+            {
+                "_id": "text",
+                "title": "Neutral - 300",
+                "color": "#727272"
+            },
+            {
+                "_id": "accent",
+                "title": "Transparent",
+                "color": "#06FF0000"
+            }
+        ],
+        "custom_colors": [
+            {
+                "_id": "caf5d95",
+                "title": "Primary - 100",
+                "color": "#FCF2E9"
+            },
+            {
+                "_id": "3ac20dc",
+                "title": "Primary - 200",
+                "color": "#F3CCA8"
+            },
+            {
+                "_id": "a4045e1",
+                "title": "Primary - 400",
+                "color": "#BD691B"
+            },
+            {
+                "_id": "a2ec671",
+                "title": "Primary - 500",
+                "color": "#693B0F"
+            },
+            {
+                "_id": "fe45e1f",
+                "title": "Secondary - 100",
+                "color": "#F3CEAB"
+            },
+            {
+                "_id": "48f414c",
+                "title": "Secondary - 200",
+                "color": "#EBAD73"
+            },
+            {
+                "_id": "38f4190",
+                "title": "Secondary - 400",
+                "color": "#6B3C0F"
+            },
+            {
+                "_id": "66b5f62",
+                "title": "Secondary - 500",
+                "color": "#361E08"
+            },
+            {
+                "_id": "4ebafc2",
+                "title": "Neutral - 100",
+                "color": "#F7F7F7"
+            },
+            {
+                "_id": "1bc8786",
+                "title": "Neutral - 200",
+                "color": "#BFBFBF"
+            },
+            {
+                "_id": "b06bc5c",
+                "title": "Neutral - 400",
+                "color": "#323232"
+            },
+            {
+                "_id": "731f09b",
+                "title": "Neutral - 500",
+                "color": "#1F1F1F"
+            },
+            {
+                "_id": "64ab314",
+                "title": "Main Background",
+                "color": "#FFFFFE"
+            },
+            {
+                "_id": "c8f3599",
+                "title": "Variant Background",
+                "color": "#FDF3E9"
+            },
+            {
+                "_id": "9aa7271",
+                "title": "Dark Background",
+                "color": "#0A0A0A"
+            },
+            {
+                "_id": "cf7b186",
+                "title": "White",
+                "color": "#FFFFFF"
+            },
+            {
+                "_id": "3afbfad",
+                "title": "Black",
+                "color": "#000000"
+            },
+            {
+                "_id": "1d6e25d",
+                "title": "Border",
+                "color": "#E7E7E7"
+            },
+            {
+                "_id": "3be1c2b",
+                "title": "Dark Transparent",
+                "color": "#000000DE"
+            },
+            {
+                "_id": "e231405",
+                "title": "Red",
+                "color": "#FF0000"
+            }
+        ],
+        "system_typography": [
+            {
+                "_id": "primary",
+                "title": "Heading \/ H1",
+                "typography_typography": "custom",
+                "typography_font_family": "Plus Jakarta Sans",
+                "typography_font_size": {
+                    "unit": "px",
+                    "size": 64,
+                    "sizes": []
+                },
+                "typography_font_weight": "600",
+                "typography_text_transform": "none",
+                "typography_line_height": {
+                    "unit": "px",
+                    "size": 74,
+                    "sizes": []
+                },
+                "typography_font_size_tablet": {
+                    "unit": "px",
+                    "size": 56,
+                    "sizes": []
+                },
+                "typography_line_height_tablet": {
+                    "unit": "px",
+                    "size": 66,
+                    "sizes": []
+                },
+                "typography_font_size_mobile": {
+                    "unit": "px",
+                    "size": 45,
+                    "sizes": []
+                },
+                "typography_line_height_mobile": {
+                    "unit": "px",
+                    "size": 55,
+                    "sizes": []
+                }
+            },
+            {
+                "_id": "secondary",
+                "title": "Heading \/ H2",
+                "typography_typography": "custom",
+                "typography_font_family": "Plus Jakarta Sans",
+                "typography_font_weight": "600",
+                "typography_font_size": {
+                    "unit": "px",
+                    "size": 56,
+                    "sizes": []
+                },
+                "typography_text_transform": "none",
+                "typography_line_height": {
+                    "unit": "px",
+                    "size": 66,
+                    "sizes": []
+                },
+                "typography_text_decoration": "none",
+                "typography_font_size_tablet": {
+                    "unit": "px",
+                    "size": 50,
+                    "sizes": []
+                },
+                "typography_line_height_tablet": {
+                    "unit": "px",
+                    "size": 60,
+                    "sizes": []
+                },
+                "typography_font_size_mobile": {
+                    "unit": "px",
+                    "size": 40,
+                    "sizes": []
+                },
+                "typography_line_height_mobile": {
+                    "unit": "px",
+                    "size": 50,
+                    "sizes": []
+                }
+            },
+            {
+                "_id": "text",
+                "title": "Body 2",
+                "typography_typography": "custom",
+                "typography_font_family": "Plus Jakarta Sans",
+                "typography_font_weight": "400",
+                "typography_font_size": {
+                    "unit": "px",
+                    "size": 16,
+                    "sizes": []
+                },
+                "typography_text_transform": "none",
+                "typography_line_height": {
+                    "unit": "px",
+                    "size": 26,
+                    "sizes": []
+                },
+                "typography_text_decoration": "none",
+                "typography_font_size_mobile": {
+                    "unit": "px",
+                    "size": 16,
+                    "sizes": []
+                },
+                "typography_line_height_mobile": {
+                    "unit": "px",
+                    "size": 26,
+                    "sizes": []
+                }
+            },
+            {
+                "_id": "accent",
+                "title": "Sub Heading",
+                "typography_typography": "custom",
+                "typography_font_family": "Plus Jakarta Sans",
+                "typography_font_weight": "500",
+                "typography_font_size": {
+                    "unit": "px",
+                    "size": 14,
+                    "sizes": []
+                },
+                "typography_text_transform": "uppercase",
+                "typography_text_decoration": "none",
+                "typography_line_height": {
+                    "unit": "px",
+                    "size": 24,
+                    "sizes": []
+                },
+                "typography_letter_spacing": {
+                    "unit": "px",
+                    "size": 1.5,
+                    "sizes": []
+                }
+            }
+        ],
+        "custom_typography": [
+            {
+                "typography_typography": "custom",
+                "typography_font_family": "Playfair Display",
+                "typography_font_size": {
+                    "unit": "px",
+                    "size": 64,
+                    "sizes": []
+                },
+                "typography_font_weight": "400",
+                "typography_text_decoration": "none",
+                "typography_line_height": {
+                    "unit": "px",
+                    "size": 74,
+                    "sizes": []
+                },
+                "_id": "3d78680",
+                "title": "Heading \/ H1B",
+                "typography_text_transform": "none",
+                "typography_font_style": "italic",
+                "typography_font_size_tablet": {
+                    "unit": "px",
+                    "size": 56,
+                    "sizes": []
+                },
+                "typography_line_height_tablet": {
+                    "unit": "px",
+                    "size": 66,
+                    "sizes": []
+                },
+                "typography_font_size_mobile": {
+                    "unit": "px",
+                    "size": 45,
+                    "sizes": []
+                },
+                "typography_line_height_mobile": {
+                    "unit": "px",
+                    "size": 55,
+                    "sizes": []
+                }
+            },
+            {
+                "typography_typography": "custom",
+                "typography_font_family": "Playfair Display",
+                "typography_font_size": {
+                    "unit": "px",
+                    "size": 56,
+                    "sizes": []
+                },
+                "typography_font_weight": "400",
+                "typography_text_transform": "none",
+                "typography_line_height": {
+                    "unit": "px",
+                    "size": 66,
+                    "sizes": []
+                },
+                "_id": "2193431",
+                "title": "Heading \/ H2B",
+                "typography_text_decoration": "none",
+                "typography_font_size_tablet": {
+                    "unit": "px",
+                    "size": 50,
+                    "sizes": []
+                },
+                "typography_line_height_tablet": {
+                    "unit": "px",
+                    "size": 60,
+                    "sizes": []
+                },
+                "typography_font_size_mobile": {
+                    "unit": "px",
+                    "size": 40,
+                    "sizes": []
+                },
+                "typography_line_height_mobile": {
+                    "unit": "px",
+                    "size": 50,
+                    "sizes": []
+                },
+                "typography_font_style": "italic"
+            },
+            {
+                "_id": "1dfef61",
+                "title": "Heading \/ H3",
+                "typography_typography": "custom",
+                "typography_font_family": "Plus Jakarta Sans",
+                "typography_font_size": {
+                    "unit": "px",
+                    "size": 48,
+                    "sizes": []
+                },
+                "typography_font_weight": "600",
+                "typography_text_transform": "none",
+                "typography_line_height": {
+                    "unit": "px",
+                    "size": 58,
+                    "sizes": []
+                },
+                "typography_text_decoration": "none",
+                "typography_font_size_tablet": {
+                    "unit": "px",
+                    "size": 45,
+                    "sizes": []
+                },
+                "typography_line_height_tablet": {
+                    "unit": "px",
+                    "size": 55,
+                    "sizes": []
+                },
+                "typography_font_size_mobile": {
+                    "unit": "px",
+                    "size": 30,
+                    "sizes": []
+                },
+                "typography_line_height_mobile": {
+                    "unit": "px",
+                    "size": 40,
+                    "sizes": []
+                }
+            },
+            {
+                "_id": "84c7ee8",
+                "title": "Heading \/ H4",
+                "typography_typography": "custom",
+                "typography_font_family": "Plus Jakarta Sans",
+                "typography_font_size": {
+                    "unit": "px",
+                    "size": 40,
+                    "sizes": []
+                },
+                "typography_font_weight": "600",
+                "typography_text_transform": "none",
+                "typography_line_height": {
+                    "unit": "px",
+                    "size": 50,
+                    "sizes": []
+                },
+                "typography_text_decoration": "none",
+                "typography_font_size_mobile": {
+                    "unit": "px",
+                    "size": 32,
+                    "sizes": []
+                },
+                "typography_line_height_mobile": {
+                    "unit": "px",
+                    "size": 42,
+                    "sizes": []
+                }
+            },
+            {
+                "_id": "2970c2c",
+                "title": "Heading \/ H5",
+                "typography_typography": "custom",
+                "typography_font_family": "Plus Jakarta Sans",
+                "typography_font_size": {
+                    "unit": "px",
+                    "size": 26,
+                    "sizes": []
+                },
+                "typography_font_weight": "600",
+                "typography_text_transform": "none",
+                "typography_line_height": {
+                    "unit": "px",
+                    "size": 36,
+                    "sizes": []
+                },
+                "typography_text_decoration": "none",
+                "typography_font_size_mobile": {
+                    "unit": "px",
+                    "size": 28,
+                    "sizes": []
+                },
+                "typography_line_height_mobile": {
+                    "unit": "px",
+                    "size": 38,
+                    "sizes": []
+                }
+            },
+            {
+                "_id": "a06afad",
+                "title": "Heading \/ H6",
+                "typography_typography": "custom",
+                "typography_font_family": "Plus Jakarta Sans",
+                "typography_font_size": {
+                    "unit": "px",
+                    "size": 21,
+                    "sizes": []
+                },
+                "typography_font_weight": "600",
+                "typography_text_transform": "none",
+                "typography_line_height": {
+                    "unit": "px",
+                    "size": 31,
+                    "sizes": []
+                },
+                "typography_text_decoration": "none",
+                "typography_font_size_mobile": {
+                    "unit": "px",
+                    "size": 22,
+                    "sizes": []
+                },
+                "typography_line_height_mobile": {
+                    "unit": "px",
+                    "size": 32,
+                    "sizes": []
+                }
+            },
+            {
+                "_id": "4f02d56",
+                "title": "Quote",
+                "typography_typography": "custom",
+                "typography_font_family": "Plus Jakarta Sans",
+                "typography_font_size": {
+                    "unit": "px",
+                    "size": 24,
+                    "sizes": []
+                },
+                "typography_font_weight": "200",
+                "typography_text_transform": "none",
+                "typography_line_height": {
+                    "unit": "px",
+                    "size": 34,
+                    "sizes": []
+                },
+                "typography_text_decoration": "none",
+                "typography_font_size_mobile": {
+                    "unit": "px",
+                    "size": 24,
+                    "sizes": []
+                },
+                "typography_line_height_mobile": {
+                    "unit": "px",
+                    "size": 34,
+                    "sizes": []
+                }
+            },
+            {
+                "typography_typography": "custom",
+                "typography_font_family": "Plus Jakarta Sans",
+                "typography_font_size": {
+                    "unit": "px",
+                    "size": 16,
+                    "sizes": []
+                },
+                "typography_font_weight": "600",
+                "typography_text_transform": "capitalize",
+                "_id": "177d6a7",
+                "title": "Label",
+                "typography_line_height": {
+                    "unit": "px",
+                    "size": 26,
+                    "sizes": []
+                }
+            },
+            {
+                "_id": "aad6626",
+                "title": "Placeholder",
+                "typography_typography": "custom",
+                "typography_font_family": "Plus Jakarta Sans",
+                "typography_font_size": {
+                    "unit": "px",
+                    "size": 15,
+                    "sizes": []
+                },
+                "typography_font_weight": "400",
+                "typography_text_decoration": "none",
+                "typography_text_transform": "none",
+                "typography_line_height": {
+                    "unit": "px",
+                    "size": 25,
+                    "sizes": []
+                }
+            },
+            {
+                "typography_typography": "custom",
+                "typography_font_family": "Plus Jakarta Sans",
+                "typography_font_size": {
+                    "unit": "px",
+                    "size": 12,
+                    "sizes": []
+                },
+                "typography_font_weight": "600",
+                "typography_line_height": {
+                    "unit": "px",
+                    "size": 22,
+                    "sizes": []
+                },
+                "_id": "07f2110",
+                "title": "Nav Text",
+                "typography_text_transform": "uppercase"
+            },
+            {
+                "_id": "0c430cd",
+                "title": "Number",
+                "typography_typography": "custom",
+                "typography_font_family": "Plus Jakarta Sans",
+                "typography_font_size": {
+                    "unit": "px",
+                    "size": 50,
+                    "sizes": []
+                },
+                "typography_font_weight": "600",
+                "typography_line_height": {
+                    "unit": "px",
+                    "size": 60,
+                    "sizes": []
+                }
+            },
+            {
+                "_id": "4cd2da2",
+                "title": "Button",
+                "typography_typography": "custom",
+                "typography_font_family": "Plus Jakarta Sans",
+                "typography_font_size": {
+                    "unit": "px",
+                    "size": 14,
+                    "sizes": []
+                },
+                "typography_font_weight": "600",
+                "typography_text_transform": "uppercase",
+                "typography_line_height": {
+                    "unit": "px",
+                    "size": 24,
+                    "sizes": []
+                }
+            },
+            {
+                "_id": "210a3ec",
+                "title": "Body 1",
+                "typography_typography": "custom",
+                "typography_font_family": "Plus Jakarta Sans",
+                "typography_font_size": {
+                    "unit": "px",
+                    "size": 22,
+                    "sizes": []
+                },
+                "typography_font_weight": "400",
+                "typography_text_transform": "none",
+                "typography_line_height": {
+                    "unit": "px",
+                    "size": 32,
+                    "sizes": []
+                }
+            },
+            {
+                "_id": "82151fd",
+                "title": "Body 3",
+                "typography_typography": "custom",
+                "typography_font_family": "Plus Jakarta Sans",
+                "typography_font_size": {
+                    "unit": "px",
+                    "size": 12,
+                    "sizes": []
+                },
+                "typography_font_weight": "400",
+                "typography_text_transform": "none",
+                "typography_line_height": {
+                    "unit": "px",
+                    "size": 22,
+                    "sizes": []
+                }
+            },
+            {
+                "typography_typography": "custom",
+                "typography_font_family": "Plus Jakarta Sans",
+                "typography_font_size": {
+                    "unit": "px",
+                    "size": 32,
+                    "sizes": []
+                },
+                "typography_font_size_mobile": {
+                    "unit": "px",
+                    "size": 28,
+                    "sizes": []
+                },
+                "typography_font_weight": "600",
+                "typography_text_transform": "none",
+                "typography_text_decoration": "none",
+                "typography_line_height": {
+                    "unit": "px",
+                    "size": 42,
+                    "sizes": []
+                },
+                "typography_line_height_mobile": {
+                    "unit": "px",
+                    "size": 38,
+                    "sizes": []
+                },
+                "_id": "7424068",
+                "title": "Circle Text"
+            }
+        ],
+        "default_generic_fonts": "Sans-serif",
+        "body_background_background": "classic",
+        "container_padding": {
+            "unit": "px",
+            "top": "24",
+            "right": "24",
+            "bottom": "24",
+            "left": "24",
+            "isLinked": true
+        },
+        "space_between_widgets": {
+            "column": "24",
+            "row": "24",
+            "isLinked": true,
+            "unit": "px",
+            "size": 24
+        },
+        "page_title_selector": "h1.entry-title",
+        "hello_footer_copyright_text": "All rights reserved",
+        "activeItemIndex": 1,
+        "__globals__": {
+            "body_background_color": "globals\/colors?id=64ab314",
+            "body_color": "globals\/colors?id=text",
+            "body_typography_typography": "globals\/typography?id=text",
+            "h1_color": "globals\/colors?id=731f09b",
+            "link_normal_color": "globals\/colors?id=secondary",
+            "h1_typography_typography": "globals\/typography?id=primary",
+            "h2_color": "globals\/colors?id=731f09b",
+            "h2_typography_typography": "globals\/typography?id=secondary",
+            "h3_color": "globals\/colors?id=731f09b",
+            "h3_typography_typography": "globals\/typography?id=1dfef61",
+            "h4_color": "globals\/colors?id=731f09b",
+            "h4_typography_typography": "globals\/typography?id=84c7ee8",
+            "h5_color": "globals\/colors?id=731f09b",
+            "h5_typography_typography": "globals\/typography?id=2970c2c",
+            "h6_color": "globals\/colors?id=731f09b",
+            "h6_typography_typography": "globals\/typography?id=a06afad",
+            "button_typography_typography": "globals\/typography?id=4cd2da2",
+            "button_text_color": "globals\/colors?id=731f09b",
+            "button_hover_text_color": "globals\/colors?id=731f09b",
+            "button_border_color": "globals\/colors?id=primary",
+            "button_background_color": "globals\/colors?id=primary",
+            "button_background_color_b": "",
+            "button_hover_background_color": "globals\/colors?id=731f09b",
+            "link_normal_typography_typography": ""
+        },
+        "viewport_md": 768,
+        "viewport_lg": 1025,
+        "container_width": {
+            "unit": "px",
+            "size": 1328,
+            "sizes": []
+        },
+        "body_color": "#8F8F8F",
+        "link_normal_typography_font_family": "Plus Jakarta Sans",
+        "link_normal_typography_font_weight": "600",
+        "link_normal_typography_text_transform": "uppercase",
+        "button_border_width": {
+            "unit": "px",
+            "top": "1",
+            "right": "1",
+            "bottom": "1",
+            "left": "1",
+            "isLinked": true
+        },
+        "button_border_radius": {
+            "unit": "px",
+            "top": "4",
+            "right": "4",
+            "bottom": "4",
+            "left": "4",
+            "isLinked": true
+        },
+        "button_padding": {
+            "unit": "px",
+            "top": "12",
+            "right": "24",
+            "bottom": "24",
+            "left": "24",
+            "isLinked": false
+        },
+        "body_background_color": "#FFFFFE",
+        "body_typography_typography": "custom",
+        "body_typography_font_family": "Plus Jakarta Sans",
+        "body_typography_font_size": {
+            "unit": "px",
+            "size": 16,
+            "sizes": []
+        },
+        "body_typography_font_weight": "400",
+        "body_typography_text_decoration": "none",
+        "body_typography_line_height": {
+            "unit": "px",
+            "size": 26,
+            "sizes": []
+        },
+        "link_normal_color": "#E38C3B",
+        "h1_color": "#1F1F1F",
+        "h2_color": "#1F1F1F",
+        "h3_color": "#1F1F1F",
+        "h4_color": "#1F1F1F",
+        "h5_color": "#1F1F1F",
+        "h6_color": "#1F1F1F",
+        "button_text_color": "#1F1F1F",
+        "button_background_color": "#E9A668",
+        "button_background_gradient_angle": {
+            "unit": "deg",
+            "size": 160,
+            "sizes": []
+        },
+        "button_border_color": "#E9A668",
+        "button_hover_text_color": "#1F1F1F",
+        "body_typography_text_transform": "none",
+        "default_page_template": "elementor_header_footer",
+        "body_typography_font_size_mobile": {
+            "unit": "px",
+            "size": 16,
+            "sizes": []
+        },
+        "body_typography_line_height_mobile": {
+            "unit": "px",
+            "size": 26,
+            "sizes": []
+        },
+        "hello_footer_logo_display": "",
+        "hello_footer_tagline_display": "",
+        "hello_footer_menu_display": "",
+        "hello_footer_copyright_display": "",
+        "hello_header_logo_display": "",
+        "hello_header_tagline_display": "",
+        "hello_header_menu_display": "",
+        "button_box_shadow_box_shadow": {
+            "horizontal": 0,
+            "vertical": 0,
+            "blur": 10,
+            "spread": 0,
+            "color": "rgba(0, 0, 0, 0)"
+        },
+        "button_padding_tablet": {
+            "unit": "px",
+            "top": "12",
+            "right": "24",
+            "bottom": "12",
+            "left": "24",
+            "isLinked": false
+        },
+        "link_normal_typography_font_size": {
+            "unit": "px",
+            "size": 14,
+            "sizes": []
+        },
+        "link_normal_typography_line_height": {
+            "unit": "px",
+            "size": 24,
+            "sizes": []
+        },
+        "button_typography_typography": "custom",
+        "button_typography_font_family": "Plus Jakarta Sans",
+        "button_typography_font_size": {
+            "unit": "px",
+            "size": 14,
+            "sizes": []
+        },
+        "button_typography_font_weight": "600",
+        "button_typography_text_transform": "uppercase",
+        "button_typography_line_height": {
+            "unit": "px",
+            "size": 24,
+            "sizes": []
+        },
+        "button_hover_background_color": "#1F1F1F"
+    }
+}

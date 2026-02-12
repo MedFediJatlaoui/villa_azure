@@ -1,0 +1,1380 @@
+{
+    "manifest_version": "1.0.23",
+    "title": "Ophelia - Template kit for hotel & resort",
+    "page_builder": "elementor",
+    "kit_version": "1.0.2",
+    "templates": [
+        {
+            "name": "Global Kit Styles",
+            "screenshot": "screenshots\/global-kit-styles.jpg",
+            "source": "templates\/global.json",
+            "preview_url": "https:\/\/new.creativemox.com",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "global-styles",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "additional_template_information": [
+                    "These are the global theme styles configured through the Elementor Theme Styles area."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Our Staff",
+            "screenshot": "screenshots\/our-staff.jpg",
+            "source": "templates\/our-staff.json",
+            "preview_url": "https:\/\/new.creativemox.com\/ophelia\/?elementor_library=our-staff",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "page",
+                "additional_template_information": [
+                    "This is a \"Page\" template for Elementor Pro."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "About Us",
+            "screenshot": "screenshots\/about-us.jpg",
+            "source": "templates\/about-us.json",
+            "preview_url": "https:\/\/new.creativemox.com\/ophelia\/?elementor_library=about-us",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "page",
+                "additional_template_information": [
+                    "This is a \"Page\" template for Elementor Pro."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Room Single",
+            "screenshot": "screenshots\/room-single.jpg",
+            "source": "templates\/room-single.json",
+            "preview_url": "https:\/\/new.creativemox.com\/ophelia\/?elementor_library=room-single",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "page",
+                "additional_template_information": [
+                    "This is a \"Page\" template for Elementor Pro."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Rooms",
+            "screenshot": "screenshots\/rooms.jpg",
+            "source": "templates\/rooms.json",
+            "preview_url": "https:\/\/new.creativemox.com\/ophelia\/?elementor_library=rooms",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "page",
+                "additional_template_information": [
+                    "This is a \"Page\" template for Elementor Pro."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Amenities",
+            "screenshot": "screenshots\/amenities.jpg",
+            "source": "templates\/amenities.json",
+            "preview_url": "https:\/\/new.creativemox.com\/ophelia\/?elementor_library=amenities",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "page",
+                "additional_template_information": [
+                    "This is a \"Page\" template for Elementor Pro."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Booking",
+            "screenshot": "screenshots\/booking.jpg",
+            "source": "templates\/booking.json",
+            "preview_url": "https:\/\/new.creativemox.com\/ophelia\/?elementor_library=booking",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "page",
+                "additional_template_information": [
+                    "This is a \"Page\" template for Elementor Pro."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Contact",
+            "screenshot": "screenshots\/contact.jpg",
+            "source": "templates\/contact.json",
+            "preview_url": "https:\/\/new.creativemox.com\/ophelia\/?elementor_library=contact",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "page",
+                "additional_template_information": [
+                    "This is a \"Page\" template for Elementor Pro."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "FAQs",
+            "screenshot": "screenshots\/faqs.jpg",
+            "source": "templates\/faqs.json",
+            "preview_url": "https:\/\/new.creativemox.com\/ophelia\/?elementor_library=faqs",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "page",
+                "additional_template_information": [
+                    "This is a \"Page\" template for Elementor Pro."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Ophelia - Single post",
+            "screenshot": "screenshots\/ophelia-single-post.jpg",
+            "source": "templates\/ophelia-single-post.json",
+            "preview_url": "https:\/\/new.creativemox.com\/ophelia\/?elementor_library=single-post-ophelia",
+            "type": "single-post",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-post",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "single-post",
+                "elementor_pro_conditions": [
+                    "include\/singular"
+                ],
+                "additional_template_information": [
+                    "This is a \"Single Post\" template for Elementor Pro.",
+                    "This template will display on: All Singular."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Ophelia - Archive blog",
+            "screenshot": "screenshots\/ophelia-archive-blog.jpg",
+            "source": "templates\/ophelia-archive-blog.json",
+            "preview_url": "https:\/\/new.creativemox.com\/ophelia\/?elementor_library=ophelia-archive-blog",
+            "type": "archive",
+            "category": "page",
+            "metadata": {
+                "template_type": "archive-blog",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "archive",
+                "elementor_pro_conditions": [
+                    "include\/archive"
+                ],
+                "additional_template_information": [
+                    "This is a \"Archive\" template for Elementor Pro.",
+                    "This template will display on: All Archives."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Ophelia - Error 404",
+            "screenshot": "screenshots\/ophelia-error-404.jpg",
+            "source": "templates\/ophelia-error-404.json",
+            "preview_url": "https:\/\/new.creativemox.com\/ophelia\/?elementor_library=ophelia-error-404",
+            "type": "error-404",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-404",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "error-404",
+                "elementor_pro_conditions": [
+                    "include\/singular\/not_found404"
+                ],
+                "additional_template_information": [
+                    "This is a \"Error 404\" template for Elementor Pro.",
+                    "This template will display on: 404 Page."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Ophelia - Footer",
+            "screenshot": "screenshots\/ophelia-footer.jpg",
+            "source": "templates\/ophelia-footer.json",
+            "preview_url": "https:\/\/new.creativemox.com\/ophelia\/?elementor_library=ophelia-footer",
+            "type": "footer",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-footer",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "footer",
+                "elementor_pro_conditions": [
+                    "include\/general"
+                ],
+                "additional_template_information": [
+                    "This is a \"Footer\" template for Elementor Pro.",
+                    "This template will display on: Entire Site."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Homepage",
+            "screenshot": "screenshots\/homepage.jpg",
+            "source": "templates\/homepage.json",
+            "preview_url": "https:\/\/new.creativemox.com\/ophelia\/?elementor_library=homepage",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "section",
+                "additional_template_information": [
+                    "This is a \"Section\" template for Elementor Pro."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Ophelia - Header",
+            "screenshot": "screenshots\/ophelia-header.jpg",
+            "source": "templates\/ophelia-header.json",
+            "preview_url": "https:\/\/new.creativemox.com\/ophelia\/?elementor_library=ophelia-header",
+            "type": "header",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-header",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "header",
+                "elementor_pro_conditions": [
+                    "include\/general"
+                ],
+                "additional_template_information": [
+                    "This is a \"Header\" template for Elementor Pro.",
+                    "This template will display on: Entire Site."
+                ]
+            },
+            "elementor_pro_required": true
+        }
+    ],
+    "required_plugins": [
+        {
+            "name": "ElementsKit Lite",
+            "version": "3.6.0",
+            "file": "elementskit-lite\/elementskit-lite.php",
+            "author": "Wpmet"
+        },
+        {
+            "name": "Skyboot Custom Icons for Elementor - Elementor Icons library",
+            "version": "1.1.0",
+            "file": "skyboot-custom-icons-for-elementor\/skyboot-custom-icons-for-elementor.php",
+            "author": "Skybootstrap"
+        },
+        {
+            "name": "Elementor Pro",
+            "version": "3.26.2",
+            "file": "elementor-pro\/elementor-pro.php",
+            "author": "Elementor.com"
+        },
+        {
+            "name": "Elementor",
+            "version": "3.29.0",
+            "file": "elementor\/elementor.php",
+            "author": "Elementor.com"
+        }
+    ],
+    "images": [
+        {
+            "filename": "smiling-guests-giving-their-check-in-information-to-hotel-reception.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/smiling-guests-giving-their-check-in-information-to-hotel-reception-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-staff.json",
+                    "name": "Our Staff"
+                }
+            ],
+            "filesize": 87831,
+            "dimensions": [
+                1080,
+                720
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-K7GUB2S"
+        },
+        {
+            "filename": "young-smiling-hotel-staff-holding-tray-with-breakfast-e1756525750959.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/young-smiling-hotel-staff-holding-tray-with-breakfast-e1756525750959-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-staff.json",
+                    "name": "Our Staff"
+                },
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 60708,
+            "dimensions": [
+                1080,
+                720
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-96NQ9ZA"
+        },
+        {
+            "filename": "smiling-maid-holding-pile-of-folded-towels-near-bed-and-looking-at-camera-in-hotel-room.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/smiling-maid-holding-pile-of-folded-towels-near-bed-and-looking-at-camera-in-hotel-room-800x534.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-staff.json",
+                    "name": "Our Staff"
+                },
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 84388,
+            "dimensions": [
+                1280,
+                854
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-MXKER4S"
+        },
+        {
+            "filename": "T6.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/T6.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-staff.json",
+                    "name": "Our Staff"
+                }
+            ],
+            "filesize": 140158,
+            "dimensions": [
+                451,
+                450
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/selective-focus-of-happy-receptionist-showing-thum-APXUH32"
+        },
+        {
+            "filename": "T8-1.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/T8-1.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-staff.json",
+                    "name": "Our Staff"
+                }
+            ],
+            "filesize": 159469,
+            "dimensions": [
+                451,
+                450
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/shop-assistant-receptionist-writing-while-standing-L4UTZ67"
+        },
+        {
+            "filename": "T5.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/T5.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-staff.json",
+                    "name": "Our Staff"
+                }
+            ],
+            "filesize": 195620,
+            "dimensions": [
+                451,
+                450
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/adult-chambermaid-and-hotel-manager-cleaning-the-r-CTYW6T6"
+        },
+        {
+            "filename": "T7.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/T7.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-staff.json",
+                    "name": "Our Staff"
+                }
+            ],
+            "filesize": 193270,
+            "dimensions": [
+                451,
+                450
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/handsome-hotel-administrator-with-crossed-arms-loo-B8SKVKU"
+        },
+        {
+            "filename": "T4.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/T4.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-staff.json",
+                    "name": "Our Staff"
+                }
+            ],
+            "filesize": 155776,
+            "dimensions": [
+                451,
+                450
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/chambermaid-in-the-hotel-room-UXFUVTN"
+        },
+        {
+            "filename": "T3.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/T3.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-staff.json",
+                    "name": "Our Staff"
+                }
+            ],
+            "filesize": 146717,
+            "dimensions": [
+                451,
+                450
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/chambermaid-in-the-hotel-corridor-2PA5PGW"
+        },
+        {
+            "filename": "T2.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/T2.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-staff.json",
+                    "name": "Our Staff"
+                }
+            ],
+            "filesize": 160379,
+            "dimensions": [
+                451,
+                450
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/serving-drinks-W7EFU82"
+        },
+        {
+            "filename": "T1.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/T1.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-staff.json",
+                    "name": "Our Staff"
+                }
+            ],
+            "filesize": 140983,
+            "dimensions": [
+                451,
+                450
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/portrait-of-beautiful-blonde-woman-hotel-reception-TVMALXT"
+        },
+        {
+            "filename": "tidy-cozy-hotel-room.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/tidy-cozy-hotel-room-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-staff.json",
+                    "name": "Our Staff"
+                },
+                {
+                    "source": "templates\/room-single.json",
+                    "name": "Room Single"
+                },
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 95679,
+            "dimensions": [
+                1080,
+                720
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-PPRDU59"
+        },
+        {
+            "filename": "juicy-beef-steak-served-at-restaurant.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/juicy-beef-steak-served-at-restaurant-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-staff.json",
+                    "name": "Our Staff"
+                },
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                },
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 138694,
+            "dimensions": [
+                1080,
+                720
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-PRL9MQJ"
+        },
+        {
+            "filename": "Team_3.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/Team_3.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-staff.json",
+                    "name": "Our Staff"
+                },
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                },
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 160580,
+            "dimensions": [
+                400,
+                400
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/smiling-attractive-young-woman-standing-with-notep-LDH33ZX"
+        },
+        {
+            "filename": "Team_5.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/Team_5.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-staff.json",
+                    "name": "Our Staff"
+                },
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                },
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 168173,
+            "dimensions": [
+                400,
+                400
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/handsome-millennial-guy-with-smartphone-KMYQCV2"
+        },
+        {
+            "filename": "Team_6.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/Team_6.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-staff.json",
+                    "name": "Our Staff"
+                },
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                },
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 166956,
+            "dimensions": [
+                400,
+                400
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/pretty-asian-housewife-carries-pedigree-dog-on-han-6NHXZUD"
+        },
+        {
+            "filename": "woman-eating-breakfast-in-the-hotel-room-room-service-breakfast-in-hotel-room-1-1.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/woman-eating-breakfast-in-the-hotel-room-room-service-breakfast-in-hotel-room-1-1-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                }
+            ],
+            "filesize": 100276,
+            "dimensions": [
+                1080,
+                720
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-2CJ5NG7"
+        },
+        {
+            "filename": "washbasin-in-bathroom-bath-accessories-household-hotel-cleaning-concept.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/washbasin-in-bathroom-bath-accessories-household-hotel-cleaning-concept-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                },
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 35448,
+            "dimensions": [
+                1080,
+                720
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-N8GGH73"
+        },
+        {
+            "filename": "cozy-hotel-room-interior.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/cozy-hotel-room-interior-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                },
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 102958,
+            "dimensions": [
+                1080,
+                720
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-4KSZ3J2"
+        },
+        {
+            "filename": "call-hotel-support-2.png",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/call-hotel-support-2.png",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                },
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 3038,
+            "dimensions": [
+                128,
+                128
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/20-hotel-icons-line-J359JV"
+        },
+        {
+            "filename": "laundry-hotel-washing-machine.png",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/laundry-hotel-washing-machine.png",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                },
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 2501,
+            "dimensions": [
+                128,
+                128
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/20-hotel-icons-line-J359JV"
+        },
+        {
+            "filename": "free-wifi-internet-1.png",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/free-wifi-internet-1.png",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                },
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 2954,
+            "dimensions": [
+                128,
+                128
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/20-hotel-icons-line-J359JV"
+        },
+        {
+            "filename": "cctv-hotel-security-camera-1.png",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/cctv-hotel-security-camera-1.png",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                },
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 2635,
+            "dimensions": [
+                128,
+                128
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/20-hotel-icons-line-J359JV"
+        },
+        {
+            "filename": "seamless_pattern03-e1756629655517.png",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/seamless_pattern03-800x800.png",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                }
+            ],
+            "filesize": 180334,
+            "dimensions": [
+                520,
+                520
+            ],
+            "image_source": "self_created",
+            "image_urls": ""
+        },
+        {
+            "filename": "modern-hotel-lobby-with-abstract-wooden-wall.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/modern-hotel-lobby-with-abstract-wooden-wall-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                },
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 152068,
+            "dimensions": [
+                1080,
+                720
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-PXHF3XH"
+        },
+        {
+            "filename": "cool-trendy-bar.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/cool-trendy-bar-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                },
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 89324,
+            "dimensions": [
+                1080,
+                720
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-TZYUE6M"
+        },
+        {
+            "filename": "woman-relaxing-by-the-pool-in-a-luxury-hotel-resort-enjoying-perfect-beach-holiday-vacation.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/woman-relaxing-by-the-pool-in-a-luxury-hotel-resort-enjoying-perfect-beach-holiday-vacation-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                }
+            ],
+            "filesize": 77417,
+            "dimensions": [
+                1080,
+                720
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-7D37U7N"
+        },
+        {
+            "filename": "front-view-of-a-simple-wooden-double-bed-with-cushions-and-thick.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/front-view-of-a-simple-wooden-double-bed-with-cushions-and-thick-800x312.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/booking.json",
+                    "name": "Booking"
+                },
+                {
+                    "source": "templates\/faqs.json",
+                    "name": "FAQs"
+                }
+            ],
+            "filesize": 74062,
+            "dimensions": [
+                1080,
+                421
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-7CH9523"
+        },
+        {
+            "filename": "3d-rendering-beautiful-luxury-bedroom-suite-in-hotel-with-tv.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/3d-rendering-beautiful-luxury-bedroom-suite-in-hotel-with-tv-800x617.jpg",
+            "templates": [
+                {
+                    "source": "templates\/room-single.json",
+                    "name": "Room Single"
+                },
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                }
+            ],
+            "filesize": 100325,
+            "dimensions": [
+                1080,
+                833
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-ZRUJ8VZ"
+        },
+        {
+            "filename": "domestic-staff-cleaning-bedroom.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/domestic-staff-cleaning-bedroom-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/room-single.json",
+                    "name": "Room Single"
+                },
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                }
+            ],
+            "filesize": 58736,
+            "dimensions": [
+                1080,
+                720
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-72LPVK8"
+        },
+        {
+            "filename": "desk-and-bed-in-hotel-room.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/desk-and-bed-in-hotel-room-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/room-single.json",
+                    "name": "Room Single"
+                },
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                },
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 124282,
+            "dimensions": [
+                1280,
+                853
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-WUECWT9"
+        },
+        {
+            "filename": "3d-rendering-beautiful-luxury-bedroom-suite-in-hotel-with-tv-1.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/3d-rendering-beautiful-luxury-bedroom-suite-in-hotel-with-tv-1-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/room-single.json",
+                    "name": "Room Single"
+                },
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                },
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 109972,
+            "dimensions": [
+                1080,
+                720
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-8GH37GQ"
+        },
+        {
+            "filename": "standard-double-beds-hotel-room.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/standard-double-beds-hotel-room-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/room-single.json",
+                    "name": "Room Single"
+                },
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                },
+                {
+                    "source": "templates\/ophelia-archive-blog.json",
+                    "name": "Ophelia - Archive blog"
+                },
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 98407,
+            "dimensions": [
+                1080,
+                720
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-BUEW5VD"
+        },
+        {
+            "filename": "3d-rendering-beautiful-comtemporary-luxury-bedroom-suite-in-hotel-with-tv-and-sofa.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/3d-rendering-beautiful-comtemporary-luxury-bedroom-suite-in-hotel-with-tv-and-sofa-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                }
+            ],
+            "filesize": 109598,
+            "dimensions": [
+                1080,
+                720
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-UBTUEET"
+        },
+        {
+            "filename": "interior-of-a-twin-queen-bed-hotel-room.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/interior-of-a-twin-queen-bed-hotel-room-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                }
+            ],
+            "filesize": 89992,
+            "dimensions": [
+                1080,
+                720
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-F752KND"
+        },
+        {
+            "filename": "Review.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/Review-800x265.jpg",
+            "templates": [
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                },
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 138156,
+            "dimensions": [
+                1236,
+                410
+            ],
+            "image_source": "self_created",
+            "image_urls": ""
+        },
+        {
+            "filename": "Pattern.png",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/Pattern.png",
+            "templates": [
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                },
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 6073,
+            "dimensions": [
+                570,
+                570
+            ],
+            "image_source": "self_created",
+            "image_urls": ""
+        },
+        {
+            "filename": "man-checking-in-to-hotel-e1656224866888.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/man-checking-in-to-hotel-e1656224866888-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/rooms.json",
+                    "name": "Rooms"
+                },
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 106652,
+            "dimensions": [
+                1080,
+                720
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-4866888"
+        },
+        {
+            "filename": "hot-summer-day-in-hotel-pool-e1656156605720.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/hot-summer-day-in-hotel-pool-e1656156605720-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                },
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 161876,
+            "dimensions": [
+                1080,
+                720
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-6605720"
+        },
+        {
+            "filename": "spa-beauty.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/spa-beauty-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                }
+            ],
+            "filesize": 52735,
+            "dimensions": [
+                1080,
+                720
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-SXWY5SC"
+        },
+        {
+            "filename": "modern-gym-interior-with-sport-and-fitness-equipment-fitness-center-interior.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/modern-gym-interior-with-sport-and-fitness-equipment-fitness-center-interior-800x600.jpg",
+            "templates": [
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                }
+            ],
+            "filesize": 248026,
+            "dimensions": [
+                1280,
+                960
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-8J5LGGZ"
+        },
+        {
+            "filename": "clean-bedroom-at-hotel-wood-tone.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/clean-bedroom-at-hotel-wood-tone-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/amenities.json",
+                    "name": "Amenities"
+                }
+            ],
+            "filesize": 73493,
+            "dimensions": [
+                1080,
+                720
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "http:\/\/point.moxcreative.com\/ophelia\/wp-content\/uploads\/sites\/31\/2022\/06\/clean-bedroom-at-hotel-wood-tone.jpg"
+        },
+        {
+            "filename": "planning-next-vacation-trip-booking-hotel-online-using-smartphone-ordering-service-phone-charging-1.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/planning-next-vacation-trip-booking-hotel-online-using-smartphone-ordering-service-phone-charging-1-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/booking.json",
+                    "name": "Booking"
+                }
+            ],
+            "filesize": 171589,
+            "dimensions": [
+                1080,
+                720
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-JE9S5M9"
+        },
+        {
+            "filename": "bright-yellow-travel-bag-and-straw-hat-on-yellow-background.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/bright-yellow-travel-bag-and-straw-hat-on-yellow-background-800x534.jpg",
+            "templates": [
+                {
+                    "source": "templates\/booking.json",
+                    "name": "Booking"
+                }
+            ],
+            "filesize": 31006,
+            "dimensions": [
+                1080,
+                721
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-R8F5PTT"
+        },
+        {
+            "filename": "sink-basin-and-faucet-bathroom-interior-black-tap-and-white-washbasin-3d-illustration.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/sink-basin-and-faucet-bathroom-interior-black-tap-and-white-washbasin-3d-illustration-800x343.jpg",
+            "templates": [
+                {
+                    "source": "templates\/booking.json",
+                    "name": "Booking"
+                },
+                {
+                    "source": "templates\/faqs.json",
+                    "name": "FAQs"
+                }
+            ],
+            "filesize": 27272,
+            "dimensions": [
+                1080,
+                463
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-TSKNQHH"
+        },
+        {
+            "filename": "people-and-technology-concept-happy-young-man-with-travel-bag-rear-view.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/people-and-technology-concept-happy-young-man-with-travel-bag-rear-view-800x534.jpg",
+            "templates": [
+                {
+                    "source": "templates\/contact.json",
+                    "name": "Contact"
+                }
+            ],
+            "filesize": 133675,
+            "dimensions": [
+                1080,
+                721
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-8PYWU4J"
+        },
+        {
+            "filename": "interior-of-modern-bedroom-suite-in-luxury-hotel.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/interior-of-modern-bedroom-suite-in-luxury-hotel-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/faqs.json",
+                    "name": "FAQs"
+                }
+            ],
+            "filesize": 122284,
+            "dimensions": [
+                1080,
+                720
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-Y3DCZZJ"
+        },
+        {
+            "filename": "hotel-room-or-apartment-doorway.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/hotel-room-or-apartment-doorway-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/ophelia-error-404.json",
+                    "name": "Ophelia - Error 404"
+                }
+            ],
+            "filesize": 65581,
+            "dimensions": [
+                1280,
+                853
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-XJZ9VBS"
+        },
+        {
+            "filename": "evening-view-along-illuminated-infinity-pool-on-roof-terrace-cityscape.jpg",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/evening-view-along-illuminated-infinity-pool-on-roof-terrace-cityscape-800x313.jpg",
+            "templates": [
+                {
+                    "source": "templates\/ophelia-footer.json",
+                    "name": "Ophelia - Footer"
+                }
+            ],
+            "filesize": 94536,
+            "dimensions": [
+                1080,
+                422
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-R6CH2XJ"
+        },
+        {
+            "filename": "Logo_Ophelia_2-1.png",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/Logo_Ophelia_2-1.png",
+            "templates": [
+                {
+                    "source": "templates\/ophelia-footer.json",
+                    "name": "Ophelia - Footer"
+                }
+            ],
+            "filesize": 6131,
+            "dimensions": [
+                710,
+                166
+            ],
+            "image_source": "self_created",
+            "image_urls": ""
+        },
+        {
+            "filename": "Logo_Ophelia_1-1.png",
+            "thumbnail_url": "http:\/\/new.creativemox.com\/ophelia\/wp-content\/uploads\/sites\/22\/2025\/08\/Logo_Ophelia_1-1.png",
+            "templates": [
+                {
+                    "source": "templates\/ophelia-header.json",
+                    "name": "Ophelia - Header"
+                }
+            ],
+            "filesize": 24433,
+            "dimensions": [
+                710,
+                166
+            ],
+            "image_source": "self_created",
+            "image_urls": ""
+        }
+    ]
+}
