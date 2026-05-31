@@ -1,0 +1,16 @@
+# Database binary files (never commit)
+mysql/data/
+
+# Elementor auto-generated CSS (regenerated on page save)
+wordpress/wp-content/uploads/elementor/css/
+
+# Composer dependencies (run composer install locally)
+wordpress/wp-content/plugins/*/vendor/
+wordpress/wp-content/mu-plugins/*/vendor/
+
+# MCP config (may contain sensitive tokens)
+.mcp.json
+
+# Local/temp files
+graphify-out/
+*.log
