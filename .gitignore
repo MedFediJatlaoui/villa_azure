@@ -1,5 +1,3 @@
-# Database binary files (never commit)
-mysql/data/
 
 # Elementor auto-generated CSS (regenerated on page save)
 wordpress/wp-content/uploads/elementor/css/
