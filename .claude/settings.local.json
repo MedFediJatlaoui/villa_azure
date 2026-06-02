@@ -52,7 +52,8 @@
       "Bash(curl -s -o /dev/null \"http://localhost:8080/rooms-suites-3/\")",
       "mcp__elementor-mcp__elementor-mcp-update-page-settings",
       "mcp__elementor-mcp__elementor-mcp-create-page",
-      "mcp__elementor-mcp__elementor-mcp-apply-template"
+      "mcp__elementor-mcp__elementor-mcp-apply-template",
+      "mcp__elementor-mcp__elementor-mcp-remove-element"
     ]
   },
   "enabledMcpjsonServers": [
