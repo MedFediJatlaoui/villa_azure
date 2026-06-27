@@ -1,5 +1,30 @@
 <?php
 /* Villa Azur — minimal targeted fixes only, no kit overrides */
+
+// ── FluentForms: calendrier en français ──────────────────────────────────────
+add_filter('fluentform/date_i18n', function () {
+    return [
+        'weekdays' => [
+            'shorthand' => ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+            'longhand'  => ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+        ],
+        'months' => [
+            'shorthand' => ['Janv', 'Févr', 'Mars', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sept', 'Oct', 'Nov', 'Déc'],
+            'longhand'  => ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+        ],
+        'firstDayOfWeek' => 1,
+        'weekAbbreviation' => 'Sem.',
+        'rangeSeparator'   => ' au ',
+        'scrollTitle'      => 'Défiler pour augmenter la valeur',
+        'toggleTitle'      => 'Cliquer pour basculer',
+    ];
+});
+
+// ── wp_mail : timeout court (évite le blocage 5 min si SMTP injoignable) ─────
+add_action('phpmailer_init', function ($m) {
+    $m->Timeout = 10; // connexion SMTP max 10 s au lieu des 300 s par défaut
+});
+
 add_action("wp_head", function () { ?>
 <style>
 /* 1. Logo sizing only */

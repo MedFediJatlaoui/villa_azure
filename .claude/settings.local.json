@@ -60,7 +60,8 @@
       "Bash(curl -s \"http://localhost:8080/wp-json/\" -u 'fedi:bXAX zCwV lpEc PP2n SxWj Qx62')",
       "Bash(python3 -c \"import sys,json; routes = json.load\\(sys.stdin\\).get\\('routes',{}\\); [print\\(r\\) for r in routes if 'mcp' in r.lower\\(\\)]\")",
       "Bash(python3 -c \"import sys,json; routes = json.load\\(sys.stdin\\).get\\('routes',{}\\); [print\\(r\\) for r in list\\(routes.keys\\(\\)\\)[:20]]\")",
-      "Bash(curl -s \"http://localhost:8080/localisation/\")"
+      "Bash(curl -s \"http://localhost:8080/localisation/\")",
+      "Bash(wp --path=wordpress fluentform forms --format=json)"
     ]
   },
   "enabledMcpjsonServers": [

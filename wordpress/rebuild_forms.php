@@ -73,10 +73,15 @@ $contact_fields = [
                 "conditional_logics" => [],
                 "validation_rules" => ["required" => ["value" => true, "message" => "Ce champ est obligatoire"]],
                 "options" => [
-                    ["label" => "Demande information", "value" => "information"],
+                    ["label" => "Demande d information generale", "value" => "information"],
+                    ["label" => "Demande de reservation", "value" => "reservation"],
+                    ["label" => "Annulation ou modification de reservation", "value" => "annulation_modification"],
+                    ["label" => "Evenement prive (mariage, anniversaire, seminaire)", "value" => "evenement_prive"],
+                    ["label" => "Demande de devis groupe", "value" => "devis_groupe"],
                     ["label" => "Reclamation", "value" => "reclamation"],
                     ["label" => "Suggestion", "value" => "suggestion"],
-                    ["label" => "Partenariat", "value" => "partenariat"],
+                    ["label" => "Partenariat et B2B", "value" => "partenariat"],
+                    ["label" => "Presse et medias", "value" => "presse_medias"],
                     ["label" => "Autre", "value" => "autre"]
                 ]
             ],
@@ -104,14 +109,17 @@ $contact_fields = [
         ]
     ],
     "submitButton" => [
-        "type" => "submit",
-        "options" => [
-            "buttonStyle" => "default",
-            "buttonSize" => "md",
-            "buttonText" => "Envoyer le message",
-            "align" => "left",
-            "button_ui" => ["layout" => "inherit", "type" => "default", "text" => "Envoyer le message", "img_url" => ""]
+        "element" => "button",
+        "attributes" => ["type" => "submit", "class" => ""],
+        "settings" => [
+            "align" => "center",
+            "button_style" => "default",
+            "container_class" => "",
+            "help_message" => "",
+            "button_size" => "md",
+            "button_ui" => ["type" => "default", "text" => "Envoyer le message", "img_url" => ""]
         ],
+        "editor_options" => ["title" => "Submit Button"],
         "uniqElKey" => "el_" . ($ts + 6)
     ]
 ];
@@ -127,7 +135,7 @@ echo "Form 3 rebuilt.\n";
 echo "  Fields: " . count($parsed["fields"]) . "\n";
 echo "  uniqElKey[0]: " . ($parsed["fields"][0]["uniqElKey"] ?? "MISSING") . "\n";
 echo "  template[0]: " . ($parsed["fields"][0]["editor_options"]["template"] ?? "MISSING") . "\n";
-echo "  Submit: " . ($parsed["submitButton"]["options"]["buttonText"] ?? "MISSING") . "\n\n";
+echo "  Submit: " . ($parsed["submitButton"]["settings"]["button_ui"]["text"] ?? "MISSING") . "\n\n";
 
 // =============================================
 // FORM 4 — RESERVATION
@@ -322,14 +330,17 @@ $resa_fields = [
         ]
     ],
     "submitButton" => [
-        "type" => "submit",
-        "options" => [
-            "buttonStyle" => "default",
-            "buttonSize" => "md",
-            "buttonText" => "Envoyer la demande",
-            "align" => "left",
-            "button_ui" => ["layout" => "inherit", "type" => "default", "text" => "Envoyer la demande", "img_url" => ""]
+        "element" => "button",
+        "attributes" => ["type" => "submit", "class" => ""],
+        "settings" => [
+            "align" => "center",
+            "button_style" => "default",
+            "container_class" => "",
+            "help_message" => "",
+            "button_size" => "md",
+            "button_ui" => ["type" => "default", "text" => "Envoyer la demande", "img_url" => ""]
         ],
+        "editor_options" => ["title" => "Submit Button"],
         "uniqElKey" => "el_" . ($ts2 + 11)
     ]
 ];
@@ -345,7 +356,7 @@ echo "Form 4 rebuilt.\n";
 echo "  Fields: " . count($parsed4["fields"]) . "\n";
 echo "  uniqElKey[0]: " . ($parsed4["fields"][0]["uniqElKey"] ?? "MISSING") . "\n";
 echo "  template[0]: " . ($parsed4["fields"][0]["editor_options"]["template"] ?? "MISSING") . "\n";
-echo "  Submit: " . ($parsed4["submitButton"]["options"]["buttonText"] ?? "MISSING") . "\n\n";
+echo "  Submit: " . ($parsed4["submitButton"]["settings"]["button_ui"]["text"] ?? "MISSING") . "\n\n";
 
 // Final shortcode test
 $out3 = do_shortcode('[fluentform id="3"]');
