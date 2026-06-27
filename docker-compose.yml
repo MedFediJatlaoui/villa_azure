@@ -29,8 +29,11 @@ services:
       WORDPRESS_CONFIG_EXTRA: |
         define('WP_HOME', 'http://localhost:8080');
         define('WP_SITEURL', 'http://localhost:8080');
+        @ini_set('upload_max_filesize', '128M');
+        @ini_set('post_max_size', '128M');
+        @ini_set('memory_limit', '256M');
     volumes:
       - ./wordpress/wp-content:/var/www/html/wp-content
-      
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini  
     depends_on:
       - db

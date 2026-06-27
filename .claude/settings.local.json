@@ -53,7 +53,13 @@
       "mcp__elementor-mcp__elementor-mcp-update-page-settings",
       "mcp__elementor-mcp__elementor-mcp-create-page",
       "mcp__elementor-mcp__elementor-mcp-apply-template",
-      "mcp__elementor-mcp__elementor-mcp-remove-element"
+      "mcp__elementor-mcp__elementor-mcp-remove-element",
+      "Bash(node /home/mahdi-ben-amor/projects/villa_azure/wordpress/wp-content/plugins/elementor-mcp-main/bin/mcp-proxy.mjs --version)",
+      "Bash(curl -s \"http://localhost:8080/wp-json/wp/v2/plugins\" -u 'fedi:bXAX zCwV lpEc PP2n SxWj Qx62')",
+      "Bash(python3 -c \"import sys,json; [print\\(p['plugin'], '-', p['status']\\) for p in json.load\\(sys.stdin\\)]\")",
+      "Bash(curl -s \"http://localhost:8080/wp-json/\" -u 'fedi:bXAX zCwV lpEc PP2n SxWj Qx62')",
+      "Bash(python3 -c \"import sys,json; routes = json.load\\(sys.stdin\\).get\\('routes',{}\\); [print\\(r\\) for r in routes if 'mcp' in r.lower\\(\\)]\")",
+      "Bash(python3 -c \"import sys,json; routes = json.load\\(sys.stdin\\).get\\('routes',{}\\); [print\\(r\\) for r in list\\(routes.keys\\(\\)\\)[:20]]\")"
     ]
   },
   "enabledMcpjsonServers": [

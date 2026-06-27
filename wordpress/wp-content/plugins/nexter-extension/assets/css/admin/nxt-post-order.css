@@ -1,0 +1,78 @@
+.nxt-reorder-btn svg {
+    position: relative;
+    top: -2px;
+    vertical-align: middle;
+}
+ul.nxt-cpt-sortable {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 20px;
+}
+
+ul.nxt-cpt-sortable[data-level="0"] {
+    margin: 13px;
+}
+
+ul.nxt-cpt-sortable li {
+    list-style: none;
+}
+.sortable-chosen {
+    background: #e2e9ff;
+    list-style: none;
+}
+.nxt-cpt-page-item {
+    padding: 12px;
+    background: #fff;
+    border: 1px solid #d1d1d6;
+    border-radius: 4px;
+    margin-block: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.2s;
+    cursor: grab;
+}
+.nxt-cpt-page-item:hover {
+    background: #e2e9ff;
+}
+
+.nxt-cpt-handle {
+    padding: 0 4px;
+    color: #666;
+}
+
+.nxt-cpt-title {
+    flex: 1;
+    font-weight: 600;
+}
+
+.nxt-cpt-status {
+    font-size: 12px;
+    font-weight: 400;
+    font-style: italic;
+    color: #666;
+    margin-left: 8px;
+}
+
+.table-view-list.media .nxt-drag-post-order tr .check-column:hover {
+    cursor: move
+}
+.table-view-list.media .nxt-drag-post-order tr.alternate {
+    background-color: #f9f9f9
+}
+.table-view-list.media .nxt-drag-post-order>tr>th:first-child:after {
+    position: absolute;
+    color: #909090;
+    content: "\f545";
+    transform: rotate(-90deg);
+    margin: 4px 0 0 6px;
+    display: block;
+    font-family: dashicons;
+    line-height: 1;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: none;
+    text-rendering: auto;
+    font-size: 20px;
+    text-align: center
+}

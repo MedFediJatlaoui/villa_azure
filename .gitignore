@@ -10,3 +10,4 @@ wordpress/wp-content/mu-plugins/*/vendor/
 # Local/temp files
 graphify-out/
 *.log
+# mysql/data/
