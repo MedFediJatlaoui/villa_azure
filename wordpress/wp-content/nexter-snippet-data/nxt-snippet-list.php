@@ -130,7 +130,7 @@ return array (
   'meta' => 
   array (
     'secret_key' => 'f1f06e3ae1e229c9b2b03f69bd2e797d',
-    'now_date' => '2026-06-27 21:16:28',
+    'now_date' => '2026-06-28 13:32:19',
     'version' => '4.6.12',
     'domain' => 'http://localhost:8080',
   ),
