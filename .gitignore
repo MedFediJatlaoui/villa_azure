@@ -11,3 +11,4 @@ wordpress/wp-content/mu-plugins/*/vendor/
 graphify-out/
 *.log
 # mysql/data/mysql/data/
+mysql/data/
