@@ -5,6 +5,7 @@ services:
     image: mariadb:10.4
     container_name: villa_db
     restart: always
+    command: --innodb_force_recovery=2
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: wordpress
