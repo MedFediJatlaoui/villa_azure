@@ -1,12 +1,12 @@
 
 
 # Composer dependencies (run composer install locally)
-wordpress/wp-content/plugins/*/vendor/
-wordpress/wp-content/mu-plugins/*/vendor/
+#wordpress/wp-content/plugins/*/vendor/
+#wordpress/wp-content/mu-plugins/*/vendor/
 
 # MCP config (may contain sensitive tokens)
 .mcp.json
-07072026.sql
+#07072026.sql
 # Local/temp files
 graphify-out/
 *.log
