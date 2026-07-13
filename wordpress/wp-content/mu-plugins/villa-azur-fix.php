@@ -71,5 +71,28 @@ add_action("wp_head", function () { ?>
   border-color: #E9A668;
   color: #1F1F1F;
 }
+/* 6. Header CTA ("Réservez") is not a dark-hero ghost button — it already has its
+   own solid background from Elementor. Rule 5 above unintentionally applied its
+   transparent/white-border ghost style here too, since both share the
+   .elementor-button-default class. Also: the global kit button padding is
+   asymmetric (12px top / 24px bottom), which pushed the label off-center
+   vertically; Elementor's own per-widget padding control does not emit any CSS
+   in this setup (confirmed empirically), so it's corrected here directly. */
+.elementor-2174 .elementor-element-9fd5a8e.elementor-button-default,
+.elementor-2174 .elementor-element-9fd5a8e.elementor-button-default:hover {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: inherit;
+}
+.elementor-2174 .elementor-element-9fd5a8e .elementor-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
 </style>
 <?php }, 5);

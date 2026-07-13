@@ -62,7 +62,8 @@
       "Bash(python3 -c \"import sys,json; routes = json.load\\(sys.stdin\\).get\\('routes',{}\\); [print\\(r\\) for r in list\\(routes.keys\\(\\)\\)[:20]]\")",
       "Bash(curl -s \"http://localhost:8080/localisation/\")",
       "Bash(wp --path=wordpress fluentform forms --format=json)",
-      "mcp__elementor-mcp__elementor-mcp-find-element"
+      "mcp__elementor-mcp__elementor-mcp-find-element",
+      "mcp__elementor-mcp__elementor-mcp-update-element"
     ]
   },
   "enabledMcpjsonServers": [
