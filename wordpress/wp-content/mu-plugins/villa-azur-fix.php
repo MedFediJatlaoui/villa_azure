@@ -143,38 +143,56 @@ add_action("wp_head", function () { ?>
 }
 
 /* 7. Mobile header: hamburger — centered logo — reservation button.
-   Root cause of the hamburger overlapping the logo: the logo column (165px)
-   and the "Réservez" column (200px) are both locked (flex-grow/shrink: 0)
-   and together already exceed the available width on most phones, so the
-   nav column between them — which is where the hamburger lives — gets
-   squeezed toward 0 and the hamburger's own fixed 45px paints outside its
-   box, over the logo. Reordering with flex `order` and letting the logo
-   column flex instead of the nav column removes the collision and centers
-   the logo for free. */
+   Root cause: a previous attempt reordered/flexed the logo and nav columns
+   via `order` + `--flex-grow`, but Elementor's own generated stylesheet sets
+   `--width` / `--flex-grow` / `--flex-shrink` on these same elements with a
+   HIGHER-specificity selector (it always chains both `.elementor-element`
+   AND `.elementor-element-<id>` — 3 classes vs our 2), so those particular
+   declarations were silently losing the cascade; only `order` (which
+   Elementor never sets) actually took effect. That correctly moved the
+   hamburger to the left, but left the logo as a small fixed-width (85px)
+   box wherever the now-reordered flexible nav column happened to push it —
+   nowhere near center (it landed close to the Réservez button instead).
+   Fix: take the logo fully out of the flex flow with absolute centering —
+   immune to whatever width the other two columns end up with — and match
+   Elementor's own selector specificity (plus !important) on anything we
+   still need to override, so it can't be silently out-cascaded again. */
 @media (max-width: 767px) {
-  .elementor-2174 .elementor-element-09b90be {
-    order: 2;
-    --flex-grow: 1;
-    --flex-shrink: 1;
-    --width: auto;
-    --justify-content: center;
-  }
-  .elementor-2174 .elementor-element-84e3c4c {
-    order: 1;
-    --flex-grow: 0;
-    --width: auto;
-  }
-  .elementor-2174 .elementor-element-555d87c {
-    order: 3;
-  }
-  /* The logo's own widget box is deliberately set wider than its column
-     (108%+) to let it bleed slightly past the column edge — safe when the
-     column is fixed-width and left-most, not once it's a flexible, centered
-     column between two others. */
-  .elementor-2174 .elementor-element-11b25c2 {
-    max-width: 100% !important;
+  .elementor-2174 .elementor-element.elementor-element-09b90be {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
     width: auto !important;
+    max-width: none !important;
+    --width: auto !important;
+    --container-widget-width: auto !important;
+    z-index: 2;
   }
+  .elementor-2174 .elementor-element.elementor-element-11b25c2 {
+    width: auto !important;
+    max-width: none !important;
+    --container-widget-width: auto !important;
+  }
+}
+
+/* 7b. Hamburger icon color: ElementsKit Lite exposes a control for the
+   toggle BUTTON's background but none for the icon itself, so it ships at a
+   hardcoded 50%-opacity black — on the header's light peach background that
+   reads as a washed-out grey smudge rather than a deliberate mark. Solid
+   brand ink at rest, brand orange on hover — the same dark-text/hover-accent
+   pairing already used everywhere else (buttons, headings, icon-box hovers). */
+.elementor-2174 .elementor-element.elementor-element-ecad4bd .elementskit-menu-hamburger-icon {
+  background-color: #1F1F1F !important;
+}
+.elementor-2174 .elementor-element.elementor-element-ecad4bd .ekit-menu-icon {
+  color: #1F1F1F !important;
+}
+.elementor-2174 .elementor-element.elementor-element-ecad4bd .elementskit-menu-hamburger:hover .elementskit-menu-hamburger-icon {
+  background-color: #E9A668 !important;
+}
+.elementor-2174 .elementor-element.elementor-element-ecad4bd .elementskit-menu-hamburger:hover > .ekit-menu-icon {
+  color: #E9A668 !important;
 }
 
 /* 8. Mobile menu backdrop was out of sync with the sliding panel: the
@@ -189,6 +207,62 @@ add_action("wp_head", function () { ?>
 }
 </style>
 <?php }, 5);
+
+// ── Visible breadcrumb trail (#9): Rank Math already emits BreadcrumbList ────
+// schema sitewide, but nothing renders the visual trail — this site's header
+// is an ElementsKit theme-support template (views/theme-support-header.php),
+// not a normal theme header.php, so it ships its own dedicated hook right
+// after the header markup (`elementskit/template/after_header`) specifically
+// for this kind of insertion. Using that instead of adding an Elementor
+// widget to the shared header keeps this change out of the fragile, already
+// custom-CSS-patched header layout entirely — pure PHP/CSS, zero risk of
+// disturbing the logo-centering / hamburger-color fixes already in place
+// there. Skipped on the front page, matching standard breadcrumb convention
+// (you're already home).
+add_action('elementskit/template/after_header', function () {
+    if (is_front_page() || ! function_exists('rank_math_the_breadcrumbs')) {
+        return;
+    }
+    echo '<div class="vaz-breadcrumb-bar">';
+    rank_math_the_breadcrumbs();
+    echo '</div>';
+});
+add_action('wp_head', function () { ?>
+<style>
+.vaz-breadcrumb-bar {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 14px 24px;
+}
+.vaz-breadcrumb-bar .rank-math-breadcrumb p {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  color: #727272;
+}
+.vaz-breadcrumb-bar .rank-math-breadcrumb a {
+  color: #727272;
+  text-decoration: none;
+}
+.vaz-breadcrumb-bar .rank-math-breadcrumb a:hover {
+  color: #E9A668;
+}
+</style>
+<?php }, 5);
+
+// ── robots.txt (#10): fix WP-Optimize's malformed Disallow line ──────────────
+// WP-Optimize's own robots_txt filter (priority 99) builds the path by
+// stripping "{scheme}://{host}" from the uploads base URL, but wp_parse_url()
+// puts the port in its own ['port'] key, separate from ['host'] — so on a
+// non-default port (like :8080 here) the strip misses the port, leaving a
+// line like "Disallow: :8080/wp-content/uploads/wpo/...json" with no leading
+// slash. That's invalid robots.txt syntax and crawlers ignore it. Hooking
+// after WP-Optimize (priority 100) and repairing just that one line in place
+// — instead of patching the plugin file — means this survives WP-Optimize
+// updates and doesn't touch code we don't own.
+add_filter('robots_txt', function ($output) {
+    return preg_replace('/^Disallow:\s*:\d+(\/.*)$/m', 'Disallow: $1', $output);
+}, 100);
 
 // ── Reservation popup (Popup Maker #3241 / Fluent Forms #4): behaviour fixes ─
 // The popup's own settings ship two problems that no amount of CSS can safely
