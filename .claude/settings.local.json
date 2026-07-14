@@ -63,7 +63,8 @@
       "Bash(curl -s \"http://localhost:8080/localisation/\")",
       "Bash(wp --path=wordpress fluentform forms --format=json)",
       "mcp__elementor-mcp__elementor-mcp-find-element",
-      "mcp__elementor-mcp__elementor-mcp-update-element"
+      "mcp__elementor-mcp__elementor-mcp-update-element",
+      "mcp__plugin_everything-claude-code_playwright__browser_install"
     ]
   },
   "enabledMcpjsonServers": [
