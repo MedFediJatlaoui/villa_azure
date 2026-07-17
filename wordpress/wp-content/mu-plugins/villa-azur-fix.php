@@ -230,6 +230,11 @@ add_action('elementskit/template/after_header', function () {
 add_action('wp_head', function () { ?>
 <style>
 .vaz-breadcrumb-bar {
+  /* Hidden per client request: Rank Math's BreadcrumbList schema is emitted
+     separately in the page's JSON-LD (class-jsonld.php / class-breadcrumbs.php)
+     regardless of whether this visual trail renders, so hiding it has no SEO
+     impact — it only affects the on-page display. */
+  display: none;
   max-width: 1440px;
   margin: 0 auto;
   padding: 14px 24px;
@@ -246,6 +251,44 @@ add_action('wp_head', function () { ?>
 }
 .vaz-breadcrumb-bar .rank-math-breadcrumb a:hover {
   color: #E9A668;
+}
+</style>
+<?php }, 5);
+
+// ── Leaflet map popup close button (#11): the Localisation/Contact map
+// widgets bleed their orange header to the popup's edges via negative
+// margins, but Leaflet's default close "×" is a tiny unstyled Tahoma
+// character sitting bare at top:0/right:0 — it reads as broken next to the
+// styled popup. Restyled sitewide (not per-widget) so both map instances
+// get it and any future one does too.
+add_action('wp_head', function () { ?>
+<style>
+.leaflet-popup-content-wrapper {
+  border-radius: 6px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.18);
+  padding: 0 !important;
+  overflow: hidden;
+}
+.leaflet-popup-content {
+  margin: 0 !important;
+}
+.leaflet-popup-close-button {
+  top: 8px !important;
+  right: 8px !important;
+  width: 22px !important;
+  height: 22px !important;
+  line-height: 21px !important;
+  font-size: 17px !important;
+  font-weight: 400 !important;
+  color: #1F1F1F !important;
+  background: rgba(255,255,255,.6) !important;
+  border-radius: 50% !important;
+  text-align: center !important;
+  transition: background .15s ease, color .15s ease;
+}
+.leaflet-popup-close-button:hover {
+  background: #1F1F1F !important;
+  color: #fff !important;
 }
 </style>
 <?php }, 5);
