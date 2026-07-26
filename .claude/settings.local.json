@@ -65,7 +65,8 @@
       "mcp__elementor-mcp__elementor-mcp-find-element",
       "mcp__elementor-mcp__elementor-mcp-update-element",
       "mcp__plugin_everything-claude-code_playwright__browser_install",
-      "mcp__elementor-mcp__elementor-mcp-get-container-schema"
+      "mcp__elementor-mcp__elementor-mcp-get-container-schema",
+      "Bash(curl -sL -o wp-accessibility.zip \"https://downloads.wordpress.org/plugin/wp-accessibility.latest-stable.zip\")"
     ]
   },
   "enabledMcpjsonServers": [

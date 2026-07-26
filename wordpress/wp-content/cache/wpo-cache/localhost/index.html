@@ -5,7 +5,20 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		
+			<script>
+	(function(){
+		try {
+			var s = JSON.parse( localStorage.getItem( 'villaA11yPrefs' ) || '{}' );
+			var cl = document.documentElement.classList;
+			if ( s.fontStep ) { cl.add( s.fontStep < 0 ? 'villa-a11y-fs-dec' + Math.abs( s.fontStep ) : 'villa-a11y-fs-' + s.fontStep ); }
+			if ( s.contrast ) { cl.add( 'villa-a11y-contrast' ); }
+			if ( s.dyslexia ) { cl.add( 'villa-a11y-dyslexia' ); }
+			if ( s.motion ) { cl.add( 'villa-a11y-reduce-motion' ); }
+			if ( s.cursor ) { cl.add( 'villa-a11y-big-cursor' ); }
+		} catch (e) {}
+	})();
+	</script>
+	
 <!-- Search Engine Optimization by Rank Math - https://rankmath.com/ -->
 <title>Villa Azur Djerba | Hôtel Boutique en Bord de Mer à Sidi Mehrez</title>
 <meta name="description" content="Hôtel boutique de 16 chambres face à la mer à Djerba. Piscine, restaurant méditerranéen et accès direct à la plage de Sidi Mehrez. Réservez en direct."/>
@@ -567,12 +580,13 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 /*# sourceURL=wp-img-auto-sizes-contain-inline-css */
 </style>
 <link rel='stylesheet' id='elementor-frontend-css' href='http://localhost:8080/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.34.3' media='all' />
-<link rel='stylesheet' id='elementor-post-2174-css' href='http://localhost:8080/wp-content/uploads/elementor/css/post-2174.css?ver=1784069858' media='all' />
+<link rel='stylesheet' id='elementor-post-2174-css' href='http://localhost:8080/wp-content/uploads/elementor/css/post-2174.css?ver=1784895486' media='all' />
 <link rel='stylesheet' id='gum-elementor-addon-css' href='http://localhost:8080/wp-content/plugins/gum-elementor-addon/css/style.css?ver=6.9.1' media='all' />
-<link rel='stylesheet' id='elementor-post-2110-css' href='http://localhost:8080/wp-content/uploads/elementor/css/post-2110.css?ver=1784246000' media='all' />
 <link rel='stylesheet' id='fluentform-elementor-widget-css' href='http://localhost:8080/wp-content/plugins/fluentform/assets/css/fluent-forms-elementor-widget.css?ver=6.2.4' media='all' />
 <link rel='stylesheet' id='font-awesome-5-all-css' href='http://localhost:8080/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=3.34.3' media='all' />
 <link rel='stylesheet' id='font-awesome-4-shim-css' href='http://localhost:8080/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=3.34.3' media='all' />
+<link rel='stylesheet' id='owl.carousel-css' href='http://localhost:8080/wp-content/plugins/gum-elementor-addon//css/owl.carousel.css?ver=6.9.1' media='all' />
+<link rel='stylesheet' id='elementor-post-2110-css' href='http://localhost:8080/wp-content/uploads/elementor/css/post-2110.css?ver=1785080287' media='all' />
 <style id='wp-emoji-styles-inline-css'>
 
 	img.wp-smiley, img.emoji {
@@ -598,12 +612,18 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 /*# sourceURL=global-styles-inline-css */
 </style>
 <link rel='stylesheet' id='vaz-flatpickr-css' href='http://localhost:8080/wp-content/plugins/fluentform/assets/libs/flatpickr/flatpickr.min.css?ver=6.2.4' media='all' />
+<link rel='stylesheet' id='villa-a11y-css' href='http://localhost:8080/wp-content/plugins/villa-a11y-widget/assets/css/widget.css?ver=1.3.0' media='all' />
+<link rel='stylesheet' id='wpa-style-css' href='http://localhost:8080/wp-content/plugins/wp-accessibility/css/wpa-style.css?ver=2.3.4' media='all' />
+<style id='wpa-style-inline-css'>
+:root { --admin-bar-top : 7px; }
+/*# sourceURL=wpa-style-inline-css */
+</style>
 <link rel='stylesheet' id='cute-alert-css' href='http://localhost:8080/wp-content/plugins/metform/public/assets/lib/cute-alert/style.css?ver=4.1.2' media='all' />
 <link rel='stylesheet' id='text-editor-style-css' href='http://localhost:8080/wp-content/plugins/metform/public/assets/css/text-editor.css?ver=4.1.2' media='all' />
 <link rel='stylesheet' id='hello-elementor-css' href='http://localhost:8080/wp-content/themes/hello-elementor/assets/css/reset.css?ver=3.4.6' media='all' />
 <link rel='stylesheet' id='hello-elementor-theme-style-css' href='http://localhost:8080/wp-content/themes/hello-elementor/assets/css/theme.css?ver=3.4.6' media='all' />
 <link rel='stylesheet' id='hello-elementor-header-footer-css' href='http://localhost:8080/wp-content/themes/hello-elementor/assets/css/header-footer.css?ver=3.4.6' media='all' />
-<link rel='stylesheet' id='elementor-post-99-css' href='http://localhost:8080/wp-content/uploads/elementor/css/post-99.css?ver=1784049090' media='all' />
+<link rel='stylesheet' id='elementor-post-99-css' href='http://localhost:8080/wp-content/uploads/elementor/css/post-99.css?ver=1784895486' media='all' />
 <link rel='stylesheet' id='flatpickr-css' href='http://localhost:8080/wp-content/plugins/metform/public/assets/css/flatpickr.min.css?ver=4.1.2' media='all' />
 <link rel='stylesheet' id='fluent-form-styles-css' href='http://localhost:8080/wp-content/plugins/fluentform/assets/css/fluent-forms-public.css?ver=6.2.4' media='all' />
 <link rel='stylesheet' id='fluentform-public-default-css' href='http://localhost:8080/wp-content/plugins/fluentform/assets/css/fluentform-public-default.css?ver=6.2.4' media='all' />
@@ -674,7 +694,6 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 /*# sourceURL=popup-maker-site-inline-css */
 </style>
 <link rel='stylesheet' id='she-header-style-css' href='http://localhost:8080/wp-content/plugins/sticky-header-effects-for-elementor/assets/css/she-header-style.css?ver=2.1.7' media='all' />
-<link rel='stylesheet' id='owl.carousel-css' href='http://localhost:8080/wp-content/plugins/gum-elementor-addon//css/owl.carousel.css?ver=6.9.1' media='all' />
 <link rel='stylesheet' id='widget-divider-css' href='http://localhost:8080/wp-content/plugins/elementor/assets/css/widget-divider.min.css?ver=3.34.3' media='all' />
 <link rel='stylesheet' id='widget-heading-css' href='http://localhost:8080/wp-content/plugins/elementor/assets/css/widget-heading.min.css?ver=3.34.3' media='all' />
 <link rel='stylesheet' id='widget-icon-list-css' href='http://localhost:8080/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css?ver=3.34.3' media='all' />
@@ -686,7 +705,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <link rel='stylesheet' id='widget-image-carousel-css' href='http://localhost:8080/wp-content/plugins/elementor/assets/css/widget-image-carousel.min.css?ver=3.34.3' media='all' />
 <link rel='stylesheet' id='widget-icon-box-css' href='http://localhost:8080/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css?ver=3.34.3' media='all' />
 <link rel='stylesheet' id='widget-image-box-css' href='http://localhost:8080/wp-content/plugins/elementor/assets/css/widget-image-box.min.css?ver=3.34.3' media='all' />
-<link rel='stylesheet' id='elementor-post-109-css' href='http://localhost:8080/wp-content/uploads/elementor/css/post-109.css?ver=1784070722' media='all' />
+<link rel='stylesheet' id='elementor-post-109-css' href='http://localhost:8080/wp-content/uploads/elementor/css/post-109.css?ver=1784895710' media='all' />
 <link rel='stylesheet' id='ekit-widget-styles-css' href='http://localhost:8080/wp-content/plugins/elementskit-lite/widgets/init/assets/css/widget-styles.css?ver=3.7.8' media='all' />
 <link rel='stylesheet' id='ekit-responsive-css' href='http://localhost:8080/wp-content/plugins/elementskit-lite/widgets/init/assets/css/responsive.css?ver=3.7.8' media='all' />
 <link rel='stylesheet' id='wpr-text-animations-css-css' href='http://localhost:8080/wp-content/plugins/royal-elementor-addons/assets/css/lib/animations/text-animations.min.css?ver=1.7.1046' media='all' />
@@ -697,10 +716,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <script src="http://localhost:8080/wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.min.js?ver=3.34.3" id="font-awesome-4-shim-js"></script>
 <script data-cfasync="false" src="http://localhost:8080/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
 <script data-cfasync="false" src="http://localhost:8080/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
-<script src="http://localhost:8080/wp-content/plugins/sticky-header-effects-for-elementor/assets/js/she-header.js?ver=2.1.7" id="she-header-js"></script>
 <script src="http://localhost:8080/wp-content/plugins/gum-elementor-addon/js/allscripts.js?ver=1.0" id="gum-elementor-addon-js"></script>
 <script src="http://localhost:8080/wp-content/plugins/gum-elementor-addon//js/owl.carousel.min.js?ver=2.2.1" id="owl.carousel-js"></script>
 <script src="http://localhost:8080/wp-content/plugins/gum-elementor-addon/js/price-table.js?ver=1.0" id="gum-price-table-js"></script>
+<script src="http://localhost:8080/wp-content/plugins/sticky-header-effects-for-elementor/assets/js/she-header.js?ver=2.1.7" id="she-header-js"></script>
 <link rel="https://api.w.org/" href="http://localhost:8080/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="http://localhost:8080/wp-json/wp/v2/pages/109" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://localhost:8080/xmlrpc.php?rsd" />
 <meta name="generator" content="WordPress 6.9.1" />
 <link rel='shortlink' href='http://localhost:8080/' />
@@ -848,7 +867,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 				</div>
 		<div class="elementor-element elementor-element-555d87c e-con-full e-flex wpr-particle-no wpr-jarallax-no wpr-parallax-no wpr-sticky-section-no e-con e-child" data-id="555d87c" data-element_type="container">
 				<div class="elementor-element elementor-element-9fd5a8e elementor-button-default elementor-widget-mobile__width-initial elementor-widget__width-initial elementor-widget elementor-widget-button" data-id="9fd5a8e" data-element_type="widget" id="open-popup-btn" data-widget_type="button.default">
-										<a class="elementor-button elementor-size-sm elementor-animation-grow" role="button" id="100">
+										<a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-grow" href="#" id="100">
 						<span class="elementor-button-content-wrapper">
 									<span class="elementor-button-text">Réservez</span>
 					</span>
@@ -1439,7 +1458,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 				<div class="elementor-element elementor-element-1accdf3a elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="1accdf3a" data-element_type="widget" data-widget_type="icon-list.default">
 							<ul class="elementor-icon-list-items">
 							<li class="elementor-icon-list-item">
-											<a href="#pum-trigger-reservation">
+											<a href="http://localhost:8080/reservation/">
 
 												<span class="elementor-icon-list-icon">
 																<i class="Array" aria-hidden="true"></i>
@@ -1576,8 +1595,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 			class="mf-form-wrapper"
 			data-form-id="1440"
 			data-action="http://localhost:8080/wp-json/metform/v1/entries/insert/1440"
-			data-wp-nonce="24aeb9b8aa"
-			data-form-nonce="57e06c6b8a"
+			data-wp-nonce="4c7b785acf"
+			data-form-nonce="677dd3c4df"
 			data-quiz-summery = "false"
 			data-save-progress = "false"
 			data-form-type="contact_form"
@@ -1646,21 +1665,65 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 		</div>
 		</div>				</div>
 				</div>
-		<div class="elementor-element elementor-element-406f6cbb e-con-full e-flex wpr-particle-no wpr-jarallax-no wpr-parallax-no wpr-sticky-section-no e-con e-child" data-id="406f6cbb" data-element_type="container">
-				</div>
 				</div>
 				</div>
 					</div>
 				</div>
 		<div class="elementor-element elementor-element-7f54d29 e-con-full e-flex wpr-particle-no wpr-jarallax-no wpr-parallax-no wpr-sticky-section-no e-con e-parent" data-id="7f54d29" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 				<div class="elementor-element elementor-element-95a15b4 elementor-widget elementor-widget-text-editor" data-id="95a15b4" data-element_type="widget" data-widget_type="text-editor.default">
-									<p style="color: rgba(255,255,255,0.78); font-size: 12px; font-family: Montserrat,sans-serif; letter-spacing: 1px; margin: 0;">© 2026 Villa Azur Djerba. Tous droits réservés.</p>								</div>
+									<p style=" font-size: 12px; font-family: Montserrat,sans-serif; letter-spacing: 1px; margin: 0;">© 2026 Villa Azur Djerba. Tous droits réservés.</p>								</div>
 				<div class="elementor-element elementor-element-ce13492 elementor-widget elementor-widget-text-editor" data-id="ce13492" data-element_type="widget" data-widget_type="text-editor.default">
-									<p style="color: rgba(255,255,255,0.78); font-size: 12px; font-family: Montserrat,sans-serif; letter-spacing: 1px; margin: 0; text-align: right;"><a style="color: #E9A668;" href="#pum-trigger-reservation">Réserver</a> &nbsp;·&nbsp; <a style="color: rgba(255, 255, 255, 0.45);" href="http://localhost:8080/contact/">Contact</a> &nbsp;·&nbsp; <a style="color: rgba(255, 255, 255, 0.45);" href="http://localhost:8080/a-propos/">À Propos</a></p>								</div>
+									<p style="color: rgba(255,255,255,0.45); font-size: 12px; font-family: Montserrat,sans-serif; letter-spacing: 1px; margin: 0; text-align: right;"><a style="color: rgb(201, 168, 76);" href="http://localhost:8080/reservation/">Réserver</a> &nbsp;·&nbsp; <a style="color: rgba(255, 255, 255, 0.45);" href="http://localhost:8080/contact/">Contact</a> &nbsp;·&nbsp; <a style="color: rgba(255, 255, 255, 0.45);" href="http://localhost:8080/a-propos/">À Propos</a></p>								</div>
 				</div>
 				</div>
 		</div>
-<div 
+	<button type="button" id="villa-a11y-toggle" class="villa-a11y-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="villa-a11y-panel" aria-label="Ouvrir les options d&#039;accessibilite">
+		<svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true" focusable="false">
+			<circle cx="12" cy="4" r="2"></circle>
+			<path d="M12 8c-3.9 0-7.5.7-7.5 2.1 0 .8 1.2 1.4 3 1.8v9.6a1.5 1.5 0 003 0v-6h3v6a1.5 1.5 0 003 0v-9.6c1.8-.4 3-1 3-1.8C19.5 8.7 15.9 8 12 8z"></path>
+		</svg>
+	</button>
+
+	<div id="villa-a11y-panel" class="villa-a11y-panel" role="dialog" aria-modal="false" aria-label="Options d&#039;accessibilite" hidden>
+		<div class="villa-a11y-panel__header">
+			<h2>Accessibilite</h2>
+			<button type="button" id="villa-a11y-close" aria-label="Fermer">&times;</button>
+		</div>
+
+		<div class="villa-a11y-group">
+			<span class="villa-a11y-group__label">Taille du texte</span>
+			<div class="villa-a11y-row">
+				<button type="button" data-action="font-dec" aria-label="Diminuer le texte">A-</button>
+				<button type="button" data-action="font-reset" aria-label="Taille par defaut">A</button>
+				<button type="button" data-action="font-inc" aria-label="Augmenter le texte">A+</button>
+			</div>
+		</div>
+
+		<button type="button" class="villa-a11y-toggle-row" data-toggle="contrast">
+			<span>Contraste eleve</span>
+			<span class="villa-a11y-switch" aria-hidden="true"></span>
+		</button>
+
+		<button type="button" class="villa-a11y-toggle-row" data-toggle="dyslexia">
+			<span>Lecture facile (dyslexie)</span>
+			<span class="villa-a11y-switch" aria-hidden="true"></span>
+		</button>
+
+		<button type="button" class="villa-a11y-toggle-row" data-toggle="motion">
+			<span>Reduire les animations</span>
+			<span class="villa-a11y-switch" aria-hidden="true"></span>
+		</button>
+
+		<button type="button" class="villa-a11y-toggle-row" data-toggle="cursor">
+			<span>Curseur agrandi</span>
+			<span class="villa-a11y-switch" aria-hidden="true"></span>
+		</button>
+
+		<button type="button" id="villa-a11y-reset" class="villa-a11y-reset-all">Reinitialiser</button>
+
+		<a class="villa-a11y-statement-link" href="http://localhost:8080/accessibilite/">Declaration d&#039;accessibilite</a>
+	</div>
+	<div 
 	id="pum-3241" 
 	role="dialog" 
 	aria-modal="false"
@@ -1674,7 +1737,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 		
 				<div class="pum-content popmake-content" tabindex="0">
 			<div class='fluentform ff-default fluentform_wrapper_4 ffs_default_wrap'><form data-form_id="4" id="fluentform_4" class="frm-fluent-form fluent_form_4 ff-el-form-top ff_form_instance_4_1 ff-form-loading ffs_default" data-form_instance="ff_form_instance_4_1" method="POST" ><fieldset  style="border: none!important;margin: 0!important;padding: 0!important;background-color: transparent!important;box-shadow: none!important;outline: none!important; min-inline-size: 100%;">
-                    <legend class="ff_screen_reader_title" style="display: block; margin: 0!important;padding: 0!important;height: 0!important;text-indent: -999999px;width: 0!important;overflow:hidden;">Demande de Reservation — Villa Azur</legend><input type='hidden' name='__fluent_form_embded_post_id' value='109' /><input type="hidden" id="_fluentform_4_fluentformnonce" name="_fluentform_4_fluentformnonce" value="1cb23f2825" /><input type="hidden" name="_wp_http_referer" value="/" /><div data-type="name-element" data-name="names" class=" ff-field_container ff-name-field-wrapper" ><div class='ff-t-container'><div class='ff-t-cell '><div class='ff-el-group'><div class="ff-el-input--label ff-el-is-required asterisk-right"><label for='ff_4_names_first_name_' id='label_ff_4_names_first_name_' >Prénom</label></div><div class='ff-el-input--content'><input type="text" name="names[first_name]" id="ff_4_names_first_name_" class="ff-el-form-control" placeholder="Votre Prénom" aria-invalid="false" aria-required=true></div></div></div><div class='ff-t-cell '><div class='ff-el-group'><div class="ff-el-input--label ff-el-is-required asterisk-right"><label for='ff_4_names_last_name_' id='label_ff_4_names_last_name_' >Nom</label></div><div class='ff-el-input--content'><input type="text" name="names[last_name]" id="ff_4_names_last_name_" class="ff-el-form-control" placeholder="Votre Nom" aria-invalid="false" aria-required=true></div></div></div></div></div><div data-name="ff_cn_id_1"  class='ff-t-container ff-column-container ff_columns_total_2 '><div class='ff-t-cell ff-t-column-1' style='flex-basis: 50%;'><div class='ff-el-group'><div class="ff-el-input--label ff-el-is-required asterisk-right"><label for='ff_4_numeric_field' id='label_ff_4_numeric_field' aria-label="Telephone ou Whatsapp">Telephone ou Whatsapp</label></div><div class='ff-el-input--content'><input type="number" name="numeric_field" id="ff_4_numeric_field" class="ff-el-form-control" placeholder=" XX XXX XXX" data-name="numeric_field" inputmode="numeric" step="any"  aria-invalid="false" aria-required=true></div></div></div><div class='ff-t-cell ff-t-column-2' style='flex-basis: 50%;'><div class='ff-el-group'><div class="ff-el-input--label ff-el-is-required asterisk-right"><label for='ff_4_email_1' id='label_ff_4_email_1' aria-label="Email">Email</label></div><div class='ff-el-input--content'><input type="email" name="email_1" id="ff_4_email_1" class="ff-el-form-control" placeholder="votre@email.com" data-name="email_1"  aria-invalid="false" aria-required=true></div></div></div></div><div class='ff-el-group'><div class="ff-el-input--label ff-el-is-required asterisk-right"><label for='ff_4_date_arrivee' id='label_ff_4_date_arrivee' aria-label="Date d arrivee">Date d arrivee</label></div><div class='ff-el-input--content'><input  aria-label='Date d arrivee Use arrow keys to navigate dates. Press enter to select a date.'  aria-haspopup='dialog' data-type-datepicker data-format='d/m/Y' type="text" name="date_arrivee" id="ff_4_date_arrivee" class="ff-el-form-control ff-el-datepicker" placeholder="jj/mm/aaaa" data-name="date_arrivee"  aria-invalid='false' aria-required=true></div></div><div class='ff-el-group'><div class="ff-el-input--label ff-el-is-required asterisk-right"><label for='ff_4_date_depart' id='label_ff_4_date_depart' aria-label="Date de depart">Date de depart</label></div><div class='ff-el-input--content'><input  aria-label='Date de depart Use arrow keys to navigate dates. Press enter to select a date.'  aria-haspopup='dialog' data-type-datepicker data-format='d/m/Y' type="text" name="date_depart" id="ff_4_date_depart" class="ff-el-form-control ff-el-datepicker" placeholder="jj/mm/aaaa" data-name="date_depart"  aria-invalid='false' aria-required=true></div></div><div class='ff-el-group'><div class="ff-el-input--label ff-el-is-required asterisk-right"><label for='ff_4_type_de_chambre' id='label_ff_4_type_de_chambre' aria-label="Type de chambre">Type de chambre</label></div><div class='ff-el-input--content'><select name="type_de_chambre" id="ff_4_type_de_chambre" class="ff-el-form-control" data-name="type_de_chambre" data-calc_value="0"  aria-invalid="false" aria-required="true" aria-labelledby="label_ff_4_type_de_chambre"><option value="">Selectionnez...</option><option data-calc_value="120" data-custom-properties="120" value="deluxe"  >Chambre Deluxe — 35-40 m2 — a partir de 120 USD/nuit</option><option data-calc_value="180" data-custom-properties="180" value="suite_junior"  >Suite Junior — 55 m2 — a partir de 180 USD/nuit</option><option data-calc_value="280" data-custom-properties="280" value="familiale"  >Villa Familiale — 90 m2 — a partir de 280 USD/nuit</option><option data-calc_value="450" data-custom-properties="450" value="suite_presidentielle"  >Suite Presidentielle — 80 m2 — a partir de 450 USD/nuit</option><option value="indecis"  >Pas encore decide</option></select></div></div><div class='ff-el-group'><div class="ff-el-input--label asterisk-right"><label for='ff_4_occasion_speciale' id='label_ff_4_occasion_speciale' aria-label="Occasion speciale">Occasion speciale</label></div><div class='ff-el-input--content'><select name="occasion_speciale" id="ff_4_occasion_speciale" class="ff-el-form-control" data-name="occasion_speciale" data-calc_value="0"  aria-invalid="false" aria-required="false" aria-labelledby="label_ff_4_occasion_speciale"><option value="">Selectionnez si applicable</option><option value="aucune"  >Aucune</option><option value="lune_de_miel"  >Lune de miel</option><option value="anniversaire"  >Anniversaire</option><option value="mariage"  >Mariage ou ceremonie</option><option value="affaires"  >Voyage d affaires</option><option value="retraite"  >Retraite et bien-etre</option><option value="autre"  >Autre</option></select></div></div><div class='ff-el-group'><div class="ff-el-input--label asterisk-right"><label for='ff_4_demandes_particulieres' id='label_ff_4_demandes_particulieres' aria-label="Demandes particulieres">Demandes particulieres</label></div><div class='ff-el-input--content'><textarea aria-required="false" aria-labelledby="label_ff_4_demandes_particulieres" name="demandes_particulieres" id="ff_4_demandes_particulieres" class="ff-el-form-control" placeholder="Lit bebe, allergie, decoration..." rows="5" data-name="demandes_particulieres" ></textarea></div></div><div class='ff-el-group ff-text-center ff_submit_btn_wrapper'><button type="submit" class="ff-btn ff-btn-submit ff-btn-md ff_btn_style"  aria-label="Envoyer la demande">Envoyer la demande</button></div></fieldset></form><div id='fluentform_4_errors' class='ff-errors-in-stack ff_form_instance_4_1 ff-form-loading_errors ff_form_instance_4_1_errors'></div></div>            <script type="text/javascript">
+                    <legend class="ff_screen_reader_title" style="display: block; margin: 0!important;padding: 0!important;height: 0!important;text-indent: -999999px;width: 0!important;overflow:hidden;">Demande de Reservation — Villa Azur</legend><input type='hidden' name='__fluent_form_embded_post_id' value='109' /><input type="hidden" id="_fluentform_4_fluentformnonce" name="_fluentform_4_fluentformnonce" value="71ed328d98" /><input type="hidden" name="_wp_http_referer" value="/" /><div data-type="name-element" data-name="names" class=" ff-field_container ff-name-field-wrapper" ><div class='ff-t-container'><div class='ff-t-cell '><div class='ff-el-group'><div class="ff-el-input--label ff-el-is-required asterisk-right"><label for='ff_4_names_first_name_' id='label_ff_4_names_first_name_' >Prénom</label></div><div class='ff-el-input--content'><input type="text" name="names[first_name]" id="ff_4_names_first_name_" class="ff-el-form-control" placeholder="Votre Prénom" aria-invalid="false" aria-required=true></div></div></div><div class='ff-t-cell '><div class='ff-el-group'><div class="ff-el-input--label ff-el-is-required asterisk-right"><label for='ff_4_names_last_name_' id='label_ff_4_names_last_name_' >Nom</label></div><div class='ff-el-input--content'><input type="text" name="names[last_name]" id="ff_4_names_last_name_" class="ff-el-form-control" placeholder="Votre Nom" aria-invalid="false" aria-required=true></div></div></div></div></div><div data-name="ff_cn_id_1"  class='ff-t-container ff-column-container ff_columns_total_2 '><div class='ff-t-cell ff-t-column-1' style='flex-basis: 50%;'><div class='ff-el-group'><div class="ff-el-input--label ff-el-is-required asterisk-right"><label for='ff_4_numeric_field' id='label_ff_4_numeric_field' aria-label="Telephone ou Whatsapp">Telephone ou Whatsapp</label></div><div class='ff-el-input--content'><input type="number" name="numeric_field" id="ff_4_numeric_field" class="ff-el-form-control" placeholder=" XX XXX XXX" data-name="numeric_field" inputmode="numeric" step="any"  aria-invalid="false" aria-required=true></div></div></div><div class='ff-t-cell ff-t-column-2' style='flex-basis: 50%;'><div class='ff-el-group'><div class="ff-el-input--label ff-el-is-required asterisk-right"><label for='ff_4_email_1' id='label_ff_4_email_1' aria-label="Email">Email</label></div><div class='ff-el-input--content'><input type="email" name="email_1" id="ff_4_email_1" class="ff-el-form-control" placeholder="votre@email.com" data-name="email_1"  aria-invalid="false" aria-required=true></div></div></div></div><div class='ff-el-group'><div class="ff-el-input--label ff-el-is-required asterisk-right"><label for='ff_4_date_arrivee' id='label_ff_4_date_arrivee' aria-label="Date d arrivee">Date d arrivee</label></div><div class='ff-el-input--content'><input  aria-label='Date d arrivee Use arrow keys to navigate dates. Press enter to select a date.'  aria-haspopup='dialog' data-type-datepicker data-format='d/m/Y' type="text" name="date_arrivee" id="ff_4_date_arrivee" class="ff-el-form-control ff-el-datepicker" placeholder="jj/mm/aaaa" data-name="date_arrivee"  aria-invalid='false' aria-required=true></div></div><div class='ff-el-group'><div class="ff-el-input--label ff-el-is-required asterisk-right"><label for='ff_4_date_depart' id='label_ff_4_date_depart' aria-label="Date de depart">Date de depart</label></div><div class='ff-el-input--content'><input  aria-label='Date de depart Use arrow keys to navigate dates. Press enter to select a date.'  aria-haspopup='dialog' data-type-datepicker data-format='d/m/Y' type="text" name="date_depart" id="ff_4_date_depart" class="ff-el-form-control ff-el-datepicker" placeholder="jj/mm/aaaa" data-name="date_depart"  aria-invalid='false' aria-required=true></div></div><div class='ff-el-group'><div class="ff-el-input--label ff-el-is-required asterisk-right"><label for='ff_4_type_de_chambre' id='label_ff_4_type_de_chambre' aria-label="Type de chambre">Type de chambre</label></div><div class='ff-el-input--content'><select name="type_de_chambre" id="ff_4_type_de_chambre" class="ff-el-form-control" data-name="type_de_chambre" data-calc_value="0"  aria-invalid="false" aria-required="true" aria-labelledby="label_ff_4_type_de_chambre"><option value="">Selectionnez...</option><option data-calc_value="120" data-custom-properties="120" value="deluxe"  >Chambre Deluxe — 35-40 m2 — a partir de 120 USD/nuit</option><option data-calc_value="180" data-custom-properties="180" value="suite_junior"  >Suite Junior — 55 m2 — a partir de 180 USD/nuit</option><option data-calc_value="280" data-custom-properties="280" value="familiale"  >Villa Familiale — 90 m2 — a partir de 280 USD/nuit</option><option data-calc_value="450" data-custom-properties="450" value="suite_presidentielle"  >Suite Presidentielle — 80 m2 — a partir de 450 USD/nuit</option><option value="indecis"  >Pas encore decide</option></select></div></div><div class='ff-el-group'><div class="ff-el-input--label asterisk-right"><label for='ff_4_occasion_speciale' id='label_ff_4_occasion_speciale' aria-label="Occasion speciale">Occasion speciale</label></div><div class='ff-el-input--content'><select name="occasion_speciale" id="ff_4_occasion_speciale" class="ff-el-form-control" data-name="occasion_speciale" data-calc_value="0"  aria-invalid="false" aria-required="false" aria-labelledby="label_ff_4_occasion_speciale"><option value="">Selectionnez si applicable</option><option value="aucune"  >Aucune</option><option value="lune_de_miel"  >Lune de miel</option><option value="anniversaire"  >Anniversaire</option><option value="mariage"  >Mariage ou ceremonie</option><option value="affaires"  >Voyage d affaires</option><option value="retraite"  >Retraite et bien-etre</option><option value="autre"  >Autre</option></select></div></div><div class='ff-el-group'><div class="ff-el-input--label asterisk-right"><label for='ff_4_demandes_particulieres' id='label_ff_4_demandes_particulieres' aria-label="Demandes particulieres">Demandes particulieres</label></div><div class='ff-el-input--content'><textarea aria-required="false" aria-labelledby="label_ff_4_demandes_particulieres" name="demandes_particulieres" id="ff_4_demandes_particulieres" class="ff-el-form-control" placeholder="Lit bebe, allergie, decoration..." rows="5" data-name="demandes_particulieres" ></textarea></div></div><div class='ff-el-group ff-text-center ff_submit_btn_wrapper'><button type="submit" class="ff-btn ff-btn-submit ff-btn-md ff_btn_style"  aria-label="Envoyer la demande">Envoyer la demande</button></div></fieldset></form><div id='fluentform_4_errors' class='ff-errors-in-stack ff_form_instance_4_1 ff-form-loading_errors ff_form_instance_4_1_errors'></div></div>            <script type="text/javascript">
                 window.fluent_form_ff_form_instance_4_1 = {"id":"4","ajaxUrl":"http:\/\/localhost:8080\/wp-admin\/admin-ajax.php","settings":{"layout":{"asteriskPlacement":"asterisk-right","globalAgreement":false},"restrictions":{"denyEmptySubmission":{"enabled":false}}},"form_instance":"ff_form_instance_4_1","form_id_selector":"fluentform_4","rules":{"names[first_name]":{"required":{"value":true,"message":"This field is required","global_message":"This field is required","global":true}},"names[middle_name]":{"required":{"value":false,"message":"This field is required","global_message":"This field is required","global":true}},"names[last_name]":{"required":{"value":true,"message":"This field is required","global_message":"This field is required","global":true}},"numeric_field":{"required":{"value":true,"message":"This field is required","global_message":"This field is required","global":true},"numeric":{"value":true,"message":"This field must contain numeric value","global_message":"This field must contain numeric value","global":true},"min":{"value":"","message":"Validation fails for minimum value","global_message":"Validation fails for minimum value","global":true},"max":{"value":"","message":"Validation fails for maximum value","global_message":"Validation fails for maximum value","global":true},"digits":{"value":"","message":"Validation fails for limited digits","global_message":"Validation fails for limited digits","global":true}},"email_1":{"required":{"value":true,"message":"This field is required","global_message":"This field is required","global":true},"email":{"value":true,"message":"This field must contain a valid email","global_message":"This field must contain a valid email","global":true}},"date_arrivee":{"required":{"value":true,"message":"Obligatoire","global":false,"global_message":"This field is required"}},"date_depart":{"required":{"value":true,"message":"Obligatoire","global":false,"global_message":"This field is required"}},"type_de_chambre":{"required":{"value":true,"message":"Obligatoire","global":false,"global_message":"This field is required"}},"occasion_speciale":[],"demandes_particulieres":[]},"debounce_time":300,"file_upload_settings":[]};
                             </script>
             
@@ -1727,7 +1790,10 @@ var fluentformElementor = {"adminUrl":"http://localhost:8080/wp-admin/admin.php"
 //# sourceURL=fluentform-elementor-js-extra
 </script>
 <script src="http://localhost:8080/wp-content/plugins/fluentform/assets/js/fluent-forms-elementor-widget.js?ver=6.2.4" id="fluentform-elementor-js"></script>
+<script src="http://localhost:8080/wp-content/plugins/gum-elementor-addon/js/jquery.easing.1.3.js?ver=1.0" id="easing-js"></script>
+<script src="http://localhost:8080/wp-content/plugins/gum-elementor-addon/js/jquery.superslides.js?ver=1.0" id="superslides-js"></script>
 <script src="http://localhost:8080/wp-content/plugins/fluentform/assets/libs/flatpickr/flatpickr.min.js?ver=6.2.4" id="vaz-flatpickr-js"></script>
+<script src="http://localhost:8080/wp-content/plugins/villa-a11y-widget/assets/js/widget.js?ver=1.3.0" id="villa-a11y-js"></script>
 <script src="http://localhost:8080/wp-content/plugins/royal-elementor-addons/assets/js/lib/particles/particles.js?ver=3.0.6" id="wpr-particles-js"></script>
 <script src="http://localhost:8080/wp-content/plugins/royal-elementor-addons/assets/js/lib/jarallax/jarallax.min.js?ver=1.12.7" id="wpr-jarallax-js"></script>
 <script src="http://localhost:8080/wp-content/plugins/royal-elementor-addons/assets/js/lib/parallax/parallax.min.js?ver=1.0" id="wpr-parallax-hover-js"></script>
@@ -1745,7 +1811,7 @@ var fluentformElementor = {"adminUrl":"http://localhost:8080/wp-admin/admin.php"
 <script src="http://localhost:8080/wp-content/plugins/elementskit-lite/widgets/init/assets/js/widget-scripts.js?ver=3.7.8" id="ekit-widget-scripts-js"></script>
 <script src="http://localhost:8080/wp-content/plugins/elementor/assets/lib/flatpickr/flatpickr.min.js?ver=4.6.13" id="flatpickr-js"></script>
 <script id="fluent-form-submission-js-extra">
-var fluentFormVars = {"ajaxUrl":"http://localhost:8080/wp-admin/admin-ajax.php","forms":[],"step_text":"Step %activeStep% of %totalStep% - %stepTitle%","step_completed_text":"Completed","is_rtl":"","date_i18n":{"weekdays":{"shorthand":["Dim","Lun","Mar","Mer","Jeu","Ven","Sam"],"longhand":["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"]},"months":{"shorthand":["Janv","F\u00e9vr","Mars","Avr","Mai","Juin","Juil","Ao\u00fbt","Sept","Oct","Nov","D\u00e9c"],"longhand":["Janvier","F\u00e9vrier","Mars","Avril","Mai","Juin","Juillet","Ao\u00fbt","Septembre","Octobre","Novembre","D\u00e9cembre"]},"firstDayOfWeek":1,"weekAbbreviation":"Sem.","rangeSeparator":" au ","scrollTitle":"D\u00e9filer pour augmenter la valeur","toggleTitle":"Cliquer pour basculer"},"pro_version":"","fluentform_version":"6.2.4","force_init":"","stepAnimationDuration":"350","upload_completed_txt":"100% Completed","upload_start_txt":"0% Completed","uploading_txt":"Uploading","choice_js_vars":{"noResultsText":"No results found","loadingText":"Loading...","noChoicesText":"No choices to choose from","itemSelectText":"Press to select","maxItemTextSingular":"Only %%maxItemCount%% option can be added","maxItemTextPlural":"Only %%maxItemCount%% options can be added"},"input_mask_vars":{"clearIfNotMatch":false},"nonce":"5109300215","file_delete_nonce":"517a9cdf75","form_id":"4","step_change_focus":"1","has_cleantalk":"","pro_payment_script_compatible":""};
+var fluentFormVars = {"ajaxUrl":"http://localhost:8080/wp-admin/admin-ajax.php","forms":[],"step_text":"Step %activeStep% of %totalStep% - %stepTitle%","step_completed_text":"Completed","is_rtl":"","date_i18n":{"weekdays":{"shorthand":["Dim","Lun","Mar","Mer","Jeu","Ven","Sam"],"longhand":["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"]},"months":{"shorthand":["Janv","F\u00e9vr","Mars","Avr","Mai","Juin","Juil","Ao\u00fbt","Sept","Oct","Nov","D\u00e9c"],"longhand":["Janvier","F\u00e9vrier","Mars","Avril","Mai","Juin","Juillet","Ao\u00fbt","Septembre","Octobre","Novembre","D\u00e9cembre"]},"firstDayOfWeek":1,"weekAbbreviation":"Sem.","rangeSeparator":" au ","scrollTitle":"D\u00e9filer pour augmenter la valeur","toggleTitle":"Cliquer pour basculer"},"pro_version":"","fluentform_version":"6.2.4","force_init":"","stepAnimationDuration":"350","upload_completed_txt":"100% Completed","upload_start_txt":"0% Completed","uploading_txt":"Uploading","choice_js_vars":{"noResultsText":"No results found","loadingText":"Loading...","noChoicesText":"No choices to choose from","itemSelectText":"Press to select","maxItemTextSingular":"Only %%maxItemCount%% option can be added","maxItemTextPlural":"Only %%maxItemCount%% options can be added"},"input_mask_vars":{"clearIfNotMatch":false},"nonce":"eb407c3356","file_delete_nonce":"0d431edeeb","form_id":"4","step_change_focus":"1","has_cleantalk":"","pro_payment_script_compatible":""};
 var fluentform_submission_messages_4 = {"file_upload_in_progress":"File upload in progress. Please wait...","javascript_handler_failed":"Javascript handler could not be loaded. Form submission has been failed. Reload the page and try again"};
 var fluentform_payment_messages_4 = {"stock_out_message":"This Item is Stock Out","item_label":"Item","price_label":"Price","qty_label":"Qty","line_total_label":"Line Total","sub_total_label":"Sub Total","discount_label":"Discount","total_label":"Total","signup_fee_label":"Signup Fee","trial_label":"Trial","processing_text":"Processing...","confirming_text":"Confirming..."};
 var fluentform_save_progress_messages_4 = {"copy_button":"Copy","email_button":"Email","email_placeholder":"Your Email Here","copy_success":"Copied"};
@@ -1764,17 +1830,20 @@ var pum_popups = {"pum-3241":{"triggers":[{"type":"click_open","settings":{"cook
 //# sourceURL=popup-maker-site-js-extra
 </script>
 <script src="http://localhost:8080/wp-content/plugins/popup-maker/dist/assets/site.js?defer&amp;ver=1.23.0" id="popup-maker-site-js"></script>
-<script src="http://localhost:8080/wp-content/plugins/gum-elementor-addon/js/jquery.easing.1.3.js?ver=1.0" id="easing-js"></script>
-<script src="http://localhost:8080/wp-content/plugins/gum-elementor-addon/js/jquery.superslides.js?ver=1.0" id="superslides-js"></script>
 <script src="http://localhost:8080/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.34.3" id="elementor-webpack-runtime-js"></script>
 <script src="http://localhost:8080/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.34.3" id="elementor-frontend-modules-js"></script>
 <script id="elementor-frontend-js-before">
-var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":false},"version":"3.34.3","is_static":false,"experimentalFeatures":{"e_font_icon_svg":true,"additional_custom_breakpoints":true,"container":true,"e_optimized_markup":true,"hello-theme-header-footer":true,"e_pro_free_trial_popup":true,"nested-elements":true,"home_screen":true,"global_classes_should_enforce_capabilities":true,"e_variables":true,"cloud-library":true,"e_opt_in_v4_page":true,"e_interactions":true,"e_editor_one":true,"import-export-customization":true},"urls":{"assets":"http:\/\/localhost:8080\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"http:\/\/localhost:8080\/wp-admin\/admin-ajax.php","uploadUrl":"http:\/\/localhost:8080\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"54206f1c4c"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"body_background_background":"classic","active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description","hello_header_logo_type":"logo","hello_header_menu_layout":"horizontal"},"post":{"id":109,"title":"Villa%20Azur%20Djerba%20%7C%20H%C3%B4tel%20Boutique%20en%20Bord%20de%20Mer%20%C3%A0%20Sidi%20Mehrez","excerpt":"","featuredImage":false}};
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":false},"version":"3.34.3","is_static":false,"experimentalFeatures":{"e_font_icon_svg":true,"additional_custom_breakpoints":true,"container":true,"e_optimized_markup":true,"hello-theme-header-footer":true,"e_pro_free_trial_popup":true,"nested-elements":true,"home_screen":true,"global_classes_should_enforce_capabilities":true,"e_variables":true,"cloud-library":true,"e_opt_in_v4_page":true,"e_interactions":true,"e_editor_one":true,"import-export-customization":true},"urls":{"assets":"http:\/\/localhost:8080\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"http:\/\/localhost:8080\/wp-admin\/admin-ajax.php","uploadUrl":"http:\/\/localhost:8080\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"379f9602bc"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"body_background_background":"classic","active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description","hello_header_logo_type":"logo","hello_header_menu_layout":"horizontal"},"post":{"id":109,"title":"Villa%20Azur%20Djerba%20%7C%20H%C3%B4tel%20Boutique%20en%20Bord%20de%20Mer%20%C3%A0%20Sidi%20Mehrez","excerpt":"","featuredImage":false}};
 //# sourceURL=elementor-frontend-js-before
 </script>
 <script src="http://localhost:8080/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.34.3" id="elementor-frontend-js"></script>
 <script src="http://localhost:8080/wp-content/plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min.js?ver=0.2.1" id="jquery-numerator-js"></script>
 <script src="http://localhost:8080/wp-content/plugins/elementor/assets/lib/swiper/v8/swiper.min.js?ver=8.4.5" id="swiper-js"></script>
+<script id="wp-accessibility-js-extra">
+var wpa = {"skiplinks":{"enabled":true,"output":""},"target":"1","tabindex":"1","underline":{"enabled":false,"target":"a"},"videos":"","dir":"","viewport":"1","lang":"","titles":"1","labels":"1","wpalabels":{"s":"Search","author":"Name","email":"Email","url":"Website","comment":"Comment"},"alt":"","altSelector":".hentry img[alt]:not([alt=\"\"]), .comment-content img[alt]:not([alt=\"\"]), #content img[alt]:not([alt=\"\"]),.entry-content img[alt]:not([alt=\"\"])","current":"","errors":"","tracking":"","ajaxurl":"http://localhost:8080/wp-admin/admin-ajax.php","security":"e3ce964709","action":"wpa_stats_action","url":"http://localhost:8080/","post_id":"109","continue":"","pause":"Pause video","play":"Play video","restUrl":"http://localhost:8080/wp-json/wp/v2/media","ldType":"button","ldHome":"http://localhost:8080","ldText":"\u003Cspan class=\"dashicons dashicons-media-text\" aria-hidden=\"true\"\u003E\u003C/span\u003E\u003Cspan class=\"screen-reader\"\u003ELong Description\u003C/span\u003E"};
+//# sourceURL=wp-accessibility-js-extra
+</script>
+<script src="http://localhost:8080/wp-content/plugins/wp-accessibility/js/wp-accessibility.min.js?ver=2.3.4" id="wp-accessibility-js" defer data-wp-strategy="defer"></script>
 <script src="http://localhost:8080/wp-content/plugins/metform/public/assets/js/htm.js?ver=4.1.2" id="htm-js"></script>
 <script src="http://localhost:8080/wp-includes/js/dist/vendor/react.min.js?ver=18.3.1.1" id="react-js"></script>
 <script src="http://localhost:8080/wp-includes/js/dist/vendor/react-dom.min.js?ver=18.3.1.1" id="react-dom-js"></script>
@@ -1787,13 +1856,13 @@ var mf = {"postType":"page","restURI":"http://localhost:8080/wp-json/metform/v1/
 <script src="http://localhost:8080/wp-content/plugins/metform/public/assets/js/app.js?ver=4.1.2" id="metform-app-js"></script>
 <script src="http://localhost:8080/wp-content/plugins/elementskit-lite/widgets/init/assets/js/animate-circle.min.js?ver=3.7.8" id="animate-circle-js"></script>
 <script id="elementskit-elementor-js-extra">
-var ekit_config = {"ajaxurl":"http://localhost:8080/wp-admin/admin-ajax.php","nonce":"9bb80dcfea"};
+var ekit_config = {"ajaxurl":"http://localhost:8080/wp-admin/admin-ajax.php","nonce":"053e42812e"};
 //# sourceURL=elementskit-elementor-js-extra
 </script>
 <script src="http://localhost:8080/wp-content/plugins/elementskit-lite/widgets/init/assets/js/elementor.js?ver=3.7.8" id="elementskit-elementor-js"></script>
 <script src="http://localhost:8080/wp-content/plugins/royal-elementor-addons/assets/js/lib/dompurify/dompurify.min.js?ver=3.0.6" id="dompurify-js"></script>
 <script id="wpr-addons-js-js-extra">
-var WprConfig = {"ajaxurl":"http://localhost:8080/wp-admin/admin-ajax.php","resturl":"http://localhost:8080/wp-json/wpraddons/v1","nonce":"80983a768c","addedToCartText":"was added to cart","viewCart":"View Cart","comparePageID":"","comparePageURL":"http://localhost:8080/","wishlistPageID":"","wishlistPageURL":"http://localhost:8080/","chooseQuantityText":"Please select the required number of items.","site_key":"","is_admin":"","input_empty":"Please fill out this field","select_empty":"Nothing selected","file_empty":"Please upload a file","recaptcha_error":"Recaptcha Error","woo_shop_ppp":"9","woo_shop_cat_ppp":"9","woo_shop_tag_ppp":"9","is_product_category":"","is_product_tag":""};
+var WprConfig = {"ajaxurl":"http://localhost:8080/wp-admin/admin-ajax.php","resturl":"http://localhost:8080/wp-json/wpraddons/v1","nonce":"719dec5228","addedToCartText":"was added to cart","viewCart":"View Cart","comparePageID":"","comparePageURL":"http://localhost:8080/","wishlistPageID":"","wishlistPageURL":"http://localhost:8080/","chooseQuantityText":"Please select the required number of items.","site_key":"","is_admin":"","input_empty":"Please fill out this field","select_empty":"Nothing selected","file_empty":"Please upload a file","recaptcha_error":"Recaptcha Error","woo_shop_ppp":"9","woo_shop_cat_ppp":"9","woo_shop_tag_ppp":"9","is_product_category":"","is_product_tag":""};
 //# sourceURL=wpr-addons-js-js-extra
 </script>
 <script data-cfasync="false" src="http://localhost:8080/wp-content/plugins/royal-elementor-addons/assets/js/frontend.min.js?ver=1.7.1046" id="wpr-addons-js-js"></script>
@@ -2025,4 +2094,4 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 </body>
 </html>
 
-<!-- Cached by WP-Optimize (gzip) - https://teamupdraft.com/wp-optimize/ - Last modified: July 17, 2026 8:42 am (Africa/Tunis UTC:1) -->
+<!-- Cached by WP-Optimize (gzip) - https://teamupdraft.com/wp-optimize/ - Last modified: July 26, 2026 4:38 pm (Africa/Tunis UTC:1) -->
