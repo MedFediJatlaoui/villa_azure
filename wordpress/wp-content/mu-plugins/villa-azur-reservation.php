@@ -1,0 +1,800 @@
+<?php
+/**
+ * Villa Azur — Reservation pricing module.
+ *
+ * A self-contained, production booking experience layered on top of the existing
+ * Fluent Forms #4 / Popup Maker #3241 pipeline (kept as the submission backend so
+ * staff entries, email notifications and the spam-guard keep working untouched —
+ * see villa-azur-fix.php).
+ *
+ * Separation of concerns:
+ *   • CONFIG    — VAZ_Reservation::config(): the SINGLE source of truth for every
+ *                 price, date range, discount, tax and limit. Change prices here
+ *                 and nowhere else; the same array is handed to the browser so the
+ *                 JS engine can never drift from the PHP one.
+ *   • ENGINE    — VAZ_Reservation::quote(): pure pricing function (dates + rooms →
+ *                 itemised breakdown). Mirrored 1:1 by the JS engine. Used on the
+ *                 server to RE-COMPUTE and validate every submission — the client
+ *                 total is displayed for the guest but never trusted for the record.
+ *   • UI        — assets/vaz-reservation.js / .css (room repeater + live total).
+ *   • BACKEND   — Fluent Forms #4 (entries + notifications).
+ *
+ * All figures come from `fiche de prix.md` (TND, per person, per night, taxes
+ * included except the séjour tax which is itemised separately).
+ */
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+final class VAZ_Reservation {
+
+    /** Fluent Forms form id this module drives. */
+    const FORM_ID = 4;
+
+    /** Popup Maker popup id that hosts the form. */
+    const POPUP_ID = 3241;
+
+    /**
+     * THE single source of truth. Every price, rule and limit lives here.
+     *
+     * Seasons carry inclusive [start, end] date ranges (Y-m-d). A stay is priced
+     * night-by-night, so a booking that straddles two seasons is charged correctly
+     * for each night. Rates are per person, per night, in TND.
+     */
+    public static function config() {
+        static $config = null;
+        if ($config !== null) {
+            return $config;
+        }
+
+        $config = [
+            'currency'   => 'TND',
+            'form_id'    => self::FORM_ID,
+            'popup_id'   => self::POPUP_ID,
+
+            // Booking limits — configurable, referenced everywhere via this array
+            // (never hardcoded elsewhere).
+            'limits' => [
+                'max_rooms'          => 6,
+                'min_adults_room'    => 1,   // a room must have at least one adult
+                'max_adults_room'    => 4,
+                'max_children_room'  => 3,
+                'max_nights'         => 30,  // sanity ceiling for a single request
+            ],
+
+            // Per-season rates (TND / person / night) + single-occupancy supplement.
+            'seasons' => [
+                'basse' => [
+                    'label'       => 'Basse saison',
+                    'bb'          => 99,   // logement + petit déjeuner
+                    'hb'          => 133,  // demi-pension
+                    'single_supp' => 16,
+                    'ranges'      => [
+                        ['2025-11-01', '2025-12-13'],
+                        ['2026-01-04', '2026-03-28'],
+                        ['2026-11-08', '2026-12-19'],
+                    ],
+                ],
+                'moyenne' => [
+                    'label'       => 'Moyenne saison',
+                    'bb'          => 178,
+                    'hb'          => 210,
+                    'single_supp' => 21,
+                    'ranges'      => [
+                        ['2025-12-14', '2026-01-03'],
+                        ['2026-03-29', '2026-07-04'],
+                        ['2026-09-20', '2026-11-07'],
+                        ['2026-12-20', '2026-12-31'],
+                    ],
+                ],
+                'haute' => [
+                    'label'       => 'Haute saison',
+                    'bb'          => 222,
+                    'hb'          => 254,
+                    'single_supp' => 31,
+                    'ranges'      => [
+                        ['2026-07-05', '2026-09-19'],
+                    ],
+                ],
+            ],
+
+            // Fallback season for any night not covered by a defined range (kept so
+            // the engine never divides by an undefined rate). The datepicker is
+            // bounded to the covered window, so this is a safety net, not a path
+            // a normal guest hits.
+            'default_season' => 'moyenne',
+
+            // Board options offered per room.
+            'boards' => [
+                'bb' => ['label' => 'Petit-déjeuner', 'sub' => 'Logement + petit déjeuner'],
+                'hb' => ['label' => 'Demi-pension',   'sub' => 'Petit-déjeuner + dîner'],
+            ],
+
+            'room_types' => [
+                'simple' => ['label' => 'Chambre Simple', 'sub' => 'Vue mer · idéale 1 personne'],
+                'double' => ['label' => 'Chambre Double', 'sub' => 'Vue mer · idéale 2 personnes'],
+            ],
+
+            // Discounts (fiche de prix.md), applied automatically by the engine.
+            'discounts' => [
+                // 1 enfant < 12 ans dans la chambre des parents = -50% toute l'année.
+                'child_under_12' => [
+                    'rate'  => 0.50,
+                    'label' => 'Réduction enfant (-12 ans)',
+                ],
+                // 3ème personne adulte dans la même chambre = -30% toute l'année.
+                // Applied to every adult beyond the second.
+                'third_adult' => [
+                    'rate'  => 0.30,
+                    'label' => '3ᵉ adulte',
+                ],
+            ],
+
+            // Taxe de séjour — Loi de finances 2024: 8 TND / nuitée / personne,
+            // plafonnée à 10 nuitées.
+            'tourist_tax' => [
+                'per_person_per_night' => 8,
+                'max_nights'           => 10,
+                'applies_to_children'  => true,
+                'label'                => 'Taxe de séjour',
+            ],
+        ];
+
+        /**
+         * Escape hatch for future price changes without editing this file
+         * (e.g. a small admin plugin or another mu-plugin).
+         */
+        $config = apply_filters('vaz_reservation_config', $config);
+        return $config;
+    }
+
+    /**
+     * Classify a single night (Y-m-d) into a season key.
+     */
+    public static function season_for_date($date) {
+        $cfg = self::config();
+        foreach ($cfg['seasons'] as $key => $season) {
+            foreach ($season['ranges'] as $range) {
+                if ($date >= $range[0] && $date <= $range[1]) {
+                    return $key;
+                }
+            }
+        }
+        return $cfg['default_season'];
+    }
+
+    /**
+     * Build the inclusive list of night dates for a stay: check-in counts,
+     * check-out does not. Returns [] on invalid input.
+     *
+     * @param string $checkin  Y-m-d
+     * @param string $checkout Y-m-d
+     * @return string[] list of Y-m-d night dates
+     */
+    public static function nights_between($checkin, $checkout) {
+        $in  = DateTime::createFromFormat('Y-m-d', $checkin);
+        $out = DateTime::createFromFormat('Y-m-d', $checkout);
+        if (!$in || !$out || $out <= $in) {
+            return [];
+        }
+        $in->setTime(0, 0, 0);
+        $out->setTime(0, 0, 0);
+        $nights = [];
+        $cursor = clone $in;
+        $guard  = 0;
+        while ($cursor < $out && $guard < 400) {
+            $nights[] = $cursor->format('Y-m-d');
+            $cursor->modify('+1 day');
+            $guard++;
+        }
+        return $nights;
+    }
+
+    /**
+     * THE pricing engine (server authority). Pure: same inputs → same breakdown.
+     * Mirrors assets/vaz-reservation.js quote().
+     *
+     * @param string $checkin  Y-m-d
+     * @param string $checkout Y-m-d
+     * @param array  $rooms     each: ['type'=>simple|double,'board'=>bb|hb,'adults'=>int,'children'=>int]
+     * @return array itemised breakdown
+     */
+    public static function quote($checkin, $checkout, array $rooms) {
+        $cfg    = self::config();
+        $nights = self::nights_between($checkin, $checkout);
+        $n      = count($nights);
+
+        $result = [
+            'currency'        => $cfg['currency'],
+            'nights'          => $n,
+            'valid'           => $n > 0 && !empty($rooms),
+            'accommodation'   => 0.0, // full-rate accommodation, all guests, board included
+            'child_discount'  => 0.0, // positive number = amount subtracted
+            'adult_discount'  => 0.0,
+            'single_supp'     => 0.0,
+            'tourist_tax'     => 0.0,
+            'total'           => 0.0,
+            'total_guests'    => 0,
+            'rooms'           => [],
+            'discount_notes'  => [], // human labels, for the "why" chips
+        ];
+
+        if ($n === 0) {
+            return $result;
+        }
+
+        $childRate = $cfg['discounts']['child_under_12']['rate'];
+        $adultRate = $cfg['discounts']['third_adult']['rate'];
+
+        foreach ($rooms as $i => $room) {
+            $type    = in_array($room['type'] ?? '', ['simple', 'double'], true) ? $room['type'] : 'double';
+            $board   = in_array($room['board'] ?? '', ['bb', 'hb'], true) ? $room['board'] : 'bb';
+            $adults  = max(0, (int) ($room['adults'] ?? 0));
+            $children = max(0, (int) ($room['children'] ?? 0));
+
+            $roomAccommodation = 0.0;
+            $roomChildDisc     = 0.0;
+            $roomAdultDisc     = 0.0;
+            $roomSingle        = 0.0;
+
+            foreach ($nights as $date) {
+                $season = self::season_for_date($date);
+                $rate   = (float) $cfg['seasons'][$season][$board];
+                $supp   = (float) $cfg['seasons'][$season]['single_supp'];
+
+                // Full-rate accommodation for every guest (board is baked into rate).
+                $roomAccommodation += ($adults + $children) * $rate;
+                // Children < 12: -50% each.
+                $roomChildDisc     += $children * $rate * $childRate;
+                // Every adult beyond the 2nd: -30%.
+                $roomAdultDisc     += max(0, $adults - 2) * $rate * $adultRate;
+                // Single occupancy (exactly one adult): supplement per night.
+                if ($adults === 1) {
+                    $roomSingle += $supp;
+                }
+            }
+
+            $roomTotal = $roomAccommodation - $roomChildDisc - $roomAdultDisc + $roomSingle;
+
+            $result['accommodation']  += $roomAccommodation;
+            $result['child_discount'] += $roomChildDisc;
+            $result['adult_discount'] += $roomAdultDisc;
+            $result['single_supp']    += $roomSingle;
+            $result['total_guests']   += $adults + $children;
+
+            $result['rooms'][] = [
+                'index'          => $i + 1,
+                'type'           => $type,
+                'board'          => $board,
+                'adults'         => $adults,
+                'children'       => $children,
+                'child_discount' => round($roomChildDisc, 2),
+                'adult_discount' => round($roomAdultDisc, 2),
+                'single_supp'    => round($roomSingle, 2),
+                'subtotal'       => round($roomTotal, 2),
+            ];
+        }
+
+        // Taxe de séjour: per person, per night, capped at max_nights.
+        $tax     = $cfg['tourist_tax'];
+        $taxNights = min($n, (int) $tax['max_nights']);
+        $taxable   = $result['total_guests']; // children counted per LoF text
+        if (!$tax['applies_to_children']) {
+            $taxable = array_reduce($result['rooms'], function ($c, $r) {
+                return $c + $r['adults'];
+            }, 0);
+        }
+        $result['tourist_tax'] = $taxable * $taxNights * (float) $tax['per_person_per_night'];
+
+        $result['total'] = $result['accommodation']
+            - $result['child_discount']
+            - $result['adult_discount']
+            + $result['single_supp']
+            + $result['tourist_tax'];
+
+        // "Why" notes for transparency.
+        if ($result['child_discount'] > 0) {
+            $result['discount_notes'][] = $cfg['discounts']['child_under_12']['label'];
+        }
+        if ($result['adult_discount'] > 0) {
+            $result['discount_notes'][] = $cfg['discounts']['third_adult']['label'];
+        }
+
+        // Round money for output.
+        foreach (['accommodation', 'child_discount', 'adult_discount', 'single_supp', 'tourist_tax', 'total'] as $k) {
+            $result[$k] = round($result[$k], 2);
+        }
+
+        return $result;
+    }
+
+    /**
+     * Validate a decoded rooms payload against the configured limits. Returns a
+     * list of friendly, specific French error strings (empty = valid).
+     */
+    public static function validate($checkin, $checkout, $rooms) {
+        $cfg    = self::config();
+        $lim    = $cfg['limits'];
+        $errors = [];
+
+        $nights = self::nights_between($checkin, $checkout);
+        if (empty($nights)) {
+            $errors[] = "La date de départ doit être postérieure à la date d'arrivée (au moins une nuit).";
+        } elseif (count($nights) > $lim['max_nights']) {
+            $errors[] = sprintf('Un séjour ne peut excéder %d nuits par demande. Contactez-nous pour un long séjour.', $lim['max_nights']);
+        }
+
+        if (!is_array($rooms) || count($rooms) < 1) {
+            $errors[] = 'Veuillez configurer au moins une chambre.';
+            return $errors;
+        }
+        if (count($rooms) > $lim['max_rooms']) {
+            $errors[] = sprintf('Maximum %d chambres par réservation.', $lim['max_rooms']);
+        }
+
+        foreach ($rooms as $i => $room) {
+            $label   = 'Chambre ' . ($i + 1);
+            $adults  = (int) ($room['adults'] ?? 0);
+            $children = (int) ($room['children'] ?? 0);
+            if ($adults < $lim['min_adults_room']) {
+                $errors[] = "$label : au moins un adulte est requis.";
+            }
+            if ($adults > $lim['max_adults_room']) {
+                $errors[] = "$label : maximum {$lim['max_adults_room']} adultes.";
+            }
+            if ($children > $lim['max_children_room']) {
+                $errors[] = "$label : maximum {$lim['max_children_room']} enfants.";
+            }
+        }
+
+        return $errors;
+    }
+
+    /* ───────────────────────── Front-end wiring ──────────────────────────── */
+
+    public static function init() {
+        add_action('wp_enqueue_scripts', [__CLASS__, 'enqueue']);
+        add_filter('fluentform/validation_errors', [__CLASS__, 'server_validate'], 20, 3);
+        add_filter('fluentform/insert_response_data', [__CLASS__, 'authoritative_recompute'], 10, 3);
+        add_filter('fluentform/response_render_input_hidden', [__CLASS__, 'render_hidden_field'], 10, 3);
+    }
+
+    /**
+     * Make the vaz_* hidden fields readable for non-technical staff wherever
+     * Fluent Forms displays a submission (entries list/detail, {all_data},
+     * and any {inputs.xxx} smart tag — this filter runs for all of them).
+     * The raw JSON payload is implementation detail, not something a hotel
+     * receptionist needs to read, so it's hidden entirely; the human-written
+     * summary/breakdown get their line breaks preserved as real <br> tags.
+     */
+    public static function render_hidden_field($value, $field, $formId) {
+        $name = $field['attributes']['name'] ?? '';
+        if (strpos($name, 'vaz_') !== 0) {
+            return $value;
+        }
+        if ($name === 'vaz_rooms_json') {
+            return ''; // technical payload — not meant for human eyes
+        }
+        if (in_array($name, ['vaz_email_details', 'vaz_email_contact', 'vaz_email_welcome'], true)) {
+            return $value; // already HTML — do not escape/convert
+        }
+        if (in_array($name, ['vaz_rooms_summary', 'vaz_breakdown'], true)) {
+            return nl2br(esc_html($value));
+        }
+        return $value;
+    }
+
+    /**
+     * Ship the UI assets and hand the config to the browser so the JS engine
+     * uses the exact same numbers as PHP (no duplicated values).
+     */
+    public static function enqueue() {
+        if (is_admin()) {
+            return;
+        }
+        $dir = plugin_dir_url(__FILE__) . 'assets/';
+        $base = __DIR__ . '/assets/';
+        $ver = static function ($f) use ($base) {
+            return file_exists($base . $f) ? (string) filemtime($base . $f) : '1.0.0';
+        };
+
+        wp_enqueue_style('vaz-reservation', $dir . 'vaz-reservation.css', [], $ver('vaz-reservation.css'));
+        wp_enqueue_script('vaz-reservation', $dir . 'vaz-reservation.js', ['jquery'], $ver('vaz-reservation.js'), true);
+
+        wp_localize_script('vaz-reservation', 'VAZ_RESA', [
+            'config' => self::config(),
+            'i18n'   => self::strings(),
+        ]);
+    }
+
+    /** UI copy in one place. */
+    public static function strings() {
+        return [
+            'addRoom'        => 'Ajouter une chambre',
+            'removeRoom'     => 'Retirer',
+            'room'           => 'Chambre',
+            'roomType'       => 'Type de chambre',
+            'board'          => 'Formule',
+            'adults'         => 'Adultes',
+            'children'       => 'Enfants (-12 ans)',
+            'childHint'      => '12 ans et plus : compté comme adulte.',
+            'summaryTitle'   => 'Votre estimation',
+            'accommodation'  => 'Hébergement',
+            'childDiscount'  => 'Réduction enfant (-12 ans)',
+            'adultDiscount'  => '3ᵉ adulte',
+            'singleSupp'     => 'Supplément single',
+            'touristTax'     => 'Taxe de séjour',
+            'total'          => 'Total estimé',
+            'perNight'       => 'nuit',
+            'nights'         => 'nuits',
+            'night'          => 'nuit',
+            'estimateNote'   => 'Estimation à titre indicatif — notre équipe confirmera la disponibilité et le montant sous 24h.',
+            'pickDates'      => 'Choisissez vos dates pour voir l’estimation.',
+            'maxRoomsHit'    => 'Maximum de chambres atteint',
+        ];
+    }
+
+    /**
+     * Server authority #1 — reject impossible reservations even if the client JS
+     * was bypassed. Scoped to form 4; runs alongside the spam-guard already on
+     * this filter in villa-azur-fix.php.
+     */
+    public static function server_validate($errors, $formData, $form) {
+        if ((int) $form->id !== self::FORM_ID) {
+            return $errors;
+        }
+        list($checkin, $checkout, $rooms) = self::extract_submission();
+        if ($rooms === null) {
+            $errors['vaz_rooms_json'] = ['Configuration des chambres manquante. Merci de réessayer.'];
+            return $errors;
+        }
+        $problems = self::validate($checkin, $checkout, $rooms);
+        if (!empty($problems)) {
+            $errors['vaz_rooms_json'] = $problems;
+        }
+        return $errors;
+    }
+
+    /**
+     * Server authority #2 — overwrite the human-readable summary, breakdown and
+     * grand total with values RE-COMPUTED on the server, so the entry and the
+     * staff email can never carry a tampered or stale client total.
+     */
+    public static function authoritative_recompute($data, $formId, $inputConfigs = null) {
+        if ((int) $formId !== self::FORM_ID) {
+            return $data;
+        }
+        list($checkin, $checkout, $rooms) = self::extract_submission();
+        if ($rooms === null) {
+            return $data;
+        }
+        $quote = self::quote($checkin, $checkout, $rooms);
+
+        $contact = self::extract_contact_fields();
+
+        $data['vaz_nights']          = (string) $quote['nights'];
+        $data['vaz_grand_total']     = self::money($quote['total']) . ' ' . $quote['currency'];
+        $data['vaz_rooms_summary']   = self::rooms_summary_text($quote);
+        $data['vaz_breakdown']       = self::breakdown_text($quote);
+        $data['vaz_email_details']   = self::email_details_html($quote, $checkin, $checkout);
+        $data['vaz_email_contact']   = self::email_contact_recap_html(
+            'Coordonnées',
+            $contact['first_name'], $contact['last_name'], $contact['email'], $contact['phone'],
+            $checkin, $checkout, $contact['request']
+        );
+        $data['vaz_email_welcome']   = self::email_welcome_html();
+        return $data;
+    }
+
+    /** Pull the plain contact/request fields from the raw POST (same technique as extract_submission). */
+    private static function extract_contact_fields() {
+        // phpcs:ignore WordPress.Security.NonceVerification.Missing -- FF verifies its own nonce upstream before these filters run.
+        $raw = isset($_POST['data']) ? wp_unslash($_POST['data']) : '';
+        parse_str($raw, $fields);
+        return [
+            'first_name' => $fields['first_name'] ?? '',
+            'last_name'  => $fields['last_name'] ?? '',
+            'email'      => $fields['email_1'] ?? '',
+            'phone'      => $fields['numeric_field'] ?? '',
+            'request'    => $fields['demandes_particulieres'] ?? '',
+        ];
+    }
+
+    /** d 'j F Y' in French, e.g. "10 août 2026". */
+    private static function french_date($iso) {
+        $months = [
+            1 => 'janvier', 2 => 'février', 3 => 'mars', 4 => 'avril', 5 => 'mai', 6 => 'juin',
+            7 => 'juillet', 8 => 'août', 9 => 'septembre', 10 => 'octobre', 11 => 'novembre', 12 => 'décembre',
+        ];
+        $dt = DateTime::createFromFormat('Y-m-d', $iso);
+        if (!$dt) { return $iso; }
+        return (int) $dt->format('j') . ' ' . $months[(int) $dt->format('n')] . ' ' . $dt->format('Y');
+    }
+
+    /**
+     * The ONE reservation-details block shared by both emails (admin + client)
+     * and by the admin entries view: stay dates, a card per room with its own
+     * price and "why" notes, then the subtotal/tax/total. Inline styles only —
+     * table-based layout — for compatibility with real-world email clients.
+     */
+    public static function email_details_html($quote, $checkin = '', $checkout = '') {
+        $cfg = self::config();
+        $c   = $quote['currency'];
+        $ink = '#1F1F1F'; $muted = '#727272'; $gold = '#E9A668'; $line = '#E7E1D6'; $green = '#2E7D5B';
+
+        $stay = ($checkin && $checkout)
+            ? self::french_date($checkin) . ' &rarr; ' . self::french_date($checkout)
+            : '';
+        $stayLine = $stay
+            ? '<p style="margin:0 0 18px;font-size:14px;color:' . $ink . ';font-weight:600;">' . esc_html($stay)
+                . ' &middot; ' . $quote['nights'] . ' ' . ($quote['nights'] > 1 ? 'nuits' : 'nuit') . '</p>'
+            : '';
+
+        $roomsHtml = '';
+        foreach ($quote['rooms'] as $r) {
+            $type  = esc_html($cfg['room_types'][$r['type']]['label'] ?? $r['type']);
+            $board = esc_html($cfg['boards'][$r['board']]['label'] ?? $r['board']);
+            $occ   = $r['adults'] . ' adulte' . ($r['adults'] > 1 ? 's' : '');
+            if ($r['children'] > 0) {
+                $occ .= ', ' . $r['children'] . ' enfant' . ($r['children'] > 1 ? 's' : '');
+            }
+            $notes = [];
+            if ($r['child_discount'] > 0) {
+                $notes[] = '&#10003; Réduction enfant (-12 ans) &minus;' . round($cfg['discounts']['child_under_12']['rate'] * 100)
+                    . '% &middot; &minus;' . self::money($r['child_discount']) . ' ' . $c;
+            }
+            if ($r['adult_discount'] > 0) {
+                $notes[] = '&#10003; 3e adulte &minus;' . round($cfg['discounts']['third_adult']['rate'] * 100)
+                    . '% &middot; &minus;' . self::money($r['adult_discount']) . ' ' . $c;
+            }
+            if ($r['single_supp'] > 0) {
+                $notes[] = 'Supplément single &middot; +' . self::money($r['single_supp']) . ' ' . $c;
+            }
+            $notesHtml = $notes
+                ? '<div style="margin-top:6px;font-size:12.5px;font-weight:600;color:' . $green . ';">' . implode('<br>', $notes) . '</div>'
+                : '';
+
+            $roomsHtml .= '
+              <tr>
+                <td style="padding:14px 16px;border:1px solid ' . $line . ';border-radius:10px;display:block;margin-bottom:10px;">
+                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+                    <td style="font-size:14px;font-weight:700;color:' . $ink . ';">Chambre ' . $r['index'] . ' &middot; ' . $type . '</td>
+                    <td style="font-size:14px;font-weight:700;color:' . $ink . ';text-align:right;white-space:nowrap;">' . self::money($r['subtotal']) . ' ' . $c . '</td>
+                  </tr></table>
+                  <div style="margin-top:3px;font-size:12.5px;color:' . $muted . ';">' . $board . ' &middot; ' . $occ . '</div>
+                  ' . $notesHtml . '
+                </td>
+              </tr>
+              <tr><td style="height:10px;line-height:10px;font-size:0;">&nbsp;</td></tr>';
+        }
+
+        $accSubtotal = round($quote['total'] - $quote['tourist_tax'], 2);
+        $tx = $cfg['tourist_tax'];
+
+        $totalsHtml = '
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:4px;">
+            <tr><td style="padding:6px 0;font-size:13.5px;color:' . $ink . ';">Sous-total hébergement</td>
+                <td style="padding:6px 0;font-size:13.5px;color:' . $ink . ';text-align:right;">' . self::money($accSubtotal) . ' ' . $c . '</td></tr>
+            <tr><td style="padding:6px 0;font-size:13.5px;color:' . $ink . ';">Taxe de séjour</td>
+                <td style="padding:6px 0;font-size:13.5px;color:' . $ink . ';text-align:right;">' . self::money($quote['tourist_tax']) . ' ' . $c . '</td></tr>
+          </table>
+          <p style="margin:8px 0 0;font-size:11.5px;line-height:1.5;color:' . $muted . ';">
+            &#9432; Taxe de séjour : ' . $tx['per_person_per_night'] . ' ' . $c . ' par personne et par nuit, plafonnée à '
+            . $tx['max_nights'] . ' nuits (taxe gouvernementale, Loi de finances 2024).
+          </p>
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:14px;padding-top:14px;border-top:2px solid ' . $ink . ';">
+            <tr>
+              <td style="font-size:15px;font-weight:700;color:' . $ink . ';">Total estimé</td>
+              <td style="font-size:22px;font-weight:800;color:' . $gold . ';text-align:right;">' . self::money($quote['total']) . ' ' . $c . '</td>
+            </tr>
+          </table>
+          <p style="margin:10px 0 0;font-size:11.5px;line-height:1.5;color:' . $muted . ';">
+            Estimation à titre indicatif — notre équipe confirmera la disponibilité et le montant définitif sous 24h.
+          </p>';
+
+        return $stayLine
+            . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0">' . $roomsHtml . '</table>'
+            . $totalsHtml;
+    }
+
+    /**
+     * "Vos coordonnées" / "Coordonnées du client" recap — echoes every
+     * relevant submitted field back verbatim, to client and staff alike, so
+     * neither ever has to wonder what was actually recorded (name, contact,
+     * stay dates, special request). $heading lets the two emails address the
+     * same data as "yours" vs. "the client's".
+     */
+    public static function email_contact_recap_html($heading, $firstName, $lastName, $email, $phone, $checkin, $checkout, $request) {
+        $ink = '#1F1F1F'; $muted = '#727272'; $line = '#E7E1D6';
+        $rows = [
+            'Nom'               => trim($firstName . ' ' . $lastName),
+            'Email'             => $email,
+            'Téléphone / WhatsApp' => $phone,
+            'Séjour souhaité'   => ($checkin && $checkout)
+                ? self::french_date($checkin) . ' &rarr; ' . self::french_date($checkout)
+                : '',
+        ];
+        $request = trim((string) $request);
+        if ($request !== '') {
+            $rows['Demande particulière / occasion'] = nl2br(esc_html($request));
+        }
+
+        $rowsHtml = '';
+        foreach ($rows as $label => $value) {
+            if ($value === '') { continue; }
+            $rowsHtml .= '<tr>'
+                . '<td style="padding:5px 0;font-size:12.5px;color:' . $muted . ';white-space:nowrap;vertical-align:top;">' . esc_html($label) . '</td>'
+                . '<td style="padding:5px 0 5px 14px;font-size:13.5px;color:' . $ink . ';font-weight:600;">' . $value . '</td>'
+                . '</tr>';
+        }
+
+        return '<p style="margin:0 0 8px;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:' . $muted . ';">' . esc_html($heading) . '</p>'
+            . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:22px;padding:16px 18px;background:#F7F5F1;border-radius:10px;">'
+            . $rowsHtml
+            . '</table>';
+    }
+
+    /**
+     * Client-only closing note. A reservation *request* has no payment behind
+     * it, so nothing stops a guest's interest quietly fading before the team
+     * calls back — this section's job is to keep that warmth alive between
+     * submission and confirmation. Reuses the exact brand voice already on
+     * the site's About page (villa-azur-fix.php's copy, "maison de famille",
+     * "16 chambres", "Là où la mer rencontre la sérénité") rather than
+     * inventing a new tone, so the email reads as continuous with the site.
+     */
+    public static function email_welcome_html() {
+        $navy = '#0F2A48'; $gold = '#E9A668'; $ink = '#1F1F1F'; $muted = '#727272';
+        return '
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:26px;background:#FBF6EE;border-left:3px solid ' . $gold . ';border-radius:0 10px 10px 0;">
+            <tr><td style="padding:20px 22px;">
+              <p style="margin:0 0 12px;font-family:Georgia,\'Times New Roman\',serif;font-style:italic;font-size:14.5px;line-height:1.75;color:' . $ink . ';">
+                Villa Azur est bien plus qu&rsquo;un hôtel : c&rsquo;est une maison de famille où l&rsquo;hospitalité est une tradition. Avec seulement 16 chambres ouvertes sur la Méditerranée, nous vous préparons un accueil intime et chaleureux, à l&rsquo;image de l&rsquo;art de vivre djerbien &mdash; là où la mer rencontre la sérénité.
+              </p>
+              <p style="margin:0;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;font-size:13.5px;line-height:1.7;color:' . $ink . ';">
+                Toute l&rsquo;équipe se réjouit déjà à l&rsquo;idée de vous accueillir sur la plage de Sidi Mehrez. En attendant notre confirmation sous 24h, n&rsquo;hésitez pas à nous écrire si la moindre question se présente &mdash; nous sommes là pour que votre séjour commence dans les meilleures conditions, avant même votre arrivée.
+              </p>
+              <p style="margin:16px 0 0;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.04em;color:' . $navy . ';">
+                &mdash; L&rsquo;équipe Villa Azur, Djerba
+              </p>
+            </td></tr>
+          </table>';
+    }
+
+    /**
+     * Full branded email skeleton — table-based, inline CSS only (no external
+     * stylesheet, no flex/grid) for compatibility across real-world email
+     * clients (Outlook/Gmail/Apple Mail). Shared by both the admin and the
+     * client email; only heading/intro/footer differ between the two.
+     *
+     * Header is cream (not navy) with the logo centered: the logo's own
+     * wordmark is navy-on-transparent, so a navy header band would render it
+     * illegible — a light band keeps it readable and reads as formal
+     * letterhead rather than an app banner.
+     */
+    public static function email_wrapper($heading, $intro, $bodyHtml, $footerHtml) {
+        $navy = '#0F2A48'; $gold = '#E9A668'; $ink = '#1F1F1F'; $muted = '#727272'; $cream = '#FDF3E9';
+        $logoUrl = function_exists('wp_get_attachment_image_url') ? wp_get_attachment_image_url(2070, 'full') : '';
+        $logoImg = $logoUrl
+            ? '<img src="' . esc_url($logoUrl) . '" alt="Villa Azur" width="72" height="60" style="display:block;height:60px;width:auto;">'
+            : '<span style="font-family:\'Plus Jakarta Sans\',Arial,sans-serif;font-size:16px;font-weight:700;letter-spacing:.06em;color:' . $navy . ';">VILLA AZUR</span>';
+
+        return '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>'
+        . '<body style="margin:0;padding:0;background:' . $cream . ';font-family:Georgia,\'Times New Roman\',serif;">'
+        . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:' . $cream . ';padding:32px 12px;">'
+        . '<tr><td align="center">'
+        . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(15,42,72,.08);">'
+
+        // Letterhead: centered logo, small letter-spaced tagline, thin gold rule.
+        . '<tr><td align="center" style="background:#FBF6EE;padding:30px 32px 22px;">'
+        . '<table role="presentation" cellpadding="0" cellspacing="0"><tr><td align="center">' . $logoImg . '</td></tr>'
+        . '<tr><td align="center" style="padding-top:10px;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:' . $muted . ';">Djerba &middot; Tunisie</td></tr></table>'
+        . '</td></tr>'
+        . '<tr><td style="height:3px;line-height:3px;font-size:0;background:' . $gold . ';">&nbsp;</td></tr>'
+
+        . '<tr><td style="padding:34px 36px 8px;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;">'
+        . '<h1 style="margin:0 0 12px;font-size:21px;font-weight:700;line-height:1.35;color:' . $navy . ';">' . $heading . '</h1>'
+        . '<p style="margin:0 0 24px;font-size:14px;line-height:1.7;color:' . $ink . ';">' . $intro . '</p>'
+        . '</td></tr>'
+        . '<tr><td style="padding:0 36px 24px;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;">' . $bodyHtml . '</td></tr>'
+        . '<tr><td style="padding:22px 36px 30px;border-top:1px solid #EFE9DE;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;font-size:12px;line-height:1.8;color:' . $muted . ';">' . $footerHtml . '</td></tr>'
+        . '</table>'
+        . '</td></tr></table>'
+        . '</body></html>';
+    }
+
+    /**
+     * Pull check-in/out and rooms[] from the raw POST. Fluent Forms drops fields
+     * it doesn't recognise from $formData (same reason the spam-guard reads
+     * $_POST['data'] directly), so the JSON room payload is read from the raw
+     * request too. Returns [checkin, checkout, rooms|null].
+     */
+    private static function extract_submission() {
+        // phpcs:ignore WordPress.Security.NonceVerification.Missing -- FF verifies its own nonce upstream before these filters run.
+        $raw = isset($_POST['data']) ? wp_unslash($_POST['data']) : '';
+        parse_str($raw, $fields);
+
+        $checkin  = self::to_iso($fields['date_arrivee'] ?? '');
+        $checkout = self::to_iso($fields['date_depart'] ?? '');
+
+        $rooms = null;
+        if (!empty($fields['vaz_rooms_json'])) {
+            $decoded = json_decode($fields['vaz_rooms_json'], true);
+            if (is_array($decoded)) {
+                $rooms = $decoded;
+            }
+        }
+        return [$checkin, $checkout, $rooms];
+    }
+
+    /** d/m/Y (or already-iso) → Y-m-d. */
+    private static function to_iso($value) {
+        $value = trim((string) $value);
+        if ($value === '') {
+            return '';
+        }
+        if (preg_match('#^(\d{4})-(\d{2})-(\d{2})$#', $value)) {
+            return $value;
+        }
+        $dt = DateTime::createFromFormat('d/m/Y', $value);
+        return $dt ? $dt->format('Y-m-d') : '';
+    }
+
+    private static function money($n) {
+        // Thousands with a thin space, no decimals unless needed.
+        $rounded = round((float) $n, 2);
+        $whole   = number_format($rounded, ($rounded == (int) $rounded) ? 0 : 2, ',', ' ');
+        return $whole;
+    }
+
+    private static function rooms_summary_text($quote) {
+        $cfg   = self::config();
+        $c     = $quote['currency'];
+        $lines = [];
+        foreach ($quote['rooms'] as $r) {
+            $type  = $cfg['room_types'][$r['type']]['label'] ?? $r['type'];
+            $board = $cfg['boards'][$r['board']]['label'] ?? $r['board'];
+            $occ   = $r['adults'] . ' adulte' . ($r['adults'] > 1 ? 's' : '');
+            if ($r['children'] > 0) {
+                $occ .= ', ' . $r['children'] . ' enfant' . ($r['children'] > 1 ? 's' : '');
+            }
+            $lines[] = sprintf(
+                'Chambre %d — %s · %s · %s · %d %s — %s %s',
+                $r['index'], $type, $board, $occ,
+                $quote['nights'], $quote['nights'] > 1 ? 'nuits' : 'nuit',
+                self::money($r['subtotal']), $c
+            );
+            if ($r['child_discount'] > 0) {
+                $lines[] = sprintf('   ✓ Réduction enfant (-12 ans) -%d%% : -%s %s',
+                    round($cfg['discounts']['child_under_12']['rate'] * 100), self::money($r['child_discount']), $c);
+            }
+            if ($r['adult_discount'] > 0) {
+                $lines[] = sprintf('   ✓ 3e adulte -%d%% : -%s %s',
+                    round($cfg['discounts']['third_adult']['rate'] * 100), self::money($r['adult_discount']), $c);
+            }
+            if ($r['single_supp'] > 0) {
+                $lines[] = sprintf('   + Supplément single : %s %s', self::money($r['single_supp']), $c);
+            }
+        }
+        return implode("\n", $lines);
+    }
+
+    private static function breakdown_text($quote) {
+        $cfg = self::config();
+        $c   = $quote['currency'];
+        $tx  = $cfg['tourist_tax'];
+        $accSubtotal = round($quote['total'] - $quote['tourist_tax'], 2);
+        $l = [];
+        $l[] = sprintf('Séjour : %d %s', $quote['nights'], $quote['nights'] > 1 ? 'nuits' : 'nuit');
+        $l[] = sprintf('Sous-total hébergement : %s %s', self::money($accSubtotal), $c);
+        $l[] = sprintf(
+            'Taxe de séjour (%d %s/personne/nuit, max %d nuits) : %s %s',
+            $tx['per_person_per_night'], $c, $tx['max_nights'], self::money($quote['tourist_tax']), $c
+        );
+        $l[] = sprintf('TOTAL ESTIMÉ : %s %s', self::money($quote['total']), $c);
+        return implode("\n", $l);
+    }
+}
+
+VAZ_Reservation::init();

@@ -1,0 +1,350 @@
+/**
+ * Villa Azur — reservation UI styling.
+ *
+ * Scoped entirely under #popmake-3241 (the one reservation popup) so it can never
+ * affect the Contact form, other popups, or the rest of the site. Uses the brand
+ * tokens already established in villa-azur-fix.php:
+ *   ink #1F1F1F · gold #E9A668 · navy #0F2A48 · cream #FDF3E9 / #F7F5F1
+ *   hairline #DCD7CD · muted #727272 / #8A8A8A · font 'Plus Jakarta Sans'
+ */
+
+#popmake-3241 .vaz-resa {
+  --vaz-ink: #1F1F1F;
+  --vaz-gold: #E9A668;
+  --vaz-navy: #0F2A48;
+  --vaz-cream: #FDF3E9;
+  --vaz-stone: #F7F5F1;
+  --vaz-line: #DCD7CD;
+  --vaz-muted: #8A8A8A;
+  --vaz-green: #2E7D5B;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--vaz-ink);
+  margin: 6px 0 14px;
+}
+
+#popmake-3241 .vaz-resa-title,
+#popmake-3241 .vaz-resa .vaz-lbl {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--vaz-muted);
+}
+#popmake-3241 .vaz-resa-title {
+  margin-bottom: 10px;
+  color: var(--vaz-ink);
+  font-size: 13px;
+}
+
+/* ── Room card ─────────────────────────────────────────────────────────── */
+#popmake-3241 .vaz-room {
+  border: 1px solid var(--vaz-line);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 12px;
+  background: #fff;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+#popmake-3241 .vaz-room:focus-within {
+  border-color: var(--vaz-gold);
+  box-shadow: 0 0 0 3px rgba(233, 166, 104, .14);
+}
+#popmake-3241 .vaz-room-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+#popmake-3241 .vaz-room-title {
+  font-weight: 600;
+  font-size: 15px;
+}
+#popmake-3241 .vaz-room-remove {
+  background: none;
+  border: none;
+  color: #A33B2B;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: background .15s ease;
+}
+#popmake-3241 .vaz-room-remove:hover { background: #FCEDEA; }
+#popmake-3241 .vaz-room-remove:focus-visible {
+  outline: 2px solid var(--vaz-gold);
+  outline-offset: 1px;
+}
+
+#popmake-3241 .vaz-field { margin-bottom: 12px; }
+#popmake-3241 .vaz-field .vaz-lbl { display: block; margin-bottom: 6px; }
+#popmake-3241 .vaz-occ {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+#popmake-3241 .vaz-field--occ { margin-bottom: 0; }
+#popmake-3241 .vaz-room-hint {
+  margin-top: 8px;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: var(--vaz-muted);
+}
+
+/* ── Segmented control (room type / board) ─────────────────────────────── */
+#popmake-3241 .vaz-seg {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+#popmake-3241 .vaz-seg-opt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  text-align: left;
+  padding: 10px 12px;
+  border: 1px solid var(--vaz-line);
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color .18s ease, background .18s ease, box-shadow .18s ease;
+}
+#popmake-3241 .vaz-seg-opt:hover { border-color: #C7C0B2; }
+#popmake-3241 .vaz-seg-opt.is-on {
+  border-color: var(--vaz-gold);
+  background: var(--vaz-cream);
+  box-shadow: inset 0 0 0 1px var(--vaz-gold);
+}
+#popmake-3241 .vaz-seg-opt:focus-visible {
+  outline: 2px solid var(--vaz-gold);
+  outline-offset: 2px;
+}
+#popmake-3241 .vaz-seg-label { font-size: 14px; font-weight: 600; color: var(--vaz-ink); }
+#popmake-3241 .vaz-seg-sub { font-size: 11.5px; color: var(--vaz-muted); font-weight: 500; }
+
+/* ── Stepper (adults / children) ───────────────────────────────────────── */
+#popmake-3241 .vaz-stepper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  border: 1px solid var(--vaz-line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+#popmake-3241 .vaz-step {
+  flex: 0 0 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: var(--vaz-stone);
+  color: var(--vaz-ink);
+  font-size: 20px;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease;
+}
+#popmake-3241 .vaz-step:hover { background: var(--vaz-gold); }
+#popmake-3241 .vaz-step:focus-visible {
+  outline: 2px solid var(--vaz-gold);
+  outline-offset: -2px;
+}
+#popmake-3241 .vaz-step-val {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Add-room button ───────────────────────────────────────────────────── */
+#popmake-3241 .vaz-add {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
+  padding: 12px;
+  border: 1.5px dashed var(--vaz-line);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--vaz-ink);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color .18s ease, background .18s ease, color .18s ease;
+}
+#popmake-3241 .vaz-add:hover:not([disabled]) {
+  border-color: var(--vaz-gold);
+  background: var(--vaz-cream);
+}
+#popmake-3241 .vaz-add[disabled] { opacity: .5; cursor: not-allowed; }
+#popmake-3241 .vaz-add:focus-visible {
+  outline: 2px solid var(--vaz-gold);
+  outline-offset: 2px;
+}
+#popmake-3241 .vaz-add-plus {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--vaz-gold);
+  color: var(--vaz-ink);
+  font-size: 16px;
+}
+#popmake-3241 .vaz-add-note { color: var(--vaz-muted); font-weight: 500; font-size: 12px; }
+
+/* ── Live summary panel ────────────────────────────────────────────────── */
+#popmake-3241 .vaz-sum {
+  margin-top: 16px;
+  border-radius: 16px;
+  background: var(--vaz-navy);
+  color: #fff;
+  padding: 20px;
+}
+#popmake-3241 .vaz-sum-empty {
+  margin-top: 16px;
+  border-radius: 14px;
+  background: var(--vaz-stone);
+  color: var(--vaz-muted);
+  padding: 18px 20px;
+  font-size: 13.5px;
+  text-align: center;
+}
+#popmake-3241 .vaz-sum-empty--err {
+  background: #FCEDEA;
+  color: #7A2A1E;
+  font-weight: 600;
+}
+#popmake-3241 .vaz-sum-head {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .6);
+  margin-bottom: 4px;
+}
+#popmake-3241 .vaz-sum-stay {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+/* Per-room line items */
+#popmake-3241 .vaz-sum-rooms {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, .14);
+}
+#popmake-3241 .vaz-sum-room-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+#popmake-3241 .vaz-sum-room-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+#popmake-3241 .vaz-sum-room-top .vaz-sum-amt { font-weight: 600; color: #fff; }
+#popmake-3241 .vaz-sum-room-meta {
+  font-size: 12px;
+  color: rgba(255, 255, 255, .55);
+  margin-top: 2px;
+}
+#popmake-3241 .vaz-sum-room-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 5px;
+}
+#popmake-3241 .vaz-sum-room-notes span {
+  font-size: 12px;
+  font-weight: 600;
+  color: #9FE3C1;
+}
+#popmake-3241 .vaz-sum-rows { display: flex; flex-direction: column; gap: 9px; }
+#popmake-3241 .vaz-sum-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, .88);
+}
+#popmake-3241 .vaz-sum-sub { color: rgba(255, 255, 255, .5); font-size: 12px; }
+#popmake-3241 .vaz-sum-row--disc .vaz-sum-amt { color: #9FE3C1; }
+#popmake-3241 .vaz-sum-amt { font-variant-numeric: tabular-nums; white-space: nowrap; }
+/* Plain-language tax explanation — always visible (no hidden info) */
+#popmake-3241 .vaz-sum-taxnote {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin-top: 10px;
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, .62);
+}
+#popmake-3241 .vaz-sum-taxnote-i {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  margin-top: 1px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, .4);
+  color: rgba(255, 255, 255, .75);
+  font-size: 10px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 15px;
+  text-align: center;
+}
+#popmake-3241 .vaz-sum-total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, .16);
+  font-size: 15px;
+  font-weight: 600;
+}
+#popmake-3241 .vaz-sum-grand {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--vaz-gold);
+  font-variant-numeric: tabular-nums;
+}
+#popmake-3241 .vaz-sum-note {
+  margin: 14px 0 0;
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, .55);
+}
+
+/* ── Mobile ────────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  #popmake-3241 .vaz-seg { grid-template-columns: 1fr; }
+  #popmake-3241 .vaz-occ { grid-template-columns: 1fr; gap: 10px; }
+  #popmake-3241 .vaz-sum-grand { font-size: 22px; }
+  #popmake-3241 .vaz-step { width: 46px; height: 46px; } /* larger touch targets */
+}
+
+/* Respect reduced-motion. */
+@media (prefers-reduced-motion: reduce) {
+  #popmake-3241 .vaz-resa * { transition: none !important; }
+}
