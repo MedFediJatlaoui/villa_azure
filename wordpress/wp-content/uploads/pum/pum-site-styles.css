@@ -1,6 +1,6 @@
 /**
  * Do not touch this file! This file created by the Popup Maker plugin using PHP
- * Last modified time: Jul 11 2026, 06:31:45
+ * Last modified time: Aug 01 2026, 07:09:01
  */
 
 
@@ -13,11 +13,11 @@
 
 
 /* Popup Theme 3232: Default Theme */
-.pum-theme-3232, .pum-theme-default-theme { background-color: rgba( 255, 255, 255, 1.00 ) } 
-.pum-theme-3232 .pum-container, .pum-theme-default-theme .pum-container { padding: 18px; border-radius: 16px; border: 1px none #000000; box-shadow: 1px 1px 3px 0px rgba( 2, 2, 2, 0.23 ); background-color: rgba( 253, 243, 233, 1.00 ) } 
+.pum-theme-3232, .pum-theme-default-theme { background-color: rgba( 28, 28, 28, 0.69 ) } 
+.pum-theme-3232 .pum-container, .pum-theme-default-theme .pum-container { padding: 24px; border-radius: 16px; border: 1px none #000000; box-shadow: 4px 4px 3px 0px rgba( 2, 2, 2, 0.75 ); background-color: rgba( 253, 243, 233, 1.00 ) } 
 .pum-theme-3232 .pum-title, .pum-theme-default-theme .pum-title { color: #000000; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: inherit; font-weight: 400; font-size: 32px; line-height: 36px } 
 .pum-theme-3232 .pum-content, .pum-theme-default-theme .pum-content { color: #8c8c8c; font-family: inherit; font-weight: 400 } 
-.pum-theme-3232 .pum-content + .pum-close, .pum-theme-default-theme .pum-content + .pum-close { position: absolute; height: auto; width: 44px; left: auto; right: 0px; bottom: auto; top: 0px; padding: 8px; color: #ffffff; font-family: inherit; font-weight: 400; font-size: 12px; line-height: 36px; border: 1px none #ffffff; border-radius: 0px; box-shadow: 1px 1px 3px 0px rgba( 2, 2, 2, 0.23 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.23 ); background-color: rgba( 227, 140, 59, 1.00 ) } 
+.pum-theme-3232 .pum-content + .pum-close, .pum-theme-default-theme .pum-content + .pum-close { position: absolute; height: auto; width: 44px; left: auto; right: 0px; bottom: auto; top: 0px; padding: 6px; color: #ffffff; font-family: inherit; font-weight: 400; font-size: 12px; line-height: 36px; border: 1px none #ffffff; border-radius: 16px; box-shadow: 1px 1px 3px 0px rgba( 2, 2, 2, 0.23 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.23 ); background-color: rgba( 227, 140, 59, 1.00 ) } 
 
 /* Popup Theme 3233: Light Box */
 .pum-theme-3233, .pum-theme-lightbox { background-color: rgba( 0, 0, 0, 0.60 ) } 

@@ -16,7 +16,7 @@ services:
       - "3306:3306"
 
   wordpress:
-    image: wordpress:php8.2-apache
+    build: .
     container_name: villa_wp
     restart: always
     ports:
