@@ -10,5 +10,6 @@
 # Local/temp files
 graphify-out/
 *.log
+backups/
 # mysql/data/mysql/data/
 mysql/data/

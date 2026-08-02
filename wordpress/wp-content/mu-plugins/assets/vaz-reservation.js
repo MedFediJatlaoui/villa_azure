@@ -196,8 +196,23 @@
     return html + '</div>';
   }
 
+  // Per-type occupancy caps (mirrors VAZ_Reservation::config()['room_types']):
+  // a room's adults/children steppers are capped both individually AND by the
+  // room's total occupant cap (the double's "one extra: adult OR child" rule).
+  function occupancyCaps(room) {
+    var rt = CFG.room_types[room.type] || {};
+    var maxOcc = rt.max_occupants;
+    return {
+      maxAdults:   Math.min(rt.max_adults, maxOcc - room.children),
+      maxChildren: Math.min(rt.max_children, maxOcc - room.adults),
+      maxOccupants: maxOcc
+    };
+  }
+
   function roomCard(room, i) {
-    var lim = CFG.limits;
+    var lim  = CFG.limits;
+    var caps = occupancyCaps(room);
+    var occHint = room.type === 'simple' ? T.occHintSimple : T.occHintDouble;
     return '' +
       '<div class="vaz-room" data-room="' + i + '">' +
       '  <div class="vaz-room-head">' +
@@ -215,14 +230,14 @@
       '  <div class="vaz-occ">' +
       '    <div class="vaz-field vaz-field--occ">' +
       '      <label class="vaz-lbl">' + T.adults + '</label>' +
-      stepper('adults', room.adults, lim.min_adults_room, lim.max_adults_room) +
+      stepper('adults', room.adults, lim.min_adults_room, caps.maxAdults) +
       '    </div>' +
       '    <div class="vaz-field vaz-field--occ">' +
       '      <label class="vaz-lbl">' + T.children + '</label>' +
-      stepper('children', room.children, 0, lim.max_children_room) +
+      stepper('children', room.children, 0, caps.maxChildren) +
       '    </div>' +
       '  </div>' +
-      '  <div class="vaz-room-hint">' + T.childHint + '</div>' +
+      '  <div class="vaz-room-hint">' + occHint + '</div>' +
       '</div>';
   }
 
@@ -436,10 +451,17 @@
 
       if (field === 'type') {
         room.type = val;
-        // Sensible occupancy default when switching type (free to adjust after).
-        room.adults = Math.min(CFG.limits.max_adults_room,
+        var rt = CFG.room_types[val] || {};
+        // Sensible occupancy default when switching type (free to adjust after),
+        // then clamp to the new type's per-room caps (a double sleeps up to 3
+        // total — 2 adults + 1 extra adult OR 1 child, never both; a simple
+        // sleeps exactly 1).
+        room.adults = Math.min(rt.max_adults,
           Math.max(CFG.limits.min_adults_room, val === 'double' ? Math.max(room.adults, 2) : 1));
-        if (val === 'simple') { room.adults = 1; room.children = 0; }
+        room.children = Math.min(rt.max_children, room.children);
+        if (room.adults + room.children > rt.max_occupants) {
+          room.children = Math.max(0, rt.max_occupants - room.adults);
+        }
         render($popup); // adults/children steppers may have changed
         return;
       }
@@ -449,14 +471,16 @@
       recalc($popup);
     });
 
-    // Steppers (adults / children) — no full re-render, just this control.
+    // Steppers (adults / children) — full re-render so the sibling stepper's
+    // max (which depends on this field, via the room's total occupant cap)
+    // stays in sync for the next click.
     $popup.on('click', '.vaz-step', function () {
       var $stepper = $(this).closest('.vaz-stepper');
       var i = +$(this).closest('.vaz-room').attr('data-room');
       var field = $stepper.attr('data-field');
       var next = clampStepper($stepper, +$(this).attr('data-dir'));
       if (state.rooms[i]) { state.rooms[i][field] = next; }
-      recalc($popup);
+      render($popup);
     });
 
     // Live reccompute when the guest changes either date (flatpickr fires change).

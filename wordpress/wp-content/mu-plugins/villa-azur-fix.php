@@ -1,6 +1,37 @@
 <?php
 /* Villa Azur — minimal targeted fixes only, no kit overrides */
 
+// ── Fix WP-Cron / Action Scheduler loopback in Docker ────────────────────────
+// WP_HOME/WP_SITEURL are http://localhost:8080 (the host-mapped port, needed
+// for real browser access), but Apache INSIDE the container only listens on
+// port 80 — so any self-loopback request (WP-Cron's own pseudo-cron spawn,
+// and Action Scheduler's async queue-runner dispatch) tries to connect to a
+// port nothing is listening on from inside the container, fails silently, and
+// leaves scheduled/async actions stuck "pending" forever. Rewriting just the
+// loopback URLs' host:port to 127.0.0.1 (no port = 80) fixes both without
+// touching WP_HOME/WP_SITEURL themselves.
+add_filter('cron_request', function ($request) {
+    $request['url'] = preg_replace('#^https?://[^/]+#', 'http://127.0.0.1', $request['url']);
+    return $request;
+});
+add_filter('as_async_request_queue_runner_query_url', function ($url) {
+    return preg_replace('#^https?://[^/]+#', 'http://127.0.0.1', $url);
+});
+
+// ── FluentForms: send email notifications asynchronously ────────────────────
+// Fluent Forms core hardcodes plain email notifications to run SYNCHRONOUSLY
+// (see EmentNotificationActions::register(): both 'fluentform/notifying_async_
+// email_notifications' and '..._notifications' are forced to __return_false
+// at priority 9) — meaning the guest's browser waits for every notification
+// email to actually finish sending via SMTP before the "submitted" response
+// comes back, which is slow whenever more than one notification is enabled.
+// Overriding at a later priority (20 > 9) wins the filter chain and routes
+// notifications through Fluent Forms' own Action Scheduler queue instead —
+// the submission still returns immediately; the loopback fix above ensures
+// that queue actually gets processed rather than sitting pending forever.
+add_filter('fluentform/notifying_async_email_notifications', '__return_true', 20);
+add_filter('fluentform/notifying_async_notifications', '__return_true', 20);
+
 // ── FluentForms: calendrier en français ──────────────────────────────────────
 add_filter('fluentform/date_i18n', function () {
     return [

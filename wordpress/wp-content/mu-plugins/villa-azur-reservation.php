@@ -58,8 +58,6 @@ final class VAZ_Reservation {
             'limits' => [
                 'max_rooms'          => 6,
                 'min_adults_room'    => 1,   // a room must have at least one adult
-                'max_adults_room'    => 4,
-                'max_children_room'  => 3,
                 'max_nights'         => 30,  // sanity ceiling for a single request
             ],
 
@@ -111,9 +109,26 @@ final class VAZ_Reservation {
                 'hb' => ['label' => 'Demi-pension',   'sub' => 'Petit-déjeuner + dîner'],
             ],
 
+            // Occupancy caps per room type (client return, 2026-08-02): a "single"
+            // sleeps exactly one adult, no additions. A "double" sleeps 2 adults,
+            // plus ONE extra person who is either an adult (→ 3 adults) or a child
+            // (→ 2 adults + 1 child) — never both, so max_occupants is the hard cap
+            // that rules out 2 adults + 1 extra adult + 1 child.
             'room_types' => [
-                'simple' => ['label' => 'Chambre Simple', 'sub' => 'Vue mer · idéale 1 personne'],
-                'double' => ['label' => 'Chambre Double', 'sub' => 'Vue mer · idéale 2 personnes'],
+                'simple' => [
+                    'label'         => 'Chambre Simple',
+                    'sub'           => 'Vue mer · idéale 1 personne',
+                    'max_adults'    => 1,
+                    'max_children'  => 0,
+                    'max_occupants' => 1,
+                ],
+                'double' => [
+                    'label'         => 'Chambre Double',
+                    'sub'           => 'Vue mer · idéale 2 personnes',
+                    'max_adults'    => 3,
+                    'max_children'  => 1,
+                    'max_occupants' => 3,
+                ],
             ],
 
             // Discounts (fiche de prix.md), applied automatically by the engine.
@@ -334,17 +349,23 @@ final class VAZ_Reservation {
         }
 
         foreach ($rooms as $i => $room) {
-            $label   = 'Chambre ' . ($i + 1);
-            $adults  = (int) ($room['adults'] ?? 0);
+            $label    = 'Chambre ' . ($i + 1);
+            $type     = in_array($room['type'] ?? '', ['simple', 'double'], true) ? $room['type'] : 'double';
+            $typeCfg  = $cfg['room_types'][$type];
+            $adults   = (int) ($room['adults'] ?? 0);
             $children = (int) ($room['children'] ?? 0);
+
             if ($adults < $lim['min_adults_room']) {
                 $errors[] = "$label : au moins un adulte est requis.";
             }
-            if ($adults > $lim['max_adults_room']) {
-                $errors[] = "$label : maximum {$lim['max_adults_room']} adultes.";
+            if ($adults > $typeCfg['max_adults']) {
+                $errors[] = "$label ({$typeCfg['label']}) : maximum {$typeCfg['max_adults']} adulte" . ($typeCfg['max_adults'] > 1 ? 's' : '') . '.';
             }
-            if ($children > $lim['max_children_room']) {
-                $errors[] = "$label : maximum {$lim['max_children_room']} enfants.";
+            if ($children > $typeCfg['max_children']) {
+                $errors[] = "$label ({$typeCfg['label']}) : maximum {$typeCfg['max_children']} enfant" . ($typeCfg['max_children'] > 1 ? 's' : '') . '.';
+            }
+            if ($adults + $children > $typeCfg['max_occupants']) {
+                $errors[] = "$label ({$typeCfg['label']}) : maximum {$typeCfg['max_occupants']} personne" . ($typeCfg['max_occupants'] > 1 ? 's' : '') . ' au total.';
             }
         }
 
@@ -418,7 +439,8 @@ final class VAZ_Reservation {
             'board'          => 'Formule',
             'adults'         => 'Adultes',
             'children'       => 'Enfants (-12 ans)',
-            'childHint'      => '12 ans et plus : compté comme adulte.',
+            'occHintSimple'  => 'Chambre simple : 1 personne, non cumulable.',
+            'occHintDouble'  => 'Chambre double : 2 adultes + 1 enfant, ou 3 adultes (3 personnes max).',
             'summaryTitle'   => 'Votre estimation',
             'accommodation'  => 'Hébergement',
             'childDiscount'  => 'Réduction enfant (-12 ans)',
@@ -574,7 +596,7 @@ final class VAZ_Reservation {
 
         $totalsHtml = '
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:4px;">
-            <tr><td style="padding:6px 0;font-size:13.5px;color:' . $ink . ';">Sous-total hébergement</td>
+            <tr><td style="padding:6px 0;font-size:13.5px;color:' . $ink . ';">Hébergement</td>
                 <td style="padding:6px 0;font-size:13.5px;color:' . $ink . ';text-align:right;">' . self::money($accSubtotal) . ' ' . $c . '</td></tr>
             <tr><td style="padding:6px 0;font-size:13.5px;color:' . $ink . ';">Taxe de séjour</td>
                 <td style="padding:6px 0;font-size:13.5px;color:' . $ink . ';text-align:right;">' . self::money($quote['tourist_tax']) . ' ' . $c . '</td></tr>
@@ -583,10 +605,10 @@ final class VAZ_Reservation {
             &#9432; Taxe de séjour : ' . $tx['per_person_per_night'] . ' ' . $c . ' par personne et par nuit, plafonnée à '
             . $tx['max_nights'] . ' nuits (taxe gouvernementale, Loi de finances 2024).
           </p>
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:14px;padding-top:14px;border-top:2px solid ' . $ink . ';">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:18px;background:#FBF6EE;border-radius:12px;">
             <tr>
-              <td style="font-size:15px;font-weight:700;color:' . $ink . ';">Total estimé</td>
-              <td style="font-size:22px;font-weight:800;color:' . $gold . ';text-align:right;">' . self::money($quote['total']) . ' ' . $c . '</td>
+              <td style="padding:16px 20px;font-size:14px;font-weight:600;color:' . $ink . ';">Séjour estimé à</td>
+              <td style="padding:16px 20px;font-size:24px;font-weight:800;color:' . $gold . ';text-align:right;">' . self::money($quote['total']) . ' ' . $c . '</td>
             </tr>
           </table>
           <p style="margin:10px 0 0;font-size:11.5px;line-height:1.5;color:' . $muted . ';">
@@ -625,12 +647,12 @@ final class VAZ_Reservation {
             if ($value === '') { continue; }
             $rowsHtml .= '<tr>'
                 . '<td style="padding:5px 0;font-size:12.5px;color:' . $muted . ';white-space:nowrap;vertical-align:top;">' . esc_html($label) . '</td>'
-                . '<td style="padding:5px 0 5px 14px;font-size:13.5px;color:' . $ink . ';font-weight:600;">' . $value . '</td>'
+                . '<td style="padding:5px 0 5px 14px;font-size:13.5px;color:' . $ink . ';font-weight:600;word-break:break-word;overflow-wrap:break-word;">' . $value . '</td>'
                 . '</tr>';
         }
 
         return '<p style="margin:0 0 8px;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:' . $muted . ';">' . esc_html($heading) . '</p>'
-            . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:22px;padding:16px 18px;background:#F7F5F1;border-radius:10px;">'
+            . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="width:100%;max-width:100%;margin-bottom:22px;padding:16px 18px;background:#F7F5F1;border-radius:10px;">'
             . $rowsHtml
             . '</table>';
     }
@@ -680,11 +702,12 @@ final class VAZ_Reservation {
             ? '<img src="' . esc_url($logoUrl) . '" alt="Villa Azur" width="72" height="60" style="display:block;height:60px;width:auto;">'
             : '<span style="font-family:\'Plus Jakarta Sans\',Arial,sans-serif;font-size:16px;font-weight:700;letter-spacing:.06em;color:' . $navy . ';">VILLA AZUR</span>';
 
-        return '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>'
-        . '<body style="margin:0;padding:0;background:' . $cream . ';font-family:Georgia,\'Times New Roman\',serif;">'
+        return '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+        . '<style>img{max-width:100%;} table{max-width:100%;} @media (max-width:600px){.vaz-email-card{width:100% !important;}}</style></head>'
+        . '<body style="margin:0;padding:0;background:' . $cream . ';font-family:Georgia,\'Times New Roman\',serif;word-break:break-word;overflow-wrap:break-word;">'
         . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:' . $cream . ';padding:32px 12px;">'
         . '<tr><td align="center">'
-        . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(15,42,72,.08);">'
+        . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" class="vaz-email-card" style="width:100%;max-width:560px;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(15,42,72,.08);">'
 
         // Letterhead: centered logo, small letter-spaced tagline, thin gold rule.
         . '<tr><td align="center" style="background:#FBF6EE;padding:30px 32px 22px;">'
@@ -693,12 +716,12 @@ final class VAZ_Reservation {
         . '</td></tr>'
         . '<tr><td style="height:3px;line-height:3px;font-size:0;background:' . $gold . ';">&nbsp;</td></tr>'
 
-        . '<tr><td style="padding:34px 36px 8px;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;">'
-        . '<h1 style="margin:0 0 12px;font-size:21px;font-weight:700;line-height:1.35;color:' . $navy . ';">' . $heading . '</h1>'
-        . '<p style="margin:0 0 24px;font-size:14px;line-height:1.7;color:' . $ink . ';">' . $intro . '</p>'
+        . '<tr><td style="padding:34px 36px 8px;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;word-break:break-word;overflow-wrap:break-word;">'
+        . '<h1 style="margin:0 0 12px;font-size:21px;font-weight:700;line-height:1.35;color:' . $navy . ';word-break:break-word;overflow-wrap:break-word;">' . $heading . '</h1>'
+        . '<p style="margin:0 0 24px;font-size:14px;line-height:1.7;color:' . $ink . ';word-break:break-word;overflow-wrap:break-word;">' . $intro . '</p>'
         . '</td></tr>'
-        . '<tr><td style="padding:0 36px 24px;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;">' . $bodyHtml . '</td></tr>'
-        . '<tr><td style="padding:22px 36px 30px;border-top:1px solid #EFE9DE;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;font-size:12px;line-height:1.8;color:' . $muted . ';">' . $footerHtml . '</td></tr>'
+        . '<tr><td style="padding:0 36px 24px;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;word-break:break-word;overflow-wrap:break-word;">' . $bodyHtml . '</td></tr>'
+        . '<tr><td style="padding:22px 36px 30px;border-top:1px solid #EFE9DE;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;font-size:12px;line-height:1.8;color:' . $muted . ';word-break:break-word;overflow-wrap:break-word;">' . $footerHtml . '</td></tr>'
         . '</table>'
         . '</td></tr></table>'
         . '</body></html>';
@@ -787,7 +810,7 @@ final class VAZ_Reservation {
         $accSubtotal = round($quote['total'] - $quote['tourist_tax'], 2);
         $l = [];
         $l[] = sprintf('Séjour : %d %s', $quote['nights'], $quote['nights'] > 1 ? 'nuits' : 'nuit');
-        $l[] = sprintf('Sous-total hébergement : %s %s', self::money($accSubtotal), $c);
+        $l[] = sprintf('Hébergement : %s %s', self::money($accSubtotal), $c);
         $l[] = sprintf(
             'Taxe de séjour (%d %s/personne/nuit, max %d nuits) : %s %s',
             $tx['per_person_per_night'], $c, $tx['max_nights'], self::money($quote['tourist_tax']), $c
