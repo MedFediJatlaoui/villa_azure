@@ -32,8 +32,8 @@ services:
       WORDPRESS_DB_USER: wpuser
       WORDPRESS_DB_PASSWORD: wppassword
       WORDPRESS_CONFIG_EXTRA: |
-        define('WP_HOME', 'http://localhost:8080');
-        define('WP_SITEURL', 'http://localhost:8080');
+        define('WP_HOME', 'https://hotelvillaazur.com');
+        define('WP_SITEURL', 'https://hotelvillaazur.com');
         @ini_set('upload_max_filesize', '128M');
         @ini_set('post_max_size', '128M');
         @ini_set('memory_limit', '256M');
