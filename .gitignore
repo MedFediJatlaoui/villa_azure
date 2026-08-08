@@ -9,6 +9,10 @@
 #07072026.sql
 wordpress_backup_*.sql
 wordpress_backup_*.sql.gz
+wordpress_prod_*.sql
+wordpress_prod_*.sql.gz
+*.sql
+*.sql.gz
 # Local/temp files
 graphify-out/
 *.log
