@@ -7,6 +7,8 @@
 # MCP config (may contain sensitive tokens)
 .mcp.json
 #07072026.sql
+wordpress_backup_*.sql
+wordpress_backup_*.sql.gz
 # Local/temp files
 graphify-out/
 *.log
