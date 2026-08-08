@@ -1,0 +1,194 @@
+# Translation of Plugins - Template Kit &#8211; Import - Stable (latest release) in Russian
+# This file is distributed under the same license as the Plugins - Template Kit &#8211; Import - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2023-06-29 15:06:53+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
+"X-Generator: GlotPress/4.0.1\n"
+"Language: ru\n"
+"Project-Id-Version: Plugins - Template Kit &#8211; Import - Stable (latest release)\n"
+
+#: inc/api/class-template-kit-import.php:93
+msgid "Single: Landing Page"
+msgstr "Одиночная: Целевая страница"
+
+#: inc/backend/class-welcome.php:43 inc/backend/class-welcome.php:44
+msgid "TK Review"
+msgstr "Обзор TK"
+
+#: inc/api/class-template-kit-import.php:119
+msgid "Other"
+msgstr "Другой"
+
+#: inc/api/class-template-kit-import.php:118
+msgid "Clients"
+msgstr "Клиенты"
+
+#: inc/api/class-template-kit-import.php:117
+msgid "Logo Grid"
+msgstr "Сетка логотипа"
+
+#: inc/api/class-template-kit-import.php:116
+msgid "Gallery"
+msgstr "Галерея"
+
+#: inc/api/class-template-kit-import.php:115
+msgid "Portfolio"
+msgstr "Портфолио"
+
+#: inc/api/class-template-kit-import.php:114
+msgid "Countdown"
+msgstr "Обратный отсчёт"
+
+#: inc/api/class-template-kit-import.php:113
+msgid "Stats"
+msgstr "Статистика"
+
+#: inc/api/class-template-kit-import.php:112
+msgid "Services"
+msgstr "Услуги"
+
+#: inc/api/class-template-kit-import.php:111
+msgid "Product"
+msgstr "Товар"
+
+#: inc/api/class-template-kit-import.php:110
+msgid "Testimonial"
+msgstr "Отзыв"
+
+#: inc/api/class-template-kit-import.php:109
+msgid "Pricing"
+msgstr "Ценообразование"
+
+#: inc/api/class-template-kit-import.php:108
+msgid "Features"
+msgstr "Функции"
+
+#: inc/api/class-template-kit-import.php:107
+msgid "Map"
+msgstr "Карта"
+
+#: inc/api/class-template-kit-import.php:106
+msgid "Team"
+msgstr "Команда"
+
+#: inc/api/class-template-kit-import.php:105
+msgid "Call to Action"
+msgstr "Призыв к действию"
+
+#: inc/api/class-template-kit-import.php:104
+msgid "Contact"
+msgstr "Контакты"
+
+#: inc/api/class-template-kit-import.php:103
+msgid "FAQ"
+msgstr "FAQ"
+
+#: inc/api/class-template-kit-import.php:102
+msgid "About"
+msgstr "Детали"
+
+#: inc/api/class-template-kit-import.php:101
+msgid "Hero"
+msgstr "Тема дня"
+
+#: inc/api/class-template-kit-import.php:100
+msgid "Popup"
+msgstr "Всплывающее окно"
+
+#: inc/api/class-template-kit-import.php:99
+msgid "Footer"
+msgstr "Подвал"
+
+#: inc/api/class-template-kit-import.php:98
+msgid "Header"
+msgstr "Заголовок"
+
+#: inc/api/class-template-kit-import.php:97
+msgid "Archive: Category"
+msgstr "Архив: Рубрика"
+
+#: inc/api/class-template-kit-import.php:96
+msgid "Archive: Search"
+msgstr "Архив: Поиск"
+
+#: inc/api/class-template-kit-import.php:95
+msgid "Archive: Product"
+msgstr "Архив: Товар"
+
+#: inc/api/class-template-kit-import.php:94
+msgid "Archive: Blog"
+msgstr "Архив: Блог"
+
+#: inc/api/class-template-kit-import.php:92
+msgid "Single: 404"
+msgstr "Одиночная: 404"
+
+#: inc/api/class-template-kit-import.php:91
+msgid "Single: Product"
+msgstr "Одиночный: Товар"
+
+#: inc/api/class-template-kit-import.php:90
+msgid "Single: Post"
+msgstr "Одиночная: Запись"
+
+#: inc/api/class-template-kit-import.php:89
+msgid "Single: Home"
+msgstr "Одиночная: Главная"
+
+#: inc/api/class-template-kit-import.php:88
+msgid "Single: Page"
+msgstr "Одиночная: Страница"
+
+#: inc/api/class-requirements.php:306
+msgid "Sorry, you are not allowed to install themes on this site."
+msgstr "Извините, вам не разрешено устанавливать темы на этот сайт."
+
+#: inc/api/class-requirements.php:265 inc/api/class-requirements.php:352
+msgid "Unable to connect to the filesystem. Please confirm your credentials."
+msgstr "Не удалось подключиться к файловой системе. Пожалуйста, подтвердите свои учетные данные."
+
+#: review/review.php:39
+msgid " - Version "
+msgstr " - Версия "
+
+#: inc/utils/class-base.php:51 inc/utils/class-base.php:62
+msgid "Something went wrong."
+msgstr "Что-то пошло не так."
+
+#. translators: %s: WordPress version
+#: template-kit-import.php:112
+msgid "Envato Elements requires WordPress version %s+. Because you are using an earlier version, the plugin is currently NOT ACTIVE."
+msgstr "Envato Elements требует версию %s WordPress или выше. Поскольку вы используете более раннюю версию, плагин в настоящее время НЕ АКТИВЕН."
+
+#: template-kit-import.php:93
+msgid "7.2 or above"
+msgstr "7.2 или выше"
+
+#. translators: %s: PHP version
+#: template-kit-import.php:88
+msgid "Template Kit Import plugin requires PHP version %1$s+, plugin is currently NOT ACTIVE. Please contact the hosting provider. WordPress recommends version %2$s."
+msgstr "Для плагина Template Kit Import требуется PHP версии %1$s+, в настоящее время плагин НЕ АКТИВЕН. Пожалуйста, свяжитесь с хостинг-провайдером. WordPress рекомендует версию %2$s."
+
+#. Author URI of the plugin
+#: template-kit-import.php
+msgid "https://envato.com"
+msgstr "https://envato.com"
+
+#. Author of the plugin
+#: template-kit-import.php
+msgid "Envato"
+msgstr "Envato"
+
+#. Description of the plugin
+#: template-kit-import.php
+msgid "Import Template Kits to WordPress"
+msgstr "Импорт наборов шаблонов в WordPress"
+
+#. Plugin Name of the plugin
+#: template-kit-import.php inc/backend/class-welcome.php:33
+msgid "Template Kit Import"
+msgstr "Template Kit Import"

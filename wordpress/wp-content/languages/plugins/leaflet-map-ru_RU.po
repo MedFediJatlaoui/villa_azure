@@ -1,0 +1,505 @@
+# Translation of Plugins - Leaflet Map - Stable (latest release) in Russian
+# This file is distributed under the same license as the Plugins - Leaflet Map - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2023-05-27 18:12:45+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
+"X-Generator: GlotPress/4.0.3\n"
+"Language: ru\n"
+"Project-Id-Version: Plugins - Leaflet Map - Stable (latest release)\n"
+
+#: templates/shortcode-helper.php:133
+msgid "Video Overlay Map"
+msgstr "Карта с наложением видео"
+
+#: templates/shortcode-helper.php:129
+msgid "Image Overlay Map"
+msgstr "Карта с наложением изображения"
+
+#: class.plugin-settings.php:243
+msgid "Some maps get tiles from multiple servers with subdomains such as a,b,c or 1,2,3 or cache1,cache2; pass a string where each char is its own subdomain, or pass comma-separated string"
+msgstr "Некоторые карты берут подложку с различных серверов с субдоменами, таких как a,b,c или 1,2,3 или cache1,cache2; укажите строку таким образом, чтобы каждый символ являлся его собственным поддоменом, или укажите строку, разделяя значения запятыми."
+
+#: templates/settings.php:175
+msgid ", under their free license."
+msgstr ", под их свободной лицензией"
+
+#: templates/settings.php:175
+msgid "Leaf icon provided by "
+msgstr "Знак листочка предоставлен "
+
+#: templates/settings.php:113
+msgid "Found an issue?"
+msgstr "Нашли ошибку?"
+
+#: templates/settings.php:114
+msgid "WordPress Support"
+msgstr "Поддержка WordPress"
+
+#: class.admin.php:85
+msgid "Shortcode helper"
+msgstr "Помощь в шорткодах"
+
+#: templates/settings.php:36
+msgid "Sorry, your nonce did not verify"
+msgstr "Извините, ваш номер не был подтверждён"
+
+#: class.plugin-settings.php:278
+msgid "Access Token"
+msgstr "Маркер доступа"
+
+#: class.plugin-settings.php:283
+msgid "An access token that is passed to L.tileLayer; useful for Mapbox tiles"
+msgstr "Маркер доступа, который передается L.TileLayer; полезен для плиток Mapbox"
+
+#: class.plugin-settings.php:273
+msgid "An id that is passed to L.tileLayer; useful for Mapbox"
+msgstr "Идентификатор, который передается L.TileLayer; полезен для Mapbox"
+
+#: class.plugin-settings.php:303
+msgid "Boolean for whether the layer is wrapped around the antimeridian"
+msgstr "Логическое значение для определения того, обернут ли слой вокруг антимеридиана"
+
+#: class.plugin-settings.php:298
+msgid "No Wrap (tiles)"
+msgstr "Без упаковки (плитки)"
+
+#: class.plugin-settings.php:293
+msgid "The zoom number used in tile URLs will be offset with this value"
+msgstr "Число масштабирования, используемое в URL-адресах плиток, будет смещено на это значение"
+
+#: class.plugin-settings.php:268
+msgid "Tile Id"
+msgstr "ID плитки"
+
+#: class.plugin-settings.php:258
+msgid "Tile Size"
+msgstr "Размер плитки"
+
+#: class.plugin-settings.php:263
+msgid "Width and height of tiles (in pixels) in the grid. Default is 256"
+msgstr "Ширина и высота плиток (в пикселях) в сетке. Значение по умолчанию равно 256"
+
+#: class.plugin-settings.php:288
+msgid "Zoom Offset"
+msgstr "Смещение масштаба"
+
+#: class.plugin-settings.php:333
+msgid "Add a scale to each map. Can also be added via shortcode <br /> <code>[leaflet-scale]</code>"
+msgstr "Добавьте масштаб к каждой карте. Также может быть добавлен с помощью shortcode <br /> <code>[leaflet-scale]</code>"
+
+#: class.plugin-settings.php:134
+msgid "Fit Bounds"
+msgstr "Подходящие рамки"
+
+#: class.plugin-settings.php:330
+msgid "Show Scale"
+msgstr "Показать Масштаб"
+
+#: class.plugin-settings.php:248
+msgid "Detect Retina"
+msgstr "Обнаружена Retina"
+
+#: class.plugin-settings.php:253
+msgid "Fetch tiles at different zoom levels to appear smoother on retina displays."
+msgstr "Извлекайте плитки с разными уровнями масштабирования, чтобы они выглядели более плавно на дисплеях retina."
+
+#: class.plugin-settings.php:382
+msgid "Show maps in excerpts"
+msgstr "Показывать карты в отрывках"
+
+#: templates/shortcode-helper.php:106
+msgid "Add GeoJSON by URL"
+msgstr "Добавить GeoJSON по URL"
+
+#: templates/shortcode-helper.php:110
+msgid "Add GeoJSON with circle markers and popups"
+msgstr "Добавьте GeoJSON с маркерами кругов и всплывающими окнами"
+
+#: templates/shortcode-helper.php:86
+msgid "Basic Polygon"
+msgstr "Базовый многоугольник"
+
+#. Author URI of the plugin
+#: leaflet-map.php
+msgid "https://bozdoz.com/"
+msgstr "https://bozdoz.com/"
+
+#: templates/shortcode-helper.php:122
+msgid "Keep them in Newfoundland"
+msgstr "Оставить в Newfoundland"
+
+#: class.plugin-settings.php:376
+msgid "KML/GPX JavaScript Converter"
+msgstr "JavaScript-конвертер KML/GPX"
+
+#: class.plugin-settings.php:379
+msgid "ToGeoJSON converts KML and GPX files to GeoJSON; if you plan to use [leaflet-kml] or [leaflet-gpx] then this library is loaded.  You can change the default if you need."
+msgstr "ToGeoJSON преобразует KML- и GPX-файлы в GeoJSON; если вы планируете использовать [leaflet-kml] или [leaflet-gpx] — библиотека будет загружена. Вы можете изменить поведение по умолчанию, если надо."
+
+#: templates/shortcode-helper.php:118
+msgid "Add GPX by URL"
+msgstr "Добавить GPX по URL"
+
+#: templates/shortcode-helper.php:114
+msgid "Add KML by URL"
+msgstr "Добавить KML по URL"
+
+#: class.plugin-settings.php:363
+msgid "Google API Key (optional)"
+msgstr "Ключ Google API (необязательно)"
+
+#: class.plugin-settings.php:211
+msgid "MapQuest API Key (optional)"
+msgstr "Ключ MapQuest API (необязательно)"
+
+#: class.plugin-settings.php:364
+msgid "Supply a Google API Key"
+msgstr "Указать ключ Google API"
+
+#: class.plugin-settings.php:369
+msgid "The Google Geocoder requires an API key with the Places product enabled"
+msgstr "Для Google Geocoder требуется ключ API с включенным продуктом Places"
+
+#: class.plugin-settings.php:372
+msgid "You are unlikely to ever be charged for geocoding."
+msgstr "С вас вряд ли когда-нибудь возьмут плату за геокодирование."
+
+#: class.plugin-settings.php:371
+msgid "You must create a project and set up a billing account, then you will be given an API key."
+msgstr "Вы должны создать проект и настроить учетную запись для выставления счетов, после чего вам будет предоставлен ключ API."
+
+#: templates/shortcode-helper.php:125
+msgid "Image Map"
+msgstr "Изображение карты"
+
+#: templates/shortcode-helper.php:67
+msgid "SVG Marker Icon"
+msgstr "Значок маркера SVG"
+
+#: templates/shortcode-helper.php:90
+msgid "Basic Circle"
+msgstr "Базовый круг"
+
+#: class.plugin-settings.php:91
+msgid "Default Longitude"
+msgstr "Стандартная долгота"
+
+#: class.plugin-settings.php:86
+msgid "Default latitude for maps."
+msgstr "Стандартная широта для карт."
+
+#: class.plugin-settings.php:96
+msgid "Default longitude for maps."
+msgstr "Стандартная долгота для карт."
+
+#: class.plugin-settings.php:81
+msgid "Default Latitude"
+msgstr "Стандартная широта"
+
+#: class.plugin-settings.php:74
+msgid "You can also change this for each map"
+msgstr "Вы также можете изменять её для каждой карты"
+
+#: class.plugin-settings.php:114
+msgid "Default Height"
+msgstr "Стандартная высота"
+
+#: class.plugin-settings.php:119
+msgid "Default height for maps. Values can include \"px\" but it is not necessary. Can also be \"%\". "
+msgstr "Стандартная высота для карт. Значения могут содержать \"px\", но это не обязательно. Может также указываться в \"%\". "
+
+#: class.plugin-settings.php:124
+msgid "Default Width"
+msgstr "Стандартная ширина"
+
+#: class.plugin-settings.php:129
+msgid "Default width for maps. Values can include \"px\" but it is not necessary.  Can also be \"%\"."
+msgstr "Стандартная ширина для карт. Значения могут содержать \"px\", но это не обязательно. Может также указываться в \"%\"."
+
+#: class.plugin-settings.php:139
+msgid "If enabled, all markers on each map will alter the view of the map; i.e. the map will fit to the bounds of all of the markers on the map."
+msgstr "Если включено, все маркеры на каждой карте будут изменять положение карты; то есть карта будет подгоняться под границы всех маркеров на ней."
+
+#: class.plugin-settings.php:149
+msgid "The zoom buttons can be large and annoying."
+msgstr "Кнопки изменения масштаба могут быть большими и раздражающими."
+
+#: class.plugin-settings.php:144
+msgid "Show Zoom Controls"
+msgstr "Показывать контролер изменения масштаба"
+
+#: class.plugin-settings.php:154
+msgid "Scroll Wheel Zoom"
+msgstr "Изменение масштаба колёсиком мыши"
+
+#: class.plugin-settings.php:159
+msgid "Disable zoom with mouse scroll wheel.  Sometimes someone wants to scroll down the page, and not zoom the map."
+msgstr "Отключить изменения масштаба колёсиком мыши. Иногда кому-то нужно пролистать страницу, а не приблизить карту."
+
+#: class.plugin-settings.php:164
+msgid "Double Click Zoom"
+msgstr "Изменение масштаба по двойному нажатию"
+
+#: class.plugin-settings.php:169
+msgid "If enabled, your maps will zoom with a double click.  By default it is disabled: If we're going to remove zoom controls and have scroll wheel zoom off by default, we might as well stick to our guns and not zoom the map."
+msgstr "Если включено, ваши карты буду приближаться по двойному клику. По умолчанию, это оключено: Если вы хотите убрать контроллер масштаба и использовать колёсико мыши по умолчанию, мы также можем стоять на своём и не приближать карту."
+
+#: class.plugin-settings.php:174
+msgid "Default Min Zoom"
+msgstr "Стандартый минимальный уровень масштаба"
+
+#: class.plugin-settings.php:101
+msgid "Default Zoom"
+msgstr "Стандартный уровень масштаба"
+
+#: class.plugin-settings.php:109
+msgid "Default zoom for maps."
+msgstr "Стандартный уровень масштаба для карт."
+
+#: class.plugin-settings.php:323
+msgid "A JS library for interactive maps"
+msgstr "JS-библиотека для интерактивных карт"
+
+#. Description of the plugin
+#: leaflet-map.php templates/settings.php:12
+msgid "A plugin for creating a Leaflet JS map with a shortcode. Boasts two free map tile services and three free geocoders."
+msgstr "Плагин для создания JS-карты листовки с short code. Может похвастаться двумя бесплатными сервисами картографических плиток и тремя бесплатными геокодерами."
+
+#: class.plugin-settings.php:327
+msgid "Attribution to a custom tile url.  Use semi-colons (;) to separate multiple."
+msgstr "Присвоение URL-адреса пользовательской плитки.  Используйте точки с запятой (;) для разделения нескольких."
+
+#: templates/shortcode-helper.php:82
+msgid "Basic Lines w/Scrollwheel"
+msgstr "Основные линии с колесом прокрутки"
+
+#: class.plugin-settings.php:233
+msgid "blog post"
+msgstr "запись в блоге"
+
+#. Author of the plugin
+#: leaflet-map.php
+msgid "bozdoz"
+msgstr "bozdoz"
+
+#: class.plugin-settings.php:208
+msgid "Choose a tiling service or provide your own."
+msgstr "Выберите сервис с плитками или укажите свой."
+
+#: templates/settings.php:169
+msgid "Clear Geocoder Cache"
+msgstr "Очистить кэш геокодера"
+
+#: class.plugin-settings.php:324
+msgid "contributors"
+msgstr "составители"
+
+#: class.plugin-settings.php:220
+msgid "Create a new app"
+msgstr "Создайте новое приложение"
+
+#: class.plugin-settings.php:314
+msgid "CSS URL"
+msgstr "CSS URL"
+
+#: class.plugin-settings.php:320
+msgid "Default Attribution"
+msgstr "Атрибуты по умолчанию"
+
+#: class.plugin-settings.php:187
+msgid "Default Max Zoom"
+msgstr "Максимальный масштаб по умолчанию"
+
+#: class.plugin-settings.php:201
+msgid "Default Tiling Service"
+msgstr "Сервис плиток по-умолчанию"
+
+#: class.plugin-settings.php:345
+msgid "Denmark Addresses"
+msgstr "Датские адреса"
+
+#: templates/shortcode-helper.php:103
+msgid "Disable all Interaction"
+msgstr "Отключить всё взаимодействие"
+
+#: templates/shortcode-helper.php:32
+msgid "Drag Me"
+msgstr "Тащи меня"
+
+#: templates/shortcode-helper.php:59
+msgid "Draggable Marker"
+msgstr "Перемещаемый маркер"
+
+#: templates/shortcode-helper.php:46
+msgid "Examples"
+msgstr "Примеры"
+
+#: templates/shortcode-helper.php:95
+msgid "Fitted Colored Line on Addresses"
+msgstr "Встроенная Цветная линия на адресах"
+
+#: class.plugin-settings.php:339
+msgid "Geocoder"
+msgstr "Геокодер"
+
+#: class.plugin-settings.php:344
+msgid "Google Maps"
+msgstr "Карты Google"
+
+#: class.plugin-settings.php:231 class.plugin-settings.php:370
+msgid "here"
+msgstr "здесь"
+
+#. Plugin URI of the plugin
+#: leaflet-map.php
+msgid "https://wordpress.org/plugins/leaflet-map/"
+msgstr "https://ru.wordpress.org/plugins/leaflet-map/"
+
+#: class.plugin-settings.php:205
+msgid "I will provide my own map tile URL"
+msgstr "Я укажу свой собственный URL тайлов"
+
+#: class.plugin-settings.php:217
+msgid "If you choose MapQuest, you must provide an API key."
+msgstr "Если вы выберете MapQuest, вам надо будет указать ключ API."
+
+#: class.plugin-settings.php:311
+msgid "If you host your own Leaflet files, then paste the URL here."
+msgstr "Если вы размещаете свои собственные файлы Leaflet, вставьте URL-адрес здесь."
+
+#: templates/shortcode-helper.php:41
+msgid "Interactive Shortcodes:"
+msgstr "Интерактивные шорткоды"
+
+#: class.plugin-settings.php:308
+msgid "JavaScript URL"
+msgstr "JavaScript URL"
+
+#. Plugin Name of the plugin
+#: leaflet-map.php
+msgid "Leaflet Map"
+msgstr "Leaflet Map"
+
+#: templates/shortcode-helper.php:78
+msgid "Links In Marker Messages (visible)"
+msgstr "Ссылки в сообщениях с маркерами (отображать)"
+
+#: templates/settings.php:77
+msgid "Location caches have been cleared!"
+msgstr "Кэш координат был очищен!"
+
+#: templates/shortcode-helper.php:53
+msgid "Many Markers!"
+msgstr "Много маркеров!"
+
+#: templates/shortcode-helper.php:43
+msgid "Map Shortcode"
+msgstr "Шорткод карты"
+
+#: class.plugin-settings.php:225
+msgid "Map Tile URL"
+msgstr "URL тайлов карты"
+
+#: class.plugin-settings.php:238
+msgid "Map Tile URL Subdomains"
+msgstr "Поддомены URL-адресов плитки карты"
+
+#: class.plugin-settings.php:206
+msgid "MapQuest (I have an API key)"
+msgstr "MapQuest (у меня есть ключ API)"
+
+#: templates/shortcode-helper.php:63
+msgid "Marker Icon"
+msgstr "Значок маркера"
+
+#: templates/shortcode-helper.php:74
+msgid "Marker Popup Messages (on click)"
+msgstr "Маркер всплывающих сообщений (по щелчку)"
+
+#: templates/shortcode-helper.php:44
+msgid "Marker Shortcode"
+msgstr "Шорткод маркера"
+
+#: templates/shortcode-helper.php:99
+msgid "More Crazy Line Attributes"
+msgstr "Больше безумных атрибутов линий"
+
+#: templates/shortcode-helper.php:42
+msgid "Move the map and the marker to generate shortcodes below:"
+msgstr "Перемещайте карту и маркер, чтобы создать шорткоды (см. ниже)"
+
+#: class.plugin-settings.php:343
+msgid "OpenStreetMap Nominatim"
+msgstr "OpenStreetMap Nominatim"
+
+#: templates/settings.php:69
+msgid "Options have been reset to default values!"
+msgstr "Настройки сброшены к стандартным!"
+
+#: templates/settings.php:62
+msgid "Options Updated!"
+msgstr "Настройки обновлены!"
+
+#: class.plugin-settings.php:232
+msgid "Please note: free tiles from MapQuest have been discontinued without use of an API key"
+msgstr "Обратите внимание: бесплатные тайлы MapQuest больше недоступны без ключа API"
+
+#: templates/settings.php:164
+msgid "Reset to Defaults"
+msgstr "Вернуть стандартные настройки"
+
+#: class.plugin-settings.php:182
+msgid "Restrict the viewer from zooming in past the minimum zoom.  Can set per map in shortcode or adjust for all maps here."
+msgstr "Запретить масштабировать мельче минимального масштаба. Можно задать индивидуально с помощью шорткода или для всех карт — здесь."
+
+#: class.plugin-settings.php:195
+msgid "Restrict the viewer from zooming out past the maximum zoom.  Can set per map in shortcode or adjust for all maps here"
+msgstr "Запретить масштабировать крупнее максимального масштаба. Можно задать индивидуально с помощью шорткода или для всех карт — здесь."
+
+#: class.plugin-settings.php:317
+msgid "Same as above."
+msgstr "То же, что и выше"
+
+#: templates/settings.php:159
+msgid "Save Changes"
+msgstr "Сохранить изменения"
+
+#: class.plugin-settings.php:230
+msgid "See more tile servers"
+msgstr "Смотрите больше серверов плиток"
+
+#: class.plugin-settings.php:347
+msgid "Select the Geocoding provider to use to retrieve addresses defined in shortcode."
+msgstr "Выберите поставщика геокодирования, который будет использоваться для извлечения адресов, определенных в short code."
+
+#: class.admin.php:84 templates/settings.php:122
+msgid "Settings"
+msgstr "Настройки"
+
+#: class.plugin-settings.php:218
+msgid "Sign up"
+msgstr "Зарегистрироваться"
+
+#: templates/shortcode-helper.php:50
+msgid "Standard"
+msgstr "Стандартная"
+
+#: class.plugin-settings.php:212
+msgid "Supply an API key if you choose MapQuest"
+msgstr "Укажите ключ API, если вы выберете MapQuest"
+
+#: class.plugin-settings.php:219
+msgid "then"
+msgstr "затем"
+
+#: class.plugin-settings.php:221
+msgid "then supply the \"Consumer Key\" here."
+msgstr "затем укажите здесь \"Ключ потребителя\"."
+
+#: templates/shortcode-helper.php:71
+msgid "Zoom Buttons"
+msgstr "Кнопки масштабирования"

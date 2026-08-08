@@ -1,0 +1,16 @@
+
+
+# Composer dependencies (run composer install locally)
+#wordpress/wp-content/plugins/*/vendor/
+#wordpress/wp-content/mu-plugins/*/vendor/
+
+# MCP config (may contain sensitive tokens)
+.mcp.json
+#07072026.sql
+# Local/temp files
+graphify-out/
+*.log
+backups/
+mysql/
+mysql/data/
+wordpress/wp-content/uploads/iawp-geo-db.mmdb

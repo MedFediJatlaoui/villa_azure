@@ -1,0 +1,693 @@
+# Translation of Plugins - Image Optimizer &#8211; Optimize Images and Convert to WebP or AVIF - Stable (latest release) in Russian
+# This file is distributed under the same license as the Plugins - Image Optimizer &#8211; Optimize Images and Convert to WebP or AVIF - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2026-01-01 10:59:57+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
+"X-Generator: GlotPress/4.0.3\n"
+"Language: ru\n"
+"Project-Id-Version: Plugins - Image Optimizer &#8211; Optimize Images and Convert to WebP or AVIF - Stable (latest release)\n"
+
+#: modules/reviews/module.php:218
+msgid "Rate our plugin"
+msgstr "Оценить наш плагин"
+
+#: modules/deactivation/module.php:184
+msgid "Insufficient permissions"
+msgstr "Недостаточно разрешений"
+
+#: modules/deactivation/module.php:105
+msgid "It's too expensive"
+msgstr "Это слишком дорого"
+
+#: modules/deactivation/module.php:148
+msgid "Other"
+msgstr "Другой"
+
+#: modules/deactivation/module.php:178
+msgid "Security check failed"
+msgstr "Проверка безопасности не удалась"
+
+#: modules/deactivation/module.php:159
+msgid "Skip & Deactivate"
+msgstr "Пропустить и деактивировать"
+
+#: modules/deactivation/module.php:162
+msgid "Submit & Deactivate"
+msgstr "Отправить и деактивировать"
+
+#: modules/optimization/templates/details-view/optimized.php:40
+#: modules/optimization/templates/list-view/optimized.php:27
+#: modules/optimization/templates/meta-box/optimized.php:36
+#: assets/build/control.js:15
+#: modules/optimization/assets/js/templates/details-view/index.js:109
+#: modules/optimization/assets/js/templates/list-view/index.js:63
+#: modules/optimization/assets/js/templates/meta-box/index.js:85
+msgid "Open optimization details"
+msgstr "Открыть детали оптимизации"
+
+#: modules/core/components/not-connected-modal.php:36
+msgid "Works across unlimited websites"
+msgstr "Работает на неограниченном количестве веб-сайтов"
+
+#: modules/core/components/not-connected-modal.php:35
+msgid "Convert to AVIF and WebP formats"
+msgstr "Преобразование в форматы AVIF и WebP"
+
+#: modules/core/components/not-connected-modal.php:34
+msgid "Bulk optimization for faster processing"
+msgstr "Массовая оптимизация для ускорения обработки"
+
+#: modules/core/components/not-connected-modal.php:33
+msgid "Boost site speed and compress images"
+msgstr "Повышение скорости работы сайта и сжатие изображений"
+
+#: modules/core/components/not-connected-modal.php:31
+msgid "Connect the Image Optimizer plugin to speed up your site. We'll handle the rest."
+msgstr "Подключите плагин Image Optimizer, чтобы ускорить работу сайта. Мы позаботимся обо всем остальном."
+
+#: modules/core/components/not-connected-modal.php:30
+msgid "Let's start optimizing your images!"
+msgstr "Давайте начнем оптимизировать ваши изображения!"
+
+#: modules/core/components/renewal-notice.php:50
+msgid "Renew and Optimize"
+msgstr "Обновление и оптимизация"
+
+#: modules/core/components/renewal-notice.php:49
+msgid "Reactivate your license to get back to top image performance."
+msgstr "Активируйте свою лицензию, чтобы вернуться к максимальной производительности изображения."
+
+#: modules/core/components/renewal-notice.php:48
+msgid "It’s Not Too Late! Renew Image Optimizer"
+msgstr "Еще не поздно! Обновить оптимизатор изображений"
+
+#: modules/core/components/renewal-notice.php:43
+msgid "Renew Now"
+msgstr "Обновить сейчас"
+
+#: modules/core/components/renewal-notice.php:42
+msgid "Renew your license today to continue enjoying premium image optimization and fast load times."
+msgstr "Продлите лицензию сегодня, чтобы и дальше наслаждаться премиальной оптимизацией изображений и быстрой загрузкой."
+
+#: modules/core/components/renewal-notice.php:41
+msgid "Image Optimizer Has Expired!"
+msgstr "Срок действия оптимизатора изображений истек!"
+
+#: modules/core/components/renewal-notice.php:35
+msgid "Turn Auto Renew On"
+msgstr "Включить автообновление"
+
+#: modules/core/components/renewal-notice.php:34
+msgid "Renew your subscription to maintain optimized images, faster website load times, and high performance."
+msgstr "Продлите подписку, чтобы поддерживать оптимизированные изображения, ускоренную загрузку сайта и высокую производительность."
+
+#: modules/core/components/renewal-notice.php:33
+msgid "Image Optimizer Expires Soon!"
+msgstr "Срок действия оптимизатора изображений истекает!"
+
+#. Description of the plugin
+#: image-optimization.php
+msgid "Automatically resize, optimize, and convert images to WebP and AVIF. Compress images in bulk or on upload to boost your WordPress site performance."
+msgstr "Автоматически изменяйте размер, оптимизируйте и конвертируйте изображения в WebP и AVIF. Сжимайте изображения массово или при загрузке, чтобы повысить производительность сайта WordPress."
+
+#. Plugin Name of the plugin
+#: image-optimization.php
+msgid "Image Optimizer - Compress, Resize and Optimize Images"
+msgstr "Image Optimizer - сжатие, изменение размеров и оптимизация изображений"
+
+#: classes/client/client-response.php:45
+#: modules/optimization/classes/optimization-error-message.php:31
+#: assets/build/admin.js:183
+msgid "Connection error"
+msgstr "Ошибка соединения"
+
+#: modules/optimization/classes/validate-image.php:80
+msgid "Unsupported file format. Only %1$s, or %2$s are supported"
+msgstr "Неподдерживаемый формат файла. Поддерживаются только %1$s или %2$s"
+
+#: modules/core/module.php:179 assets/build/admin.js:168
+#: assets/build/admin.js:195
+msgid "Fix mismatched URL"
+msgstr "Исправьте несовпадение URL-адресов"
+
+#: modules/core/module.php:173
+msgid "This is most likely due to a change in the domain URL of your site (including HTTP/SSL migration)."
+msgstr "Скорее всего, это связано с изменением URL-адреса домена вашего сайта (включая перенос HTTP/SSL)."
+
+#: modules/core/module.php:166
+msgid "Your license key does not match your current domain, causing a mismatch."
+msgstr "Ваш лицензионный ключ не соответствует текущему домену, что вызывает несоответствие."
+
+#. Author URI of the plugin
+#: image-optimization.php
+msgid "https://go.elementor.com/author-uri-io/"
+msgstr "https://go.elementor.com/author-uri-io/"
+
+#: modules/optimization/templates/details-view/optimized.php:53
+#: modules/optimization/templates/list-view/optimized.php:38
+#: modules/optimization/templates/meta-box/optimized.php:47
+msgid "Requested WebP format is larger than the original file. Switch to Lossy in settings to convert this image in an optimized manner."
+msgstr "Запрашиваемый формат WebP больше исходного файла. Переключитесь на Lossy в настройках, чтобы преобразовать это изображение в оптимизированном виде."
+
+#: modules/core/components/not-connected-modal.php:29
+#: modules/core/components/not-connected.php:40
+msgid "Connect now"
+msgstr "Подключиться сейчас"
+
+#: image-optimization.php:79
+msgid "Show me how"
+msgstr "Покажи мне, как"
+
+#. translators: %s: PHP version.
+#: image-optimization.php:76
+msgid "Update to PHP version %s and get back to optimizing!"
+msgstr "Обновите PHP до версии %s и возвращайтесь к оптимизации!"
+
+#: classes/rest/route.php:286
+msgid "No route was found matching the URL and request method"
+msgstr "Подходящий маршрут для URL и метода запроса не найден"
+
+#: modules/core/components/not-connected.php:32
+msgid "Image Optimizer is not connected right now. To start optimizing your images, please connect your account."
+msgstr "Image Optimizer сейчас не подключен. Чтобы начать оптимизацию изображений, подключите свой аккаунт."
+
+#: modules/optimization/components/bulk-optimization.php:166
+msgid "Bulk optimizing may take a lot of processing and server time, depending on the number of images. Your site will still work smoothly until the processing is all done, without any downtime."
+msgstr "Массовая оптимизация может занять много времени на обработку и сервер, в зависимости от количества изображений. До окончания обработки ваш сайт будет работать без сбоев."
+
+#: modules/optimization/components/bulk-optimization.php:159
+msgid "Heads up!"
+msgstr "Предупреждение!"
+
+#: modules/core/components/user-feedback.php:236
+msgid ""
+"<b>Found Image Optimizer helpful?</b> Leave us a <a href=\"%1$s\" aria-label=\"%2$s\" target=\"_blank\"\n"
+"\t\t\t\trel=\"noopener noreferrer\">★★★★★</a> rating!"
+msgstr ""
+"<b>Нашли Image Optimizer полезным?</b> Оставьте нам оценку <a href=\"%1$s\" aria-label=\"%2$s\" target=\"_blank\"\n"
+"\t\t\t\trel=\"noopener noreferrer\">★★★★★</a>!"
+
+#: modules/core/components/user-feedback.php:176
+msgid ""
+"If you've enjoyed it, consider leaving a <a href=\"%1$s\" aria-label=\"%2$s\" target=\"_blank\"\n"
+"\t\t\t\trel=\"noopener noreferrer\">★★★★★</a> review to spread the word."
+msgstr ""
+"Если вам понравилась эта книга, оставьте отзыв на <a href=\"%1$s\" aria-label=\"%2$s\" target=\"_blank\"\n"
+"\t\t\t\trel=\"noopener noreferrer\">сайте ★★★★★</a>, чтобы распространить информацию о ней."
+
+#: modules/core/components/user-feedback.php:168
+msgid "Thanks for using Image Optimizer!"
+msgstr "Спасибо за использование Image Optimizer!"
+
+#: modules/core/components/user-feedback.php:104
+msgid ""
+"If you enjoyed using Image Optimizer, consider leaving a <a href=\"%1$s\" aria-label=\"%2$s\" target=\"_blank\"\n"
+"\t\t\t\trel=\"noopener noreferrer\">★★★★★</a> review to spread the word."
+msgstr ""
+"Если вам понравилось использовать Image Optimizer, оставьте отзыв на <a href=\"%1$s\" aria-label=\"%2$s\" target=\"_blank\"\n"
+"\t\t\t\trel=\"noopener noreferrer\">★★★★★</a>, чтобы распространить информацию о нем."
+
+#: modules/core/components/user-feedback.php:96
+msgid "Your image has been optimized!"
+msgstr "Ваше изображение было оптимизировано!"
+
+#: modules/core/components/user-feedback.php:110
+#: modules/core/components/user-feedback.php:182
+#: modules/core/components/user-feedback.php:241
+msgid "Five stars"
+msgstr "Пять звезд"
+
+#: image-optimization.php:177
+msgid "Image Optimizer isn’t running because:"
+msgstr "Оптимизатор изображений не работает, потому что:"
+
+#: image-optimization.php:113
+msgid "Your site doesn’t have the necessary read/write permissions for your file system to use this plugin. Please contact your hosting provider to resolve this matter."
+msgstr "Ваш сайт не имеет необходимых прав на чтение/запись в файловой системе для использования этого плагина. Пожалуйста, свяжитесь с вашим хостинг-провайдером, чтобы решить этот вопрос."
+
+#. translators: 1: MySQL minimum version. 2: MariaDB minimum version.
+#: image-optimization.php:99
+msgid "The database server version is outdated. Update to MySQL version %1$s or MariaDB version %2$s."
+msgstr "Версия сервера базы данных устарела. Обновите версию MySQL до версии %1$s или MariaDB до версии %2$s."
+
+#: image-optimization.php:89
+msgid "The following required PHP extensions are missing: %s"
+msgstr "Отсутствуют следующие необходимые расширения PHP: %s"
+
+#: modules/optimization/rest/get-bulk-optimization-images.php:34
+msgid "Missed operation id"
+msgstr "Идентификатор пропущенной операции"
+
+#: modules/optimization/classes/optimize-image.php:198
+#: modules/optimization/classes/optimize-image.php:206
+msgid "Service response is incorrect"
+msgstr "Неверный ответ службы"
+
+#: modules/optimization/classes/optimization-error-message.php:28
+msgid "File with this name already exists"
+msgstr "Файл с таким именем уже существует"
+
+#: modules/core/module.php:95 modules/core/module.php:141
+msgid "Upgrade plan now"
+msgstr "Обновить план прямо сейчас"
+
+#: modules/core/module.php:89
+msgid "You have no images left to optimize in your current plan."
+msgstr "У вас не осталось изображений для оптимизации в текущем плане."
+
+#: modules/core/module.php:82
+msgid "You’ve reached your plan quota."
+msgstr "Вы достигли своей плановой нормы."
+
+#: classes/client/client-response.php:44
+msgid "Image already optimized"
+msgstr "Изображение уже оптимизировано"
+
+#: classes/client/client-response.php:43
+msgid "Bulk token expired"
+msgstr "Срок действия массового маркера истек"
+
+#: modules/optimization/templates/details-view/optimized.php:55
+#: modules/optimization/templates/list-view/optimized.php:40
+#: modules/optimization/templates/meta-box/optimized.php:49
+#: assets/build/control.js:15
+#: modules/optimization/assets/js/templates/details-view/index.js:127
+#: modules/optimization/assets/js/templates/list-view/index.js:72
+#: modules/optimization/assets/js/templates/meta-box/index.js:99
+msgid "Image is fully optimized"
+msgstr "Изображение полностью оптимизировано"
+
+#: modules/optimization/classes/single-optimization.php:45
+msgid "Optimization is already in progress"
+msgstr "Оптимизация уже идет"
+
+#: classes/client/client-response.php:42
+#: modules/optimization/classes/optimization-error-message.php:29
+msgid "Plan quota reached"
+msgstr "Квота по плану достигнута"
+
+#. Plugin URI of the plugin
+#: image-optimization.php
+msgid "https://go.elementor.com/wp-repo-description-tab-io-product-page/"
+msgstr "https://go.elementor.com/wp-repo-description-tab-io-product-page/"
+
+#: modules/core/components/not-connected-modal.php:42 assets/build/admin.js:168
+#: assets/build/admin.js:195
+msgid "Connect to start"
+msgstr "Подключение для запуска"
+
+#: modules/settings/components/settings-pointer.php:33
+msgid "Head over to the Image Optimization Settings to fine-tune how your media uploads are managed."
+msgstr "Перейдите к настройкам оптимизации изображений, чтобы точно настроить управление загрузкой медиафайлов."
+
+#: modules/optimization/templates/list-view/loading.php:31
+#: assets/build/control.js:15
+#: modules/optimization/assets/js/templates/list-view/index.js:32
+msgid "Loading…"
+msgstr "Загрузка…"
+
+#: modules/optimization/templates/list-view/loading.php:27
+#: assets/build/control.js:15
+#: modules/optimization/assets/js/templates/list-view/index.js:28
+msgid "Reoptimizing…"
+msgstr "Переоптимизация…"
+
+#: modules/optimization/templates/list-view/loading.php:23
+#: assets/build/control.js:15
+#: modules/optimization/assets/js/templates/list-view/index.js:24
+msgid "Optimizing…"
+msgstr "Оптимизация…"
+
+#: modules/optimization/templates/list-view/loading.php:19
+#: assets/build/admin.js:183 assets/build/control.js:15
+#: modules/optimization/assets/js/templates/list-view/index.js:20
+msgid "Restoring…"
+msgstr "Восстановление…"
+
+#: modules/optimization/templates/details-view/optimized.php:82
+#: modules/optimization/templates/list-view/optimized.php:69
+#: modules/optimization/templates/meta-box/optimized.php:78
+#: assets/build/control.js:15
+#: modules/optimization/assets/js/templates/details-view/index.js:137
+#: modules/optimization/assets/js/templates/list-view/index.js:85
+#: modules/optimization/assets/js/templates/meta-box/index.js:114
+msgid "Reoptimize"
+msgstr "Переоптимизируйте"
+
+#: modules/optimization/templates/details-view/optimized.php:67
+#: modules/optimization/templates/list-view/optimized.php:50
+#: modules/optimization/templates/meta-box/optimized.php:59
+msgid "%1$s%% (%2$s)"
+msgstr "%1$s%% (%2$s)"
+
+#: modules/optimization/templates/details-view/optimized.php:61
+#: modules/optimization/templates/list-view/optimized.php:45
+#: modules/optimization/templates/meta-box/optimized.php:54
+#: assets/build/control.js:15
+#: modules/optimization/assets/js/templates/details-view/index.js:118
+#: modules/optimization/assets/js/templates/list-view/index.js:71
+#: modules/optimization/assets/js/templates/meta-box/index.js:95
+msgid "Overall saving"
+msgstr "Общая экономия"
+
+#: modules/optimization/templates/details-view/optimized.php:28
+#: modules/optimization/templates/list-view/optimized.php:17
+#: modules/optimization/templates/meta-box/optimized.php:25
+#: assets/build/control.js:15
+#: modules/optimization/assets/js/templates/details-view/index.js:101
+#: modules/optimization/assets/js/templates/list-view/index.js:56
+#: modules/optimization/assets/js/templates/meta-box/index.js:78
+msgid "Image sizes optimized"
+msgstr "Оптимизация размеров изображений"
+
+#: modules/optimization/templates/details-view/not-optimized.php:27
+#: modules/optimization/templates/list-view/not-optimized.php:13
+#: modules/optimization/templates/meta-box/not-optimized.php:22
+#: assets/build/control.js:15
+#: modules/optimization/assets/js/templates/details-view/index.js:24
+#: modules/optimization/assets/js/templates/list-view/index.js:10
+#: modules/optimization/assets/js/templates/meta-box/index.js:19
+msgid "Optimize now"
+msgstr "Оптимизируйте сейчас"
+
+#: modules/optimization/templates/details-view/not-optimized.php:17
+#: modules/optimization/templates/meta-box/not-optimized.php:15
+#: assets/build/control.js:15 assets/build/control.js:24
+#: modules/optimization/assets/js/templates/details-view/index.js:14
+#: modules/optimization/assets/js/templates/meta-box/index.js:12
+#: modules/optimization/assets/js/templates/optimization-details/index.js:88
+msgid "Not optimized"
+msgstr "Не оптимизировано"
+
+#: modules/optimization/templates/details-view/loading.php:18
+#: modules/optimization/templates/meta-box/loading.php:16
+#: assets/build/control.js:15
+#: modules/optimization/assets/js/templates/details-view/index.js:39
+#: modules/optimization/assets/js/templates/meta-box/index.js:31
+msgid "In Progress"
+msgstr "В процессе"
+
+#: modules/optimization/templates/details-view/error.php:56
+#: modules/optimization/templates/details-view/error.php:74
+#: modules/optimization/templates/list-view/error.php:49
+#: modules/optimization/templates/list-view/error.php:67
+#: modules/optimization/templates/meta-box/error.php:49
+#: modules/optimization/templates/meta-box/error.php:67
+#: assets/build/admin.js:168 assets/build/admin.js:183
+#: assets/build/control.js:15
+#: modules/optimization/assets/js/templates/common/index.js:21
+#: modules/optimization/assets/js/templates/common/index.js:41
+msgid "Try again"
+msgstr "Попробуйте еще раз"
+
+#: modules/optimization/templates/details-view/error.php:31
+#: modules/optimization/templates/meta-box/error.php:28
+#: assets/build/control.js:15
+#: modules/optimization/assets/js/templates/details-view/index.js:67
+#: modules/optimization/assets/js/templates/meta-box/index.js:52
+msgid "Reason"
+msgstr "Причина"
+
+#: modules/optimization/templates/details-view/error.php:25
+#: modules/optimization/templates/meta-box/error.php:23
+#: assets/build/control.js:15
+#: modules/optimization/assets/js/templates/details-view/index.js:61
+#: modules/optimization/assets/js/templates/meta-box/index.js:47
+msgid "Error"
+msgstr "Ошибка"
+
+#: modules/optimization/rest/optimize-bulk.php:89
+msgid "Bulk re-optimization is already in progress"
+msgstr "Массовая переоптимизация уже проводится"
+
+#: modules/optimization/templates/details-view/error.php:21
+#: modules/optimization/templates/details-view/loading.php:14
+#: modules/optimization/templates/details-view/not-optimized.php:13
+#: modules/optimization/templates/details-view/optimized.php:18
+#: modules/optimization/templates/meta-box/error.php:20
+#: modules/optimization/templates/meta-box/loading.php:13
+#: modules/optimization/templates/meta-box/not-optimized.php:12
+#: modules/optimization/templates/meta-box/optimized.php:17
+#: assets/build/admin.js:186 assets/build/control.js:15
+#: modules/optimization/assets/js/templates/details-view/index.js:10
+#: modules/optimization/assets/js/templates/details-view/index.js:35
+#: modules/optimization/assets/js/templates/details-view/index.js:57
+#: modules/optimization/assets/js/templates/details-view/index.js:91
+#: modules/optimization/assets/js/templates/meta-box/index.js:9
+#: modules/optimization/assets/js/templates/meta-box/index.js:28
+#: modules/optimization/assets/js/templates/meta-box/index.js:44
+#: modules/optimization/assets/js/templates/meta-box/index.js:70
+msgid "Status"
+msgstr "Статус"
+
+#: modules/optimization/rest/optimize-bulk.php:71
+msgid "Bulk optimization is already in progress"
+msgstr "Массовая оптимизация уже проводится"
+
+#: modules/optimization/rest/cancel-bulk-optimization.php:48
+msgid "Bulk optimization is not in progress"
+msgstr "Массовая оптимизация не проводится"
+
+#: modules/optimization/rest/cancel-bulk-optimization.php:38
+#: modules/optimization/rest/optimize-bulk.php:41
+#: modules/optimization/rest/optimize-single-image.php:40
+msgid "Invalid activation"
+msgstr "Неверная активация"
+
+#: modules/optimization/components/media-control.php:258
+msgid "Image restoring error"
+msgstr "Ошибка восстановления изображения"
+
+#: modules/optimization/classes/optimization-error-message.php:30
+msgid "Optimization error"
+msgstr "Ошибка оптимизации"
+
+#: modules/optimization/components/media-control.php:58
+#: modules/optimization/components/media-control.php:86
+#: assets/build/admin.js:358
+msgid "Image optimization"
+msgstr "Оптимизация изображений"
+
+#: modules/optimization/components/list-view-pointer.php:28
+msgid "Get the most out of your optimizing options. Use the List view to quickly optimize your uploaded images with Image Optimizer."
+msgstr "Используйте максимум возможностей для оптимизации. Используйте вид списка, чтобы быстро оптимизировать загруженные изображения с помощью Image Optimizer."
+
+#: modules/optimization/components/list-view-pointer.php:27
+msgid "Switch to list view"
+msgstr "Переключение в виде списка"
+
+#: modules/core/module.php:417
+msgid "Bulk Optimization"
+msgstr "Массовая оптимизация"
+
+#: modules/optimization/components/admin-filter.php:28
+msgid "Filter by optimization status"
+msgstr "Фильтр по статусу оптимизации"
+
+#: modules/optimization/components/admin-filter.php:22
+msgid "Errors"
+msgstr "Ошибки"
+
+#: modules/optimization/components/admin-filter.php:21 assets/build/admin.js:1
+msgid "In progress"
+msgstr "В процессе"
+
+#: modules/optimization/components/admin-filter.php:18
+msgid "All Media Files"
+msgstr "Все медиафайлы"
+
+#: modules/optimization/components/admin-bulk-actions.php:15
+#: modules/optimization/templates/details-view/optimized.php:94
+#: modules/optimization/templates/list-view/optimized.php:63
+#: modules/optimization/templates/meta-box/optimized.php:72
+#: assets/build/control.js:15
+#: modules/optimization/assets/js/templates/details-view/index.js:149
+#: modules/optimization/assets/js/templates/list-view/index.js:79
+#: modules/optimization/assets/js/templates/meta-box/index.js:108
+msgid "Restore original"
+msgstr "Восстановить оригинал"
+
+#: modules/optimization/components/admin-bulk-actions.php:14
+#: assets/build/control.js:24
+#: modules/optimization/assets/js/templates/optimization-details/index.js:96
+msgid "Optimize"
+msgstr "Оптимизировать"
+
+#. Translators: %s - max file size
+#: modules/optimization/classes/validate-image.php:105
+#: modules/optimization/classes/validate-image.php:114
+#: assets/build/control.js:27
+#: modules/optimization/assets/js/templates/optimization-details/index.js:117
+msgid "File is too large. Max size is %s"
+msgstr "Файл слишком большой. Максимальный размер - %s"
+
+#: modules/optimization/classes/validate-image.php:39
+msgid "Can't optimize this file. If the issue persists, Contact Support"
+msgstr "Не удается оптимизировать этот файл. Если проблема сохраняется, обратитесь в службу поддержки"
+
+#: modules/optimization/classes/validate-image.php:55
+#: modules/optimization/classes/validate-image.php:97
+msgid "File is missing. Verify the upload"
+msgstr "Файл отсутствует. Проверьте загрузку"
+
+#: modules/optimization/classes/optimization-error-message.php:16
+msgid "Image reoptimizing failed"
+msgstr "Переоптимизация изображения не удалась"
+
+#: modules/optimization/classes/optimization-status.php:56
+msgid "Image restoring failed"
+msgstr "Восстановление изображения не удалось"
+
+#: modules/optimization/classes/bulk-optimization-controller.php:133
+msgid "Images quota exceeded"
+msgstr "Квота изображений превышена"
+
+#: modules/oauth/rest/connect-init.php:38
+msgid "You are already connected"
+msgstr "Вы уже подключены"
+
+#: modules/oauth/components/connect.php:155
+#: modules/oauth/components/connect.php:231
+#: modules/oauth/components/connect.php:273
+#: modules/oauth/components/connect.php:301
+msgid "Invalid response from server"
+msgstr "Неверный ответ от сервера"
+
+#: modules/oauth/rest/activate.php:52 modules/oauth/rest/deactivate.php:45
+msgid "Missing license key"
+msgstr "Отсутствующий лицензионный ключ"
+
+#: modules/oauth/rest/activate.php:38 modules/oauth/rest/deactivate.php:38
+#: modules/oauth/rest/get-subscriptions.php:38
+msgid "Please connect first"
+msgstr "Пожалуйста, сначала подключитесь"
+
+#: modules/oauth/components/connect-pointer.php:28
+msgid "You’re one click away from improving your site’s performance dramatically!"
+msgstr "Всего один клик - и вы сможете значительно повысить производительность своего сайта!"
+
+#: modules/oauth/components/connect-pointer.php:27
+msgid "Start by connecting your license"
+msgstr "Начните с подключения лицензии"
+
+#: modules/core/module.php:209
+#: modules/optimization/templates/details-view/error.php:67
+#: modules/optimization/templates/list-view/error.php:60
+#: modules/optimization/templates/meta-box/error.php:60
+#: assets/build/control.js:15 assets/build/control.js:27
+#: modules/optimization/assets/js/templates/common/index.js:34
+#: modules/optimization/assets/js/templates/optimization-details/index.js:134
+msgid "Upgrade"
+msgstr "Обновить"
+
+#: modules/core/module.php:216
+#: modules/optimization/templates/details-view/error.php:49
+#: modules/optimization/templates/list-view/error.php:42
+#: modules/optimization/templates/meta-box/error.php:42
+#: assets/build/control.js:15
+#: modules/optimization/assets/js/templates/common/index.js:14
+msgid "Connect"
+msgstr "Подключить"
+
+#: modules/core/module.php:199 assets/build/admin.js:186
+#: assets/build/admin.js:195
+msgid "Settings"
+msgstr "Настройки"
+
+#: modules/core/components/conflicts.php:58
+msgid "Deactivate All"
+msgstr "Деактивировать все"
+
+#: modules/core/components/conflicts.php:38
+msgid "Having more than one may result in unexpected results."
+msgstr "Наличие более одного может привести к неожиданным результатам."
+
+#: modules/backups/rest/restore-single.php:40
+#: modules/optimization/rest/optimize-single-image.php:50
+msgid "Invalid image id"
+msgstr "Неверный идентификатор изображения"
+
+#: classes/rest/route.php:390 classes/rest/route.php:405 classes/route.php:364
+msgid "You do not have sufficient permissions to access this data."
+msgstr "У вас нет достаточных прав для доступа к этим данным."
+
+#: classes/rest/route.php:381 classes/route.php:353
+msgid "Invalid nonce"
+msgstr "Неверный код"
+
+#: classes/rest/route.php:374 classes/route.php:346
+#: modules/optimization/components/media-control.php:291
+msgid "Internal server error"
+msgstr "Внутренняя ошибка сервера"
+
+#: classes/rest/route.php:367 classes/route.php:339
+msgid "Both `message` and `code` keys must be provided"
+msgstr "Оба ключа `message` и `code` должны быть предоставлены"
+
+#: classes/module-base.php:122 classes/module-base.php:133
+msgid "Something went wrong."
+msgstr "Что-то пошло не так."
+
+#. translators: %s: file size in gigabytes
+#: classes/file-utils.php:93 assets/build/admin.js:166
+#: assets/build/control.js:13 modules/optimization/assets/js/utils/index.js:12
+msgid "%s Gb"
+msgstr "%s Гб"
+
+#. translators: %s: file size in megabytes
+#: classes/file-utils.php:92 assets/build/admin.js:163
+#: assets/build/control.js:10 modules/optimization/assets/js/utils/index.js:10
+msgid "%s Mb"
+msgstr "%s Mb"
+
+#. translators: %s: file size in kilobytes
+#: classes/file-utils.php:91 assets/build/admin.js:160
+#: assets/build/control.js:7 modules/optimization/assets/js/utils/index.js:8
+msgid "%s Kb"
+msgstr "%s Kb"
+
+#. translators: %s: file size in bytes
+#: classes/file-utils.php:90 assets/build/admin.js:157
+#: assets/build/admin.js:168 assets/build/control.js:4
+#: assets/build/control.js:15 modules/optimization/assets/js/utils/index.js:6
+#: modules/optimization/assets/js/utils/index.js:17
+msgid "%s Bytes"
+msgstr "%s Байт"
+
+#. Author of the plugin
+#: image-optimization.php
+msgid "Elementor.com"
+msgstr "Elementor.com"
+
+#: modules/core/components/conflicts.php:31
+msgid "Image optimizer has detected multiple active image optimization plugins."
+msgstr "Image optimizer обнаружил несколько активных плагинов для оптимизации изображений."
+
+#: modules/settings/components/settings-pointer.php:32
+msgid "Image Optimizer"
+msgstr "Image Optimizer"
+
+#: modules/settings/components/settings-pointer.php:38
+msgid "Take me there"
+msgstr "Перейти туда"
+
+#: modules/optimization/components/admin-filter.php:20
+msgid "Unoptimized"
+msgstr "Не оптимизировано"
+
+#: modules/optimization/components/admin-filter.php:19
+#: modules/optimization/templates/details-view/optimized.php:22
+#: modules/optimization/templates/meta-box/optimized.php:20
+#: assets/build/admin.js:1 assets/build/control.js:15
+#: modules/optimization/assets/js/templates/details-view/index.js:95
+#: modules/optimization/assets/js/templates/meta-box/index.js:73
+msgid "Optimized"
+msgstr "Оптимизировано"
+
+#: modules/oauth/rest/activate.php:45
+msgid "Already activated"
+msgstr "Уже активировано"

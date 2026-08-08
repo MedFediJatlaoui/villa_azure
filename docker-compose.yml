@@ -1,0 +1,47 @@
+# Pinned so the named volume below always resolves to the same identity
+# (db_data), regardless of what directory this file lives in or is invoked
+# from — otherwise Compose derives the project name from the current folder,
+# which is also what made the old relative bind-mount path (./mysql/data)
+# fragile in the first place.
+name: villa_azure
+
+services:
+  db:
+    image: mariadb:10.4
+    container_name: villa_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wpuser
+      MYSQL_PASSWORD: wppassword
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  wordpress:
+    build: .
+    container_name: villa_wp
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wpuser
+      WORDPRESS_DB_PASSWORD: wppassword
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_HOME', 'http://localhost:8080');
+        define('WP_SITEURL', 'http://localhost:8080');
+        @ini_set('upload_max_filesize', '128M');
+        @ini_set('post_max_size', '128M');
+        @ini_set('memory_limit', '256M');
+    volumes:
+      - ./wordpress/wp-content:/var/www/html/wp-content
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+    depends_on:
+      - db
+
+volumes:
+  db_data:

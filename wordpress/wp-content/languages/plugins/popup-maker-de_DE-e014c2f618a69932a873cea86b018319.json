@@ -1,0 +1,1 @@
+{"translation-revision-date":"2026-07-10 20:50:03+0000","generator":"GlotPress\/4.0.3","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"de"},"Field type `%s` not found":["Feldtyp `%s` nicht gefunden"],"%s(s)":["%s(s)"],"Search":["Suche"]}},"comment":{"reference":"dist\/packages\/fields.js"}}

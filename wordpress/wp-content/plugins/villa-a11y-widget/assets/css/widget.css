@@ -1,0 +1,317 @@
+/* Villa Azur - self-hosted accessibility widget. Brand colors from the Elementor kit. */
+
+@font-face {
+	font-family: 'OpenDyslexic';
+	src: url('../fonts/opendyslexic.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+.villa-a11y-toggle {
+	position: fixed !important;
+	left: 20px !important;
+	bottom: 20px !important;
+	right: auto !important;
+	top: auto !important;
+	z-index: 999999 !important;
+	width: 56px !important;
+	height: 56px !important;
+	min-width: 56px !important;
+	max-width: 56px !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	border-radius: 50% !important;
+	background: #E9A668 !important;
+	color: #1F1F1F !important;
+	border: none !important;
+	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	cursor: pointer !important;
+	transition: transform 0.15s ease, background 0.15s ease !important;
+	text-transform: none !important;
+	line-height: 1 !important;
+}
+
+.villa-a11y-toggle:hover,
+.villa-a11y-toggle:focus-visible {
+	background: #E38C3B !important;
+	transform: scale(1.06) !important;
+}
+
+.villa-a11y-toggle:focus-visible {
+	outline: 3px solid #1F1F1F !important;
+	outline-offset: 2px !important;
+}
+
+.villa-a11y-panel {
+	position: fixed !important;
+	left: 20px !important;
+	right: auto !important;
+	bottom: 88px !important;
+	top: auto !important;
+	z-index: 999999 !important;
+	width: 300px !important;
+	max-width: calc(100vw - 40px) !important;
+	max-height: calc(100vh - 120px) !important;
+	overflow-y: auto !important;
+	background: #FFFFFE !important;
+	border: 1px solid #E7E7E7 !important;
+	border-radius: 16px !important;
+	box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2) !important;
+	padding: 20px !important;
+	font-family: 'Plus Jakarta Sans', sans-serif !important;
+	color: #1F1F1F !important;
+	text-align: left !important;
+}
+
+.villa-a11y-panel[hidden] {
+	display: none;
+}
+
+.villa-a11y-panel__header {
+	display: flex !important;
+	align-items: center !important;
+	justify-content: space-between !important;
+	margin: 0 0 14px !important;
+	padding: 0 !important;
+	width: auto !important;
+}
+
+.villa-a11y-panel__header h2 {
+	font-size: 18px !important;
+	font-weight: 600 !important;
+	line-height: 1.3 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	color: #1F1F1F !important;
+	text-transform: none !important;
+	width: auto !important;
+}
+
+.villa-a11y-panel__header button {
+	background: none !important;
+	border: none !important;
+	font-size: 22px !important;
+	line-height: 1 !important;
+	cursor: pointer !important;
+	color: #727272 !important;
+	padding: 4px 8px !important;
+	margin: 0 !important;
+	width: auto !important;
+	height: auto !important;
+	text-transform: none !important;
+}
+
+.villa-a11y-panel__header button:hover,
+.villa-a11y-panel__header button:focus-visible {
+	color: #1F1F1F !important;
+}
+
+.villa-a11y-group {
+	margin: 0 0 12px !important;
+	padding: 0 0 12px !important;
+	border-bottom: 1px solid #E7E7E7 !important;
+}
+
+.villa-a11y-group__label {
+	display: block !important;
+	font-size: 13px !important;
+	font-weight: 600 !important;
+	line-height: 1.3 !important;
+	color: #727272 !important;
+	margin: 0 0 8px !important;
+	padding: 0 !important;
+	text-transform: none !important;
+}
+
+.villa-a11y-row {
+	display: flex !important;
+	gap: 8px !important;
+	width: auto !important;
+}
+
+.villa-a11y-row button {
+	flex: 1 1 0% !important;
+	padding: 8px 0 !important;
+	margin: 0 !important;
+	border-radius: 8px !important;
+	border: 1px solid #E7E7E7 !important;
+	background: #FCF2E9 !important;
+	color: #1F1F1F !important;
+	font-size: 14px !important;
+	line-height: 1.3 !important;
+	font-weight: 600 !important;
+	text-transform: none !important;
+	cursor: pointer !important;
+	height: auto !important;
+	width: auto !important;
+}
+
+.villa-a11y-row button:hover,
+.villa-a11y-row button:focus-visible {
+	background: #F3CCA8 !important;
+}
+
+.villa-a11y-toggle-row {
+	width: 100% !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: space-between !important;
+	background: none !important;
+	border: none !important;
+	border-bottom: 1px solid #E7E7E7 !important;
+	padding: 10px 0 !important;
+	margin: 0 !important;
+	font-size: 14px !important;
+	line-height: 1.4 !important;
+	font-weight: 400 !important;
+	color: #1F1F1F !important;
+	cursor: pointer !important;
+	text-align: left !important;
+	text-transform: none !important;
+	height: auto !important;
+}
+
+.villa-a11y-switch {
+	width: 38px !important;
+	height: 22px !important;
+	border-radius: 999px !important;
+	background: #E7E7E7 !important;
+	position: relative !important;
+	flex: none !important;
+	transition: background 0.15s ease !important;
+}
+
+.villa-a11y-switch::after {
+	content: '' !important;
+	position: absolute !important;
+	top: 2px !important;
+	left: 2px !important;
+	width: 18px !important;
+	height: 18px !important;
+	border-radius: 50% !important;
+	background: #fff !important;
+	transition: transform 0.15s ease !important;
+}
+
+.villa-a11y-toggle-row[aria-pressed="true"] .villa-a11y-switch {
+	background: #E9A668 !important;
+}
+
+.villa-a11y-toggle-row[aria-pressed="true"] .villa-a11y-switch::after {
+	transform: translateX(16px) !important;
+}
+
+.villa-a11y-reset-all {
+	width: 100% !important;
+	margin: 14px 0 0 !important;
+	padding: 10px !important;
+	border-radius: 8px !important;
+	border: 1px solid #E38C3B !important;
+	background: #fff !important;
+	color: #E38C3B !important;
+	font-size: 14px !important;
+	line-height: 1.3 !important;
+	font-weight: 600 !important;
+	text-transform: none !important;
+	cursor: pointer !important;
+	height: auto !important;
+}
+
+.villa-a11y-reset-all:hover,
+.villa-a11y-reset-all:focus-visible {
+	background: #FCF2E9 !important;
+}
+
+.villa-a11y-statement-link {
+	display: block !important;
+	text-align: center !important;
+	margin: 12px 0 0 !important;
+	padding: 0 !important;
+	font-size: 12px !important;
+	line-height: 1.3 !important;
+	font-weight: 400 !important;
+	color: #727272 !important;
+	text-decoration: underline !important;
+	text-transform: none !important;
+}
+
+/* --- Effects applied to the whole site --- */
+
+/*
+ * Text-size control uses `zoom` rather than per-element font-size: scaling
+ * every descendant's font-size via `em` compounds multiplicatively at each
+ * level of nesting (a div inside a div inside a section all re-multiply),
+ * producing runaway sizes. `zoom` scales the whole subtree exactly once.
+ * The widget itself gets the inverse zoom so it stays a constant size.
+ */
+html[class*="villa-a11y-fs-"] {
+	--villa-a11y-scale: 1;
+}
+html.villa-a11y-fs-1 { --villa-a11y-scale: 1.15; }
+html.villa-a11y-fs-2 { --villa-a11y-scale: 1.3; }
+html.villa-a11y-fs-3 { --villa-a11y-scale: 1.45; }
+html.villa-a11y-fs-4 { --villa-a11y-scale: 1.6; }
+html.villa-a11y-fs-dec1 { --villa-a11y-scale: 0.92; }
+html.villa-a11y-fs-dec2 { --villa-a11y-scale: 0.85; }
+
+html[class*="villa-a11y-fs-"] body {
+	zoom: var(--villa-a11y-scale) !important;
+}
+
+html[class*="villa-a11y-fs-"] .villa-a11y-toggle,
+html[class*="villa-a11y-fs-"] .villa-a11y-panel {
+	zoom: calc(1 / var(--villa-a11y-scale)) !important;
+}
+
+html.villa-a11y-dyslexia body :not(.villa-a11y-toggle):not(.villa-a11y-panel):not(.villa-a11y-panel *) {
+	font-family: 'OpenDyslexic', 'Plus Jakarta Sans', sans-serif !important;
+	letter-spacing: 0.4px !important;
+	word-spacing: 2px !important;
+	line-height: 1.7 !important;
+	text-align: left !important;
+}
+
+html.villa-a11y-contrast {
+	filter: invert(1) hue-rotate(180deg) contrast(1.05);
+	background: #fff;
+}
+html.villa-a11y-contrast img,
+html.villa-a11y-contrast video,
+html.villa-a11y-contrast iframe,
+html.villa-a11y-contrast svg,
+html.villa-a11y-contrast picture,
+html.villa-a11y-contrast .villa-a11y-toggle,
+html.villa-a11y-contrast .villa-a11y-panel {
+	filter: invert(1) hue-rotate(180deg);
+}
+
+html.villa-a11y-reduce-motion *,
+html.villa-a11y-reduce-motion *::before,
+html.villa-a11y-reduce-motion *::after {
+	animation-play-state: paused !important;
+	animation-duration: 0.001ms !important;
+	transition: none !important;
+	scroll-behavior: auto !important;
+}
+
+html.villa-a11y-big-cursor,
+html.villa-a11y-big-cursor * {
+	cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path d="M4 2l14 8-6 1.5L14 20 9 14 4 22z" fill="black" stroke="white" stroke-width="1.5"/></svg>') 4 4, auto !important;
+}
+
+@media (max-width: 480px) {
+	.villa-a11y-panel {
+		left: 12px;
+		right: 12px;
+		width: auto;
+		bottom: 84px;
+	}
+	.villa-a11y-toggle {
+		left: 12px;
+		bottom: 12px;
+	}
+}

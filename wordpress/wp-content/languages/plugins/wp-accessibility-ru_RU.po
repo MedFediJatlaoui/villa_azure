@@ -1,0 +1,1008 @@
+# Translation of Plugins - WP Accessibility - Stable (latest release) in Russian
+# This file is distributed under the same license as the Plugins - WP Accessibility - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2026-01-22 06:17:22+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
+"X-Generator: GlotPress/4.0.3\n"
+"Language: ru\n"
+"Project-Id-Version: Plugins - WP Accessibility - Stable (latest release)\n"
+
+#: wp-accessibility.php:392
+msgctxt "Commenter email label"
+msgid "Email"
+msgstr "Email"
+
+#: wp-accessibility.php:545
+msgid "Pause video"
+msgstr "Приостановить видео"
+
+#: wp-accessibility.php:546
+msgid "Play video"
+msgstr "Воспроизвести видео"
+
+#: wp-accessibility.php:394
+msgctxt "Commenter message label"
+msgid "Comment"
+msgstr "Комментарий"
+
+#: wp-accessibility-overlay.php:158
+msgid "Insert play/pause button on autoplay videos"
+msgstr "Вставить кнопку воспроизведения/паузы на автоматически проигрываемых видео"
+
+#: wp-accessibility.php:391
+msgctxt "Commenter name label"
+msgid "Name"
+msgstr "Имя"
+
+#: wp-accessibility-overlay.php:158
+msgid "Only effects videos with <code>autoplay</code> enabled and <code>controls</code> disabled."
+msgstr "Затрагивает только видео с <code>autoplay</code> и без <code>controls</code>."
+
+#: wp-accessibility.php:390
+msgctxt "Search field label"
+msgid "Search"
+msgstr "Поиск"
+
+#: wp-accessibility.php:393
+msgctxt "Commenter website label"
+msgid "Website"
+msgstr "Сайт"
+
+#: wp-accessibility-admin.php:98
+msgid "Allow <code>h1</code> in the headings block"
+msgstr "Разрешить <code>h1</code> в блоке заголовков"
+
+#: wp-accessibility-settings.php:414
+msgid "Donate to WP Accessibility"
+msgstr "Поддержать WP Доступность"
+
+#: wp-accessibility.php:570
+msgid "Log Out"
+msgstr "Выйти"
+
+#: wp-accessibility-admin.php:82
+msgid "* Accessibility problems accessing adminbar dropdowns were fixed in WordPress 6.5."
+msgstr "* В WordPress 6.5 были исправлены проблемы с доступом к выпадающим панелям админки."
+
+#: wp-accessibility-settings.php:495
+msgid "Try the Course"
+msgstr "Попробовать курс"
+
+#: wp-accessibility-settings.php:485
+msgid "Learn more about WordPress Accessibility"
+msgstr "Узнать больше о WordPress Accessibility"
+
+#. translators: link to linkedin learning course page.
+#: wp-accessibility-settings.php:482
+msgid "Want to learn more about WordPress and Accessibility? Take my <a href=\"%s\">WordPress Accessibility course at LinkedIn Learning</a>!"
+msgstr "Хотите узнать больше о WordPress and Accessibility? Посмотрите мой <a href=\"%s\">курс о WordPress Accessibility на LinkedIn Learning</a>!"
+
+#: wp-accessibility-admin.php:82
+msgid "Disable top-level adminbar logout link"
+msgstr "Выключить ссылку выхода в верхней части административной панели"
+
+#. translators: link to accessibility content features documentation.
+#: wp-accessibility-settings.php:334
+msgid "Enable <a href=\"%s\">content features to improve site accessibility</a>."
+msgstr "Включить <a href=\"%s\">функции контента для улучшения доступности сайта</a>."
+
+#. translators: link to accessibility fix documentation.
+#: wp-accessibility-overlay.php:102
+msgid "Settings that <a href=\"%s\">fix potential accessibility issues</a> on your site."
+msgstr "Параметры, которые <a href=\"%s\">решают проблемы доступности</a> вашего сайта."
+
+#: wp-accessibility-settings.php:278
+msgid "Test with Grayscale"
+msgstr "Тестировать в градациях серого"
+
+#: wp-accessibility-settings.php:274
+msgid "Include Contrast button"
+msgstr "Включить кнопку \"Контрастность\""
+
+#: wp-accessibility-settings.php:270
+msgid "Include Font size button"
+msgstr "Включить кнопку \"Размер текста\""
+
+#. translators: link to toolbar documentation.
+#: wp-accessibility-settings.php:255
+msgid "Enable a simple <a href=\"%s\">display settings toolbar</a> with high contrast mode and text size enlarging."
+msgstr "Включить простую <a href=\"%s\">панель настроек экрана</a> с режимом высокого контраста и масштабированием текста."
+
+#. translators: link to skiplink documentation.
+#: wp-accessibility-settings.php:154
+msgid "If your theme does not have skip links, <a href=\"%s\">review the skiplink documentation</a> and configure them."
+msgstr "Если в вашей теме нет ссылок для пропуска, <a href=\"%s\">ознакомьтесь с документацией</a> и настройте их."
+
+#: wp-accessibility-admin.php:109
+msgid "Disabled"
+msgstr "Отключено"
+
+#: wp-accessibility-admin.php:105
+msgid "Statistics Tracking"
+msgstr "Отслеживание статистики"
+
+#. translators: link to plugin documentation.
+#: wp-accessibility.php:75
+msgid "To learn more, check out the <a href=\"%s\">plugin documentation</a>."
+msgstr "Чтобы узнать больше, обратитесь к <a href=\"%s\">документации плагина</a>."
+
+#: wp-accessibility.php:72
+msgid "Visit the WP Accessibility Stats to view what WP Accessibility did on each page."
+msgstr "Чтобы просмотреть статистику WP Accessibility по каждой странице, посетите WP Accessibility Stats."
+
+#: wp-accessibility.php:71
+msgid "Go to the Themes page and install a theme of your choice, then explore the site. Errors corrected are logged in the console and saved to stats."
+msgstr "Перейдите на страницу \"Темы\" и установите тему по вашему выбору, затем посмотрите сайт. Исправленные ошибки регистрируются в консоли и сохраняются в статистике."
+
+#: wp-accessibility.php:70
+msgid "Create a new post and add media to observe some WP Accessibility features."
+msgstr "Создайте новую запись и добавьте медиафайлы, чтобы увидеть некоторые функции WP Accessibility."
+
+#: wp-accessibility.php:68
+msgid "Let me give you a few quick things to try out while you're here:"
+msgstr "Вот несколько быстрых рекомендаций, которые вы можете попробовать, пока вы здесь:"
+
+#: wp-accessibility.php:67
+msgid "Thanks for trying out WP Accessibility!"
+msgstr "Спасибо за то, что попробовали WP Accessibility!"
+
+#: wp-accessibility-stats.php:398
+msgid "View full record"
+msgstr "Посмотреть запись полностью"
+
+#: wp-accessibility-stats.php:513
+msgid "No data found"
+msgstr "Данные не найдены"
+
+#. translators: Action enabled.
+#: wp-accessibility-stats.php:699
+msgid "%s disabled"
+msgstr "%s отключено"
+
+#. translators: Action enabled.
+#: wp-accessibility-stats.php:699
+msgid "%s enabled"
+msgstr "%s включено"
+
+#: wp-accessibility-stats.php:734
+msgid "WP Accessibility Statistics"
+msgstr "Статистика WP Accessibility"
+
+#. translators: Date of change.
+#: wp-accessibility-stats.php:713
+msgid "Found issues changed on %s"
+msgstr "Найденные проблемы были изменены %s"
+
+#: wp-accessibility-stats.php:709
+msgid "Page loaded"
+msgstr "Страница загружена"
+
+#. translators: Data expanded; either `alt` or `longdesc`.
+#: wp-accessibility-stats.php:704
+msgid "%s expanded on image."
+msgstr "%s расширено на изображении."
+
+#: wp-accessibility-stats.php:693
+msgid "Large Font Size"
+msgstr "Большой размер текста"
+
+#: wp-accessibility-stats.php:693
+msgid "High Contrast"
+msgstr "Повышенный контраст"
+
+#: wp-accessibility-stats.php:680
+msgid "Page View"
+msgstr "Просмотр страницы"
+
+#: wp-accessibility-stats.php:680
+msgid "User Action"
+msgstr "Действие пользователя"
+
+#: wp-accessibility-stats.php:557
+msgid "Unknown browser"
+msgstr "Неизвестный браузер"
+
+#. translators: 1) image link. 2) date 3) time.
+#: wp-accessibility-stats.php:388 wp-accessibility-stats.php:422
+msgid "Long description expanded on image %1$s on %2$s at %3$s"
+msgstr "Полное описание развернуто на изображении %1$s %2$s в %3$s"
+
+#. translators: 1) image link. 2) date 3) time.
+#. translators: 1) image ID. 2) date 3) time.
+#: wp-accessibility-stats.php:382 wp-accessibility-stats.php:417
+msgid "Alt text expanded on image %1$s on %2$s at %3$s"
+msgstr "Текст Alt развернут на изображении %1$s %2$s в %3$s"
+
+#. translators: date changed, time changed.
+#: wp-accessibility-stats.php:351
+msgid "Large font size disabled on %1$s at %2$s"
+msgstr "Увеличенный размер шрифта выключен %1$s в %2$s"
+
+#. translators: path stats are related to.
+#: wp-accessibility-stats.php:323
+msgid "View: %s"
+msgstr "Просмотр: %s"
+
+#: wp-accessibility-stats.php:294
+msgid "User Stats"
+msgstr "Статистика по пользователям"
+
+#: wp-accessibility-stats.php:294
+msgid "User Actions"
+msgstr "Действия пользователей"
+
+#: wp-accessibility-stats.php:292
+msgid "Page Stats"
+msgstr "Статистика по страницам"
+
+#: wp-accessibility-stats.php:292
+msgid "Pages Viewed"
+msgstr "Просмотры страниц"
+
+#: wp-accessibility-stats.php:24
+msgid "View"
+msgstr "Просмотреть"
+
+#: wp-accessibility-stats.php:23
+msgid "New"
+msgstr "Добавить"
+
+#: wp-accessibility-stats.php:22
+msgid "Edit Stats"
+msgstr "Изменить статистику"
+
+#: wp-accessibility-stats.php:21
+msgid "Create New"
+msgstr "Создать новый"
+
+#: wp-accessibility-stats.php:20
+msgid "Add New"
+msgstr "Добавить новый"
+
+#: wp-accessibility-stats.php:665
+msgid "Info"
+msgstr "Инфо"
+
+#. translators: Number of accessibility issues fixed.
+#: wp-accessibility-stats.php:476 wp-accessibility-stats.php:491
+msgid "%d issue fixed"
+msgid_plural "%d issues fixed"
+msgstr[0] "Проблема %d исправлена"
+msgstr[1] "%d проблемы исправлены"
+msgstr[2] "%d проблемы исправлены"
+
+#: wp-accessibility-stats.php:581
+msgid "<code>aria-current</code> was assigned to a link."
+msgstr "<code>aria-current</code> был присвоен ссылке."
+
+#: wp-accessibility-stats.php:664
+msgid "Last Action"
+msgstr "Последнее действие"
+
+#: wp-accessibility-stats.php:663
+msgid "Statistic Type"
+msgstr "Тип статистики"
+
+#. translators: URL path.
+#: wp-accessibility-stats.php:637
+msgid "Page view: %s"
+msgstr "Просмотр страницы: %s"
+
+#. translators: Post ID.
+#: wp-accessibility-stats.php:634
+msgid "User: %d"
+msgstr "Пользователь: %d"
+
+#: wp-accessibility-stats.php:586
+msgid "The language of the page was set."
+msgstr "Язык страницы установлен."
+
+#: wp-accessibility-stats.php:585
+msgid "The language direction was set."
+msgstr "Направление языка установлено."
+
+#: wp-accessibility-stats.php:583
+msgid "The viewport maximum scale was fixed."
+msgstr "Максимальный масштаб окна (viewport) исправлен."
+
+#: wp-accessibility-stats.php:584
+msgid "The scalability of the viewport was fixed."
+msgstr "Масштабируемость окна просмотра (viewport) исправлена."
+
+#: wp-accessibility-stats.php:582
+msgid "Skiplinks added to the page."
+msgstr "Ссылки для пропуска добавлены на страницу."
+
+#: wp-accessibility-stats.php:580
+msgid "Explicit <code>label</code> elements added to inputs."
+msgstr "Явные элементы <code>label</code> добавлены к полям ввода."
+
+#: wp-accessibility-stats.php:579
+msgid "Implicit <code>label</code> elements added to inputs."
+msgstr "Неявные элементы <code>label</code> добавлены к полям ввода."
+
+#: wp-accessibility-stats.php:578
+msgid "<code>title</code> attributes removed from images."
+msgstr "Атрибуты <code>title</code> удалены из изображений."
+
+#: wp-accessibility-stats.php:577
+msgid "<code>title</code> attributes removed from inputs and buttons."
+msgstr "Атрибуты <code>title</code> удалены из полей ввода и кнопок."
+
+#: wp-accessibility-stats.php:572
+msgid "<code>tabindex</code> was removed from a link."
+msgstr "<code>tabindex</code> удален из ссылки."
+
+#: wp-accessibility-stats.php:573
+msgid "<code>tabindex</code> was added to a fake button."
+msgstr "<code>tabindex</code> добавлен к фальшивой кнопке."
+
+#: wp-accessibility-stats.php:574
+msgid "<code>tabindex</code> were removed from links, inputs, and buttons."
+msgstr "Атрибуты <code>tabindex</code> удалены из ссылок, полей ввода и кнопок."
+
+#: wp-accessibility-stats.php:575
+msgid "<code>target</code> attributes were removed from links."
+msgstr "Атрибуты <code>target</code> удалены из ссылок."
+
+#: wp-accessibility-stats.php:576
+msgid "<code>title</code> attributes were removed from inputs."
+msgstr "Атрибуты <code>title</code> удалены из полей ввода."
+
+#. translators: date changed, time changed.
+#: wp-accessibility-stats.php:349
+msgid "High contrast disabled on %1$s at %2$s"
+msgstr "Увеличенный размер шрифта выключен %1$s в %2$s"
+
+#. translators: date changed, time changed.
+#: wp-accessibility-stats.php:347
+msgid "Large font size enabled on %1$s at %2$s"
+msgstr "Увеличенный размер шрифта выключен %1$s в %2$s"
+
+#. translators: date changed, time changed.
+#: wp-accessibility-stats.php:345
+msgid "High contrast enabled on %1$s at %2$s"
+msgstr "Высокая контрастность включена %1$s в %2$s"
+
+#. translators: Post ID.
+#: wp-accessibility-stats.php:329
+msgid "User %s"
+msgstr "Пользователь %s"
+
+#: wp-accessibility-stats.php:259
+msgid "WP Accessibility tracks accessibility changes it makes to your site, and records when visitors change font size and high contrast options. No personally identifying data is stored."
+msgstr "WP Accessibility отслеживает изменения доступности, которые он вносит на ваш сайт, и записывает, когда посетители меняют размер шрифта и параметры высокой контрастности. Персональные данные не сохраняются."
+
+#: wp-accessibility-stats.php:248
+msgid "WP Accessibility Stats"
+msgstr "Статистика WP Accessibility"
+
+#: wp-accessibility-stats.php:60
+msgid "Stats Types"
+msgstr "Виды статистики"
+
+#: wp-accessibility-stats.php:27
+msgid "No stats found in trash"
+msgstr "Статистика в корзине не найдена"
+
+#: wp-accessibility-stats.php:26
+msgid "No stats found"
+msgstr "Статистика не найдена"
+
+#: wp-accessibility-stats.php:19
+msgid "Accessibility Stats"
+msgstr "Статистика доступности"
+
+#: wp-accessibility-stats.php:18
+msgid "Stats"
+msgstr "Статистика"
+
+#: wp-accessibility-stats.php:17
+msgid "WP Accessibility Stats Record"
+msgstr "Записи статистики WP Accessibility"
+
+#: wp-accessibility-settings.php:548
+msgid "Affiliate Links"
+msgstr "Партнёрские ссылки"
+
+#: wp-accessibility-settings.php:545
+msgid "Buy Accessibility Checker"
+msgstr "Купить Accessibility Checker"
+
+#: wp-accessibility-settings.php:542
+msgid "Use coupon code <code>WPAccessibility</code> for 20% off <strong>Accessibility Checker Pro</strong> at <a href=\"https://equalizedigital.com/?ref=joedolson&discount=WPAccessibility&campaign=wpaccessibility\" aria-describedby=\"wpa-affiliate-notice\">Equalize Digital</a>!"
+msgstr "Используйте купон <code>WPAccessibility</code> для получения скидки 20% на <strong>Accessibility Checker Pro</strong> на сайте <a href=\"https://equalizedigital.com/?ref=joedolson&discount=WPAccessibility&campaign=wpaccessibility\" aria-describedby=\"wpa-affiliate-notice\">Equalize Digital</a>!"
+
+#: wp-accessibility-help.php:70
+msgid "Page statistics are collected when the page is initially viewed, then again if the accessibility values have changed since the last check."
+msgstr "Статистика страницы собирается при первоначальном просмотре страницы, а затем снова, если значения доступности изменились с момента последней проверки."
+
+#: wp-accessibility-help.php:69
+msgid "User statistics (toolbar actions) collected by WP Accessibility are tracked using browser fingerprinting, and no identifiable information is stored at any time."
+msgstr "Статистика пользователей (действия панели инструментов), собираемая WP Accessibility, отслеживается с помощью данных браузера, и никакая информация о пользователях не сохраняется."
+
+#: wp-accessibility-admin.php:117
+msgid "Site Administrators"
+msgstr "Администраторы сайта"
+
+#: wp-accessibility-admin.php:113
+msgid "All Visitors"
+msgstr "Все посетители"
+
+#: wp-accessibility-alt.php:243
+msgid "Missing alt text"
+msgstr "Недостающий альтернативный текст (alt)"
+
+#: wp-accessibility-alt.php:240
+msgid "Caption and alt text are the same"
+msgstr "Подпись и альтернативный текст (alt) совпадают"
+
+#: wp-accessibility-alt.php:237
+msgid "Suspicious alt text"
+msgstr "Подозрительный альтернативный текст (alt)"
+
+#: wp-accessibility-alt.php:234
+msgid "Long alt text"
+msgstr "Длинный альтернативный текст (alt)"
+
+#: wp-accessibility-settings.php:533
+msgid "Affiliate Link"
+msgstr "Партнерская ссылка"
+
+#: wp-accessibility-settings.php:528
+msgid "Use coupon code <code>WPAccessibility</code> for 20% off!"
+msgstr "Используйте купон <code>WPAccessibility</code> для получения скидки 20%!"
+
+#: wp-accessibility-settings.php:530
+msgid "Get Accessibility Checker"
+msgstr "Получить Accessibility Checker"
+
+#: wp-accessibility-settings.php:519
+msgid "Ready to fix your site?"
+msgstr "Готовы исправить ваш сайт?"
+
+#: wp-accessibility-settings.php:516
+msgid "Try Accessibility Checker by Equalize Digital - fast and efficient accessibility testing for your site!"
+msgstr "Попробуйте Accessibility Checker от Equalize Digital - быстрое и эффективное тестирование доступности вашего сайта!"
+
+#: wp-accessibility-settings.php:516
+msgid "Finding Accessibility Checker useful? Go Pro for more advanced accessibility testing options!"
+msgstr "Считаете Accessibility Checker полезным? Переходите на Pro для продвинутого тестирования доступности!"
+
+#: wp-accessibility-settings.php:410
+msgid "If you find WP Accessibility useful, please <a href='https://wordpress.org/plugins/wp-accessibility/'>rate it five stars</a> or <a href='https://translate.wordpress.org/projects/wp-plugins/wp-accessibility'>help with translation</a>."
+msgstr "Если WP Accessibility вам полезен, пожалуйста <a href='https://wordpress.org/plugins/wp-accessibility/'>поставьте 5 звезд</a> или <a href='https://translate.wordpress.org/projects/wp-plugins/wp-accessibility'>помогите с переводом</a>."
+
+#: wp-accessibility-settings.php:353
+msgid "Add toggle to view image <code>alt</code> text in comments and post content."
+msgstr "Добавьте переключатель для просмотра альтернативного текста <code>alt</code> изображений в комментариях и содержимом записей."
+
+#: wp-accessibility.php:956
+msgid "Summary"
+msgstr "Резюме"
+
+#: wp-accessibility.php:1017
+msgid "Simple Content Summary"
+msgstr "Упрощенное содержание"
+
+#: wp-accessibility.php:1002
+msgid "Content Summary"
+msgstr "Содержимое резюме"
+
+#: wp-accessibility-overlay.php:42 wp-accessibility-overlay.php:119
+msgid "Continue Reading"
+msgstr "Продолжить чтение"
+
+#: wp-accessibility-settings.php:171
+msgid "Skip to Content link target"
+msgstr "Цель для ссылки Перейти к содержимому"
+
+#: wp-accessibility.php:1019
+msgid "Provide a simplified summary to aid comprehension of complex content."
+msgstr "Предоставьте краткое содержание для улучшения понимания сложного содержимого."
+
+#: wp-accessibility-admin.php:125
+msgid "Update Accessibility Tools"
+msgstr "Обновить инструменты доступности"
+
+#: wp-accessibility-admin.php:73
+msgid "These change the admin experience or help with testing."
+msgstr "Эти настройки изменяют работу в административной части или помогают с тестированием."
+
+#: wp-accessibility-admin.php:70
+msgid "Testing & Admin Experience"
+msgstr "Тестирование и администрирование"
+
+#: wp-accessibility-settings.php:381
+msgid "Update Accessibility Features"
+msgstr "Обновление специальных возможностей"
+
+#: wp-accessibility-settings.php:356
+msgid "Enable Content Summaries"
+msgstr "Включить краткие описания содержимого"
+
+#: wp-accessibility-settings.php:329
+msgid "Accessibility Features"
+msgstr "Специальные возможности"
+
+#: wp-accessibility-overlay.php:162
+msgid "Excludes links inside <code>nav</code> elements."
+msgstr "Исключает ссылки внутри элементов <code>nav</code>."
+
+#: wp-accessibility-overlay.php:138
+msgid "Your theme must have a search.php template"
+msgstr "В вашей теме должен быть шаблон search.php."
+
+#: wp-accessibility-overlay.php:138
+msgid "Force search error on empty search submission"
+msgstr "Усиленный поиск ошибок на пустых поисковых запросах"
+
+#: wp-accessibility-overlay.php:134
+msgid "Prevent links from opening in new windows"
+msgstr "Запретить открытие ссылок в новых окнах"
+
+#: wp-accessibility-overlay.php:118
+msgid "Continue reading prefix text"
+msgstr "Текст перед \"Читать далее\""
+
+#: wp-accessibility-overlay.php:96 wp-accessibility.php:86
+msgid "Accessibility Fixes"
+msgstr "Исправления доступности"
+
+#: wp-accessibility-settings.php:281
+msgid "Toolbar location (optional)"
+msgstr "Размещение панели инструментом (не обязательно)"
+
+#: wp-accessibility-settings.php:262
+msgid "Enable Accessibility toolbar"
+msgstr "Включить панель инструментов доступности"
+
+#: wp-accessibility-settings.php:228
+msgid "Styles for Skiplinks"
+msgstr "Стили для ссылок пропуска к содержимому"
+
+#: wp-accessibility-settings.php:220
+msgid "Use default Skiplink CSS"
+msgstr "Использовать CSS по умолчанию для ссылок пропуска к содержимому"
+
+#: wp-accessibility-settings.php:175
+msgid "Skip to Navigation link target"
+msgstr "Цель ссылки \"Перейти к навигации\""
+
+#: wp-accessibility-settings.php:172 wp-accessibility-settings.php:176
+#: wp-accessibility-settings.php:282
+msgid "ID attribute starting with <code>#</code>"
+msgstr "Атрибуты ID начинаются с <code>#</code>"
+
+#: wp-accessibility-admin.php:45
+msgid "Accessibility Tools Updated"
+msgstr "Инструменты доступности обновлены"
+
+#: wp-accessibility-settings.php:88
+msgid "Accessibility Features Updated"
+msgstr "Функции доступности обновлены"
+
+#: wp-accessibility-help.php:22
+msgid "WP Accessibility Help"
+msgstr "Помощь WP Accessibility"
+
+#: wp-accessibility-alt.php:64
+msgid "Long <code>alt</code> text"
+msgstr "Длинный текст <code>alt</code>"
+
+#: wp-accessibility-settings.php:342 wp-accessibility.php:743
+msgid "None"
+msgstr "Нет"
+
+#: wp-accessibility-help.php:44
+msgid "Customization"
+msgstr "Персонализация"
+
+#: wp-accessibility-settings.php:459
+msgid "You're using a theme reviewed as <code>accessibility-ready</code> by the WordPress theme review team. Some options have been disabled in WP Accessibility."
+msgstr "Вы используете тему, которая прошла проверку как <code>accessibility-ready</code> командой проверки тем WordPress. Некоторые опции в WP Accessibility отключены."
+
+#: wp-accessibility-help.php:54
+msgid "Set a custom long description template by adding <code>longdesc-template.php</code> to your theme directory."
+msgstr "Установите пользовательский шаблон длинного описания, добавив файл <code>longdesc-template.php</code> в директорию вашей темы."
+
+#: wp-accessibility-help.php:51
+msgid "Set custom styles for large print using the body class <code>.fontsize</code> in your theme styles or the customizer."
+msgstr "Установите пользовательские стили для крупного шрифта, используя класс <code>.fontsize</code> для тега body в стилях вашей темы или в кастомайзере."
+
+#: wp-accessibility-help.php:48
+msgid "Custom high-contrast styles go in <code>a11y-contrast.css</code> in your Theme's stylesheet directory."
+msgstr "Пользовательские стили высокой контрастности добавляются в файл <code>a11y-contrast.css</code> в директории стилей вашей темы."
+
+#: wp-accessibility-admin.php:78
+msgid "* May cause slow searches on large media libraries."
+msgstr "* Может замедлить поиск для библиотек файлов очень большого размера. "
+
+#: wp-accessibility-admin.php:78
+msgid "Include alt attribute in media library searches"
+msgstr "Включить атрибут Alt в поиск в библиотеке файлов. "
+
+#: wp-accessibility-admin.php:86
+msgid "Disable fullscreen block editor by default"
+msgstr "Отключить полноэкранный режим для редактора блоков по умолчанию"
+
+#: wp-accessibility-alt.php:62
+msgid "Suspicious <code>alt</code>"
+msgstr "Подозрительный <code>alt</code>"
+
+#: wp-accessibility-alt.php:60
+msgid "Invalid <code>alt</code>"
+msgstr "Ключи <code>alt</code> неверен"
+
+#: wp-accessibility-longdesc.php:184
+msgid "Has Long Description"
+msgstr "Имеет длинное описание"
+
+#: wp-accessibility.php:550
+msgid "Long Description"
+msgstr "Длинное описание"
+
+#: wp-accessibility.php:803
+msgid "Please describe your problem."
+msgstr "Пожалуйста, опишите вашу проблему"
+
+#: wp-accessibility-help.php:67
+msgid "Information collected by WP Accessibility"
+msgstr "Информация, собранная WP Accessibility"
+
+#: wp-accessibility-help.php:66
+msgid "The accessibility toolbar sets cookies to maintain awareness of the user's selected accessibility options. If the toolbar is not in use, WP Accessibility does not set any cookies."
+msgstr "Панель инструментов специальных возможностей устанавливает файлы cookie для обеспечения осведомленности о выбранных пользователем параметрах специальных возможностей. Если панель инструментов не используется, WP Accessibility не устанавливает файлы cookie."
+
+#: wp-accessibility-help.php:65
+msgid "Cookies"
+msgstr "Cookies"
+
+#: wp-accessibility-help.php:62
+msgid "Privacy"
+msgstr "Конфиденциальность"
+
+#: wp-accessibility-help.php:68
+msgid "WP Accessibility does not collect any personally identifying information about users or visitors."
+msgstr "WP Accessibility не собирает никакой личной идентифицирующей информации о пользователях или посетителях."
+
+#. Translators: Contrast ratio, foreground Hex color, background Hex color.
+#: wp-accessibility-admin.php:148
+msgid "Luminosity Contrast Ratio for %2$s and %3$s is %1$s (Threshold: greater than 7:1 for AAA, 4.5:1 for AA)"
+msgstr "Коэффициент контрастности яркости для %2$s и %3$s составляет %1$s (Порог: более 7:1 для AAA, 4.5:1 для AA)"
+
+#: wp-accessibility-settings.php:278
+msgid "Grayscale is intended for testing, and will appear only for logged-in administrators"
+msgstr "Переключатель оттенков серого предназначен только для тестирования и отображается только для администраторов, вошедших в систему."
+
+#: wp-accessibility-settings.php:349
+msgid "Support <code>longdesc</code> on featured images"
+msgstr "Поддержка <code>longdesc</code> на избранных изображениях"
+
+#: wp-accessibility.php:385
+msgid "Skip links"
+msgstr "Пропустить ссылки"
+
+#: wp-accessibility-settings.php:316
+msgid "Hide toolbar on small screens."
+msgstr "Скрыть панель инструментов на маленьких экранах."
+
+#: wp-accessibility-settings.php:114
+msgid "Toolbar Settings Updated"
+msgstr "Настройки панели инструментов обновлены"
+
+#: wp-accessibility-settings.php:324
+msgid "Update Toolbar Settings"
+msgstr "Обновить настройки панели инструментов"
+
+#. Translators: URL to donate.
+#: wp-accessibility-help.php:35
+msgid "Please, consider <a href=\"%s\">making a donation</a> to support WP Accessibility!"
+msgstr "Пожалуйста, рассмотрите возможность <a href=\"%s\"> сделать пожертвование </a> для поддержки WP Accessibility!"
+
+#: wp-accessibility-settings.php:304
+msgid "Use alternate font resizing stylesheet"
+msgstr "Используйте альтернативную таблицу стилей изменения размера шрифта"
+
+#: wp-accessibility-settings.php:312
+msgid "Place toolbar on opposite side of screen."
+msgstr "Разместите панель инструментов на правой стороне экрана."
+
+#. Plugin Name of the plugin
+#: wp-accessibility.php wp-accessibility.php:85
+msgid "WP Accessibility"
+msgstr "WP Accessibility"
+
+#. Description of the plugin
+#: wp-accessibility.php
+msgid "Helps improve accessibility in your WordPress site, like removing title attributes."
+msgstr "Помогает улучшить доступность вашего сайта WordPress, например удаление атрибутов заголовка."
+
+#. Author of the plugin
+#: wp-accessibility.php
+msgid "Joe Dolson"
+msgstr "Joe Dolson"
+
+#: wp-accessibility-alt.php:181
+msgid "All images must either have an alt attribute or be declared as decorative."
+msgstr "Все изображения должны иметь атрибут alt или быть объявлены как декоративные."
+
+#. Author URI of the plugin
+#: wp-accessibility.php
+msgid "https://www.joedolson.com/"
+msgstr "https://www.joedolson.com/"
+
+#. Plugin URI of the plugin
+#: wp-accessibility.php
+msgid "https://www.joedolson.com/wp-accessibility/"
+msgstr "https://www.joedolson.com/wp-accessibility/"
+
+#: wp-accessibility.php:821
+msgid "From:"
+msgstr "От:"
+
+#: wp-accessibility.php:832
+msgid "Send Support Request"
+msgstr "Отправить запрос поддержки"
+
+#: wp-accessibility.php:829
+msgid "Support Request:"
+msgstr "Запрос поддержки:"
+
+#: wp-accessibility.php:834
+msgid "The following additional information will be sent with your support request:"
+msgstr "Следующая дополнительная информация будет отправлена с вашим запросом поддержки:"
+
+#: wp-accessibility-alt.php:66
+msgid "Has <code>alt</code>"
+msgstr "Имеет <code>alt</code>"
+
+#: wp-accessibility-alt.php:58 wp-accessibility-alt.php:178
+msgid "Decorative"
+msgstr "Декоративный"
+
+#: wp-accessibility-alt.php:55
+msgid "Add <code>alt</code> text"
+msgstr "Добавить <code>alt</code> текст"
+
+#. Translators: Donation URL.
+#: wp-accessibility.php:826
+msgid "I <a href=\"%s\">made a donation</a> to help support this plugin"
+msgstr "Я <a href=\"%s\"> сделал пожертвование</a>, чтобы оказать поддержку этому плагину"
+
+#: wp-accessibility-alt.php:26
+msgid "Accessibility"
+msgstr "Доступность"
+
+#: wp-accessibility.php:809
+msgid "I cannot provide support, but will treat your request as a bug report, and will incorporate any permanent solutions I discover into the plug-in."
+msgstr "Я не могу предоставить поддержку, но обработаю ваш запрос как сообщение об ошибке и включу в плагин любые постоянные решения, которые я обнаружу."
+
+#: wp-accessibility-alt.php:70
+msgid "N/A"
+msgstr "Н/Д"
+
+#: wp-accessibility.php:807
+msgid "Thank you for supporting the continuing development of this plug-in! I'll get back to you as soon as I can."
+msgstr "Спасибо за поддержку развития этого плагина! Я вернусь к вам, как только смогу."
+
+#: wp-accessibility-help.php:57
+msgid "The <a href=\"#wpa_widget_toolbar\">shortcode for the Accessibility toolbar</a> is <code>[wpa_toolbar]</code>"
+msgstr "<a href=\"#wpa_widget_toolbar\">shortcode для панели инструментов доступности</a> – <code>[wpa_toolbar]</code>"
+
+#: wp-accessibility-admin.php:195
+msgid "Check Color Contrast"
+msgstr "Проверить цветовой контраст"
+
+#: wp-accessibility-help.php:28
+msgid "Get Plug-in Support"
+msgstr "Получить поддержку плагина"
+
+#: wp-accessibility-settings.php:404
+msgid "Support this Plugin"
+msgstr "Поддержка этого плагина"
+
+#: wp-accessibility-settings.php:440
+msgid "Accessibility References"
+msgstr "Рекомендации WP Accessibility"
+
+#: wp-accessibility-settings.php:455
+msgid "Your Theme"
+msgstr "Ваша тема"
+
+#. Translators: URL to read about the accessibility ready tag requirements.
+#: wp-accessibility-settings.php:464
+msgid "Read more about the <a href=\"%s\">WordPress accessibility-ready tag</a>"
+msgstr "Подробнее о <a href=\"%s\"> теге \"WordPress accessibility-ready\"</a>"
+
+#: wp-accessibility-admin.php:130
+msgid "Color Contrast Tester"
+msgstr "Испытание цветов контрастности"
+
+#: wp-accessibility-settings.php:290
+msgid "Default size"
+msgstr "Размер по умолчанию"
+
+#: wp-accessibility-admin.php:102
+msgid "Enable diagnostic CSS"
+msgstr "Включить диагностику CSS"
+
+#: wp-accessibility-admin.php:180
+msgid "Foreground color"
+msgstr "Цвет переднего плана"
+
+#: wp-accessibility-settings.php:308
+msgid "Support Accessibility toolbar as shortcode or widget"
+msgstr "Поддержка панели инструментов доступности как shortcode или виджета."
+
+#: wp-accessibility-admin.php:161
+msgid "Test another set of colors"
+msgstr "Тестировать другой набор цветов"
+
+#: wp-accessibility-admin.php:176
+msgid "Test of relative luminosity"
+msgstr "Тестировать относительную яркость"
+
+#: wp-accessibility-admin.php:159
+msgid "The colors compared <strong>do not pass</strong> the relative luminosity test."
+msgstr "Сравнение цветов <strong>не прошло</strong> тест на относительную яркость."
+
+#: wp-accessibility-admin.php:153
+msgid "The colors compared <strong>pass</strong> the relative luminosity test at level AA."
+msgstr "Сравнение цветов <strong>прошло</strong> тест на относительную яркость на уровне АА."
+
+#: wp-accessibility-admin.php:150
+msgid "The colors compared <strong>pass</strong> the relative luminosity test at level AAA."
+msgstr "Сравнение цветов <strong>прошло</strong> тест на относительную яркость на уровне ААА."
+
+#: wp-accessibility-admin.php:156
+msgid "The colors compared pass the relative luminosity test <strong>only when used in large print</strong> situations (greater than 18pt (24px) text or 14pt (18.66px) bold text.)"
+msgstr "Сравнение цветов прошло тест на относительную яркость <strong>только когда используется большой шрифт</strong> (больше чем 18pt или 14pt жирный)."
+
+#: wp-accessibility-settings.php:288
+msgid "Toolbar font size"
+msgstr "Размер шрифта панели инструментов"
+
+#: wp-accessibility-overlay.php:173
+msgid "Update Miscellaneous Settings"
+msgstr "Обновить прочие настройки"
+
+#: wp-accessibility-overlay.php:166
+msgid "Add outline to elements on keyboard focus"
+msgstr "Добавить контур к элементам на клавиатуре"
+
+#: wp-accessibility-admin.php:185
+msgid "Background color"
+msgstr "Цвет фона"
+
+#: wp-accessibility-overlay.php:162
+msgid "Force underline on links"
+msgstr "Принудительно подчеркивать все ссылки"
+
+#: wp-accessibility-settings.php:343
+msgid "Link to description"
+msgstr "Ссылка на описание"
+
+#: wp-accessibility-settings.php:340
+msgid "Long Description UI"
+msgstr "Длинное описание UI"
+
+#: wp-accessibility-overlay.php:142
+msgid "Remove tabindex from focusable elements"
+msgstr "Удалить tabindex из фокусируемых элементов"
+
+#: wp-accessibility-settings.php:344
+msgid "Button trigger to overlay image"
+msgstr "Триггер кнопки для наложения изображения"
+
+#: wp-accessibility-overlay.php:128
+msgid "<strong>Three disabled features:</strong> Site language, continue reading text and standard form labels are provided in your <code>accessibility-ready</code> theme."
+msgstr "<strong>Три отключенные функции:</strong> Язык сайта, текст \"читать далее\" и стандартные метки форм предоставляются в вашей теме, которая была отмечена как <code>accessibility-ready</code>."
+
+#: wp-accessibility-overlay.php:115
+msgid "Add post title to \"more\" links."
+msgstr "Добавлять названия записей в ссылки \"Читать далее\"."
+
+#: wp-accessibility-settings.php:139
+msgid "Add Skiplinks"
+msgstr "Добавить Skiplinks"
+
+#: wp-accessibility-settings.php:161
+msgid "Configure Skiplinks"
+msgstr "Настроить Skiplinks"
+
+#: wp-accessibility-settings.php:164
+msgid "Enable Skiplinks"
+msgstr "Включить Skiplinks"
+
+#: wp-accessibility-settings.php:168
+msgid "Skiplinks always visible"
+msgstr "Skiplinks всегда виден"
+
+#: wp-accessibility-settings.php:242
+msgid "Update Skiplink Settings"
+msgstr "Обновить настройки Skiplink "
+
+#: wp-accessibility-settings.php:146
+msgid "Your <code>accessibility-ready</code> theme has skip links built in."
+msgstr "Ваша тема <code>accessibility-ready</code> имеет встроенные ссылки для пропуска."
+
+#: wp-accessibility-settings.php:191
+msgid "Site Map link target (URL for your site map)"
+msgstr "Ссылка на карту сайта (URL вашей карты сайта)"
+
+#: wp-accessibility-settings.php:212
+msgid "Link text for your link"
+msgstr "Текст ссылки для вашей ссылки"
+
+#: wp-accessibility-settings.php:208
+msgid "Add your own link (link or container ID)"
+msgstr "Добавить свою ссылку или ID контейнера"
+
+#: wp-accessibility-overlay.php:71
+msgid "Miscellaneous Accessibility Settings Updated"
+msgstr "Прочие настройки Доступности обновлены"
+
+#: wp-accessibility-settings.php:71
+msgid "WP Accessibility does not provide any styles for visible skiplinks. You can still set the look of the links using the textareas provided, but all other layout must be assigned in your theme."
+msgstr "WP Accessibility не предоставляет никаких стилей для видимых пропущенных ссылок. Вы по-прежнему можете настроить внешний вид ссылок, используя предоставленные текстовые области, но все остальные макеты должны быть назначены в вашей теме."
+
+#: wp-accessibility-settings.php:74
+msgid "Skiplinks Settings Updated"
+msgstr "Обновлены настройки ссылок для пропуска к контенту"
+
+#: wp-accessibility-overlay.php:154
+msgid "Remove title attributes"
+msgstr "Установить атрибуты заголовка"
+
+#: wp-accessibility-admin.php:61 wp-accessibility-settings.php:130
+msgid "WP Accessibility Features"
+msgstr "Функции WP Accessibility"
+
+#: wp-accessibility.php:382
+msgid "Site map"
+msgstr "Карта сайта"
+
+#: wp-accessibility.php:381
+msgid "Skip to navigation"
+msgstr "Перейти к навигации"
+
+#: wp-accessibility.php:380
+msgid "Skip to Content"
+msgstr "Перейти к содержимому"
+
+#: wp-accessibility-toolbar.php:150 wp-accessibility-toolbar.php:202
+msgid "Toggle Font size"
+msgstr "Переключить на увеличенный шрифт"
+
+#: wp-accessibility-toolbar.php:149 wp-accessibility-toolbar.php:201
+msgid "Toggle Grayscale"
+msgstr "Переключить на оттенки серого"
+
+#: wp-accessibility-toolbar.php:148 wp-accessibility-toolbar.php:200
+msgid "Toggle High Contrast"
+msgstr "Переключить на высокую контрастность"
+
+#: class-wp-accessibility-toolbar.php:33 wp-accessibility-settings.php:250
+msgid "Accessibility Toolbar"
+msgstr "Панель инструментов доступности"
+
+#: class-wp-accessibility-toolbar.php:66
+msgid "Title:"
+msgstr "Заголовок:"
+
+#: templates/longdesc-template.php:36
+msgid "Return to article."
+msgstr "Вернуться к сообщению."
+
+#: wp-accessibility.php:158
+msgid "Accessibility Settings"
+msgstr "Настройки доступности"
+
+#: wp-accessibility-stats.php:25
+msgid "Search"
+msgstr "Поиск"
