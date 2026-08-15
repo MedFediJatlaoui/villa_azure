@@ -20,3 +20,7 @@ backups/
 mysql/
 mysql/data/
 wordpress/wp-content/uploads/iawp-geo-db.mmdb
+
+# WP-Optimize page cache (regenerated automatically, shouldn't be versioned)
+wordpress/wp-content/cache/
+wordpress/wp-content/advanced-cache.php
