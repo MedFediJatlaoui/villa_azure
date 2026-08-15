@@ -598,6 +598,27 @@ h1.entry-title {
 .elementor-element-2d69c17 > .elementor-element {
   flex-shrink: 0 !important;
 }
+
+/* 10j. HOME "RÉSERVEZ VOTRE SÉJOUR" SECTION — rule 10d's 3-level-deep zeroing
+   (".e-con .e-con .e-con") also matches elementor-element-272c79df, which sits
+   4 e-con levels deep (2a61bacd > 738587d > 43497b7c > 3b171390 > 272c79df).
+   Unlike the icon-box case 10d was written for, none of those four ancestors
+   carry any padding of their own (738587d/43497b7c/3b171390 are all
+   zero-padding structural wrappers, and 2a61bacd/738587d are explicitly 0 at
+   this width too) — 272c79df is the ONLY element in the chain providing a
+   side gutter (32px, authored for 601-1024px). Zeroing it at <=600px left the
+   label, heading, paragraph and both buttons flush against the screen edge on
+   phones (measured: 0px padding at 390px vs. 32px at 601px — the gutter
+   simply vanishes below the 10d breakpoint). Restoring the same 32px used
+   just above 600px keeps the gutter consistent across the whole mobile range.
+   Selector matches 10d's specificity (4 classes) and is placed after it, same
+   approach as 10g, so this wins the cascade tie instead of losing to 10d. */
+@media (max-width: 600px) {
+  .elementor .e-con.elementor-element.elementor-element-272c79df {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+}
 </style>
 <?php }, 5);
 
