@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Villa Azur</title>
+	<atom:link href="https://hotelvillaazur.com/en/feed/" rel="self" type="application/rss+xml" />
+	<link>https://hotelvillaazur.com</link>
+	<description>Hôtel boutique en bord de mer à Djerba, Tunisie</description>
+	<lastBuildDate>Mon, 03 Aug 2026 20:09:40 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=7.0.4</generator>
+
+<image>
+	<url>https://hotelvillaazur.com/wp-content/uploads/2026/02/cropped-VILLA_AZUR_RVB-320x200-1-150x150.png</url>
+	<title>Villa Azur</title>
+	<link>https://hotelvillaazur.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+</channel>
+</rss>
