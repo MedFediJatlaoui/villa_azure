@@ -684,6 +684,35 @@ h1.entry-title {
     text-align: center !important;
   }
 }
+
+/* 10n. ROOMS PAGE — the decorative circle centred over the 2x2 photo grid
+   (elementor-element-9e451e6, a 24px-ring accent shape, no content) is
+   150px in diameter at every width from 768px up — that's the designed
+   size. Only the <767px rule breaks the pattern: instead of the same or a
+   smaller circle for the narrower phone grid, it jumps UP to --width/
+   --min-height:250px, nearly 1.7x the desktop size, which is why it swallows
+   most of the four photos instead of sitting as a small accent between them.
+   Reusing the site's own already-designed 150px for phones too — same value
+   already approved at every wider breakpoint, not a new number — and scaling
+   the accompanying negative margins (originally -100px/-20px, tuned to pull
+   a 250px circle onto the grid intersection) down by the same 150/250 = 0.6
+   ratio so a smaller circle lands on the same intersection point rather than
+   drifting off it. Border width (24px) and border-radius (100%) are already
+   breakpoint-independent, so they're untouched — only diameter and offset
+   change. Same element id across all 5 language duplicates of this page
+   (post-2617/3576/3577/3578/3579.css checked directly). */
+@media (max-width: 767px) {
+  .elementor-element.elementor-element-9e451e6 {
+    width: 150px !important;
+    min-height: 150px !important;
+    margin-bottom: -60px !important;
+    margin-right: -12px !important;
+    --width: 150px !important;
+    --min-height: 150px !important;
+    --margin-bottom: -60px !important;
+    --margin-right: -12px !important;
+  }
+}
 </style>
 <?php }, 5);
 
