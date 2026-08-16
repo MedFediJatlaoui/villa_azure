@@ -619,6 +619,35 @@ h1.entry-title {
     padding-right: 32px !important;
   }
 }
+
+/* 10k. RESTAURANT PAGE "Restaurant à la carte" PHOTO — elementor-element-ac87b1a
+   was resized in the editor to 101.825% of its own container (a stray drag past
+   the container's edge, not a deliberate bleed — the value has no round number
+   behind it), so the widget overflows its parent at every width. Its <img> also
+   carries a flat height:500px with no responsive override, unlike every other
+   sized element already fixed on this site. At desktop that 500px is a tall
+   feature-photo crop inside a ~55%-wide column (rule: --width:55% at >=768px),
+   but that column becomes 100% width at <=1024px (rule: --width:100% at
+   768-1024px, and no override at all below 768px, so it stays full width down
+   to phones too) — the same 500px crop of a 2560x1707 source then eats more
+   than half an iPhone's viewport height for a single content photo, and no
+   longer scales with the column at all. Same element id across all 5 language
+   duplicates of this page (post-2654/3580/3581/3582/3583.css checked directly),
+   so one unscoped rule covers all of them. Both sub-rules use !important only
+   (no specificity match needed): the page CSS's width/height declarations
+   carry no !important of their own, so any !important here wins outright. */
+@media (max-width: 1024px) {
+  .elementor-element.elementor-element-ac87b1a {
+    width: 100% !important;
+    max-width: 100% !important;
+    --container-widget-width: 100% !important;
+  }
+}
+@media (max-width: 767px) {
+  .elementor-element.elementor-element-ac87b1a img {
+    height: auto !important;
+  }
+}
 </style>
 <?php }, 5);
 
