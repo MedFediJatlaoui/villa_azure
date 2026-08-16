@@ -648,6 +648,25 @@ h1.entry-title {
     height: auto !important;
   }
 }
+
+/* 10l. RESTAURANT PAGE PHOTO, continued — fixing 10k's img height to auto
+   revealed that the photo's own container, elementor-element-fb3019e, carries
+   a flat min-height:574px at every width (no responsive override anywhere in
+   the page CSS). At desktop that height was already filled by the old fixed
+   500px image plus its wrapper, so it went unnoticed; once the image scales
+   down proportionally on a phone (~227px tall at a ~340px-wide column), the
+   container still holds itself open to 574px, leaving a large blank gap below
+   the photo. Phone-only per request — scoped to the same <=767px breakpoint as
+   10k's height fix, not touched at tablet/desktop. Safe against layout shift:
+   the <img> keeps its width/height HTML attributes (2560x1707), so browsers
+   still reserve its aspect-ratio box before it loads. Same element id across
+   all 5 language duplicates, as with 10k. */
+@media (max-width: 767px) {
+  .elementor-element.elementor-element-fb3019e {
+    min-height: 0 !important;
+    --min-height: 0px !important;
+  }
+}
 </style>
 <?php }, 5);
 
