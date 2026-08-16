@@ -713,6 +713,28 @@ h1.entry-title {
     --margin-right: -12px !important;
   }
 }
+
+/* 10o. HOME PAGE — same pattern as 10n, different section. The decorative
+   pill/blob (elementor-element-2e10aa47, an empty container with a fixed
+   100px border-radius rather than 50%, so it's a stadium shape, not a true
+   circle) sits between the hero gallery and the "Villa Azur Djerba" facade
+   photo. Height is a constant 102px at every width (no breakpoint touches
+   --min-height), but width flips the same way 10n's circle did: 122px at
+   desktop/tablet (>=768px), then UP to 172px on phones (<767px) instead of
+   staying the same or shrinking — the opposite of normal responsive scaling.
+   At 122px wide x 102px tall it's a compact rounded-square accent; at 172px
+   wide with the same 102px height it stretches into the elongated blob shape
+   reported. Restoring the already-designed 122px used at every wider
+   breakpoint. Margins/z-index left untouched — those position it between the
+   two photos and aren't implicated by the width value itself. Same element
+   id across all 5 language duplicates of the home page (post-109/3572/3573/
+   3574/3575.css checked directly), matching 10n's approach exactly. */
+@media (max-width: 767px) {
+  .elementor-element.elementor-element-2e10aa47 {
+    width: 122px !important;
+    --width: 122px !important;
+  }
+}
 </style>
 <?php }, 5);
 
