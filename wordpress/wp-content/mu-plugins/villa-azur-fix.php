@@ -735,6 +735,34 @@ h1.entry-title {
     --width: 122px !important;
   }
 }
+
+/* 10p. HOME PAGE — the facade-photo/stats-counter row (elementor-element-
+   7fb7f239) carries a literal --width:1574px from 768px up, with no upper
+   bound and no percentage fallback, unlike every other element in this
+   chain (its own parent 5be531a3 is a normal --width:91.889%). Its parent
+   has no explicit flex-direction, so it inherits Elementor's own container
+   default (.e-con.e-flex{--flex-direction:column}) — meaning 7fb7f239's
+   width is a CROSS-axis dimension there, not something flex-shrink can
+   reduce to fit. Elementor applies it as a literal `width:var(--width)`
+   (checked in elementor/assets/css/frontend.min.css, no clamp/min()), so
+   from 768px up this row — and everything sized as a percentage of it,
+   including the 2x2 counter grid's calc(50% - 12px) cards — is laid out
+   against a 1574px basis instead of the real viewport. On a genuinely wide
+   desktop screen that's wide enough it goes unnoticed; at tablet/narrow-
+   laptop widths (768-1439px) it isn't, which is why two of the four counter
+   cards end up positioned/sized against the wrong basis and the facade
+   photo above them is affected too. Scoped to 768-1439px (tablet through
+   portrait/narrow laptop) so wide desktop, where this may have been the
+   intended value, is untouched — falls back to the container-widget-width
+   this element already correctly uses at <=1024px, extended up through
+   1439px. Same element id across all 5 language duplicates of the home
+   page (post-109/3572/3573/3574/3575.css checked directly). */
+@media (min-width: 768px) and (max-width: 1439px) {
+  .elementor-element.elementor-element-7fb7f239 {
+    width: 100% !important;
+    --width: 100% !important;
+  }
+}
 </style>
 <?php }, 5);
 
