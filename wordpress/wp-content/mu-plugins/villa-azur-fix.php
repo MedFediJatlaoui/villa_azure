@@ -667,6 +667,23 @@ h1.entry-title {
     --min-height: 0px !important;
   }
 }
+
+/* 10m. ABOUT PAGE "Notre Mission" / "Notre Vision" — the two image-box widgets
+   share the same base style (.elementor-image-box-wrapper{text-align:center}),
+   but only elementor-element-5b626a2 ("Notre Mission") has a page-authored
+   mobile-breakpoint override knocking it back to text-align:start at
+   <=767px — elementor-element-0989806 ("Notre Vision") has no such override
+   and stays centered. Two widgets built the same way, one accidentally given
+   a different mobile alignment in the editor. Restoring center on Mission
+   only, phone-only, so it matches Vision instead of changing Vision. Same
+   element id across all 5 language duplicates of this page (post-2658/3588/
+   3589/3590/3591.css checked directly). No !important needed on the page's
+   own rule to beat — same reasoning as 10k/10l. */
+@media (max-width: 767px) {
+  .elementor-element.elementor-element-5b626a2 .elementor-image-box-wrapper {
+    text-align: center !important;
+  }
+}
 </style>
 <?php }, 5);
 
