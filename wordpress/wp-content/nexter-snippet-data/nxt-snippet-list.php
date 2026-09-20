@@ -130,9 +130,9 @@ return array (
   'meta' => 
   array (
     'secret_key' => 'f1f06e3ae1e229c9b2b03f69bd2e797d',
-    'now_date' => '2026-08-08 15:20:57',
+    'now_date' => '2026-08-23 14:19:25',
     'version' => '4.6.12',
-    'domain' => 'https://hotelvillaazur.com',
+    'domain' => 'http://hotelvillaazur.com',
   ),
   'error_files' => 
   array (

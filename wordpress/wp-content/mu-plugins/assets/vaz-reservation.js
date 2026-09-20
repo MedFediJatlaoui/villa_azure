@@ -423,6 +423,10 @@
       '    <span class="vaz-add-plus">+</span> ' + T.addRoom +
       '    <span class="vaz-add-note"></span>' +
       '  </button>' +
+      '  <label class="vaz-baby">' +
+      '    <input type="checkbox" name="vaz_has_baby" value="1">' +
+      '    <span>' + T.hasBaby + '</span>' +
+      '  </label>' +
       '  <div id="vaz-resa-summary" class="vaz-sum" aria-live="polite"></div>' +
       '</div>');
 

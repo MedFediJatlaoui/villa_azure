@@ -36,6 +36,33 @@ final class VAZ_Reservation {
     const POPUP_ID = 3241;
 
     /**
+     * Shared <style> block for every outgoing HTML email (this file's own
+     * email_wrapper(), and a byte-identical copy pasted into each Fluent
+     * Forms notification's message body in wp-admin). Deliberately tiny now:
+     * real phone mail apps (Gmail's own Android/iOS app included — it does
+     * NOT use a standard WebView/browser engine for message bodies, it has
+     * its own much more limited HTML+CSS renderer) strip <style>/@media
+     * entirely, so an @media(max-width:600px) block here is dead weight —
+     * confirmed on-device: the "mobile" padding never applied, the desktop
+     * padding always rendered, on every phone screenshot that showed this
+     * template broken. So there is no responsive/desktop split any more —
+     * every padding/margin/font-size in email_wrapper()/email_details_html()/
+     * email_contact_recap_html() is just one small size, used unconditionally
+     * on every screen. Same reasoning killed two-column table rows: Gmail's
+     * renderer cannot be trusted to divide width across two <td>s sharing a
+     * row (percentage width, `table-layout:fixed`, an HTML width="" attribute
+     * all failed to stop it collapsing the narrower column to a sliver and
+     * wrapping text one or two letters per line — confirmed on-device after
+     * each was tried). ONE <td> per row, full width, with label/value stacked
+     * as two <div>s inside it, is the only structure that renderer draws
+     * correctly — keep that for any new content added here. Also: no cell
+     * anywhere uses white-space:nowrap on text that can run long (a nowrap
+     * label forces its whole row, and therefore the whole card, wider than
+     * the phone's viewport = horizontal scroll).
+     */
+    const EMAIL_STYLE = 'img{max-width:100%;} table{max-width:100%;}';
+
+    /**
      * THE single source of truth. Every price, rule and limit lives here.
      *
      * Seasons carry inclusive [start, end] date ranges (Y-m-d). A stay is priced
@@ -456,6 +483,7 @@ final class VAZ_Reservation {
             'board'          => VAZ_I18N::t($lang, 'ui.board'),
             'adults'         => VAZ_I18N::t($lang, 'ui.adults'),
             'children'       => VAZ_I18N::t($lang, 'ui.children'),
+            'hasBaby'        => VAZ_I18N::t($lang, 'ui.hasBaby'),
             'occHintSimple'  => VAZ_I18N::t($lang, 'ui.occHintSimple'),
             'occHintDouble'  => VAZ_I18N::t($lang, 'ui.occHintDouble'),
             'summaryTitle'   => VAZ_I18N::t($lang, 'ui.summaryTitle'),
@@ -525,7 +553,7 @@ final class VAZ_Reservation {
         $data['vaz_email_contact']   = self::email_contact_recap_html(
             VAZ_I18N::t($lang, 'recap.heading'),
             $contact['first_name'], $contact['last_name'], $contact['email'], $contact['phone'],
-            $checkin, $checkout, $contact['request'], $lang
+            $checkin, $checkout, $contact['request'], $contact['has_baby'], $lang
         );
         $data['vaz_email_welcome']   = self::email_welcome_html($lang);
 
@@ -566,6 +594,7 @@ final class VAZ_Reservation {
             'email'      => $fields['email_1'] ?? '',
             'phone'      => $fields['numeric_field'] ?? '',
             'request'    => $fields['demandes_particulieres'] ?? '',
+            'has_baby'   => !empty($fields['vaz_has_baby']),
         ];
     }
 
@@ -585,7 +614,7 @@ final class VAZ_Reservation {
             ? VAZ_I18N::format_date($checkin, $lang) . ' &rarr; ' . VAZ_I18N::format_date($checkout, $lang)
             : '';
         $stayLine = $stay
-            ? '<p style="margin:0 0 18px;font-size:14px;color:' . $ink . ';font-weight:600;">' . esc_html($stay)
+            ? '<p style="margin:0 0 12px;font-size:14px;color:' . $ink . ';font-weight:600;">' . esc_html($stay)
                 . ' &middot; ' . $quote['nights'] . ' ' . VAZ_I18N::word($lang, 'night', $quote['nights']) . '</p>'
             : '';
 
@@ -615,11 +644,9 @@ final class VAZ_Reservation {
 
             $roomsHtml .= '
               <tr>
-                <td style="padding:14px 16px;border:1px solid ' . $line . ';border-radius:10px;display:block;margin-bottom:10px;">
-                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
-                    <td style="font-size:14px;font-weight:700;color:' . $ink . ';">' . VAZ_I18N::t($lang, 'ui.room') . ' ' . $r['index'] . ' &middot; ' . $type . '</td>
-                    <td style="font-size:14px;font-weight:700;color:' . $ink . ';text-align:right;white-space:nowrap;">' . self::money($r['subtotal']) . ' ' . $c . '</td>
-                  </tr></table>
+                <td class="vaz-room-card" style="padding:10px 12px;border:1px solid ' . $line . ';border-radius:10px;display:block;margin-bottom:8px;">
+                  <div style="font-size:14px;font-weight:700;color:' . $ink . ';">' . VAZ_I18N::t($lang, 'ui.room') . ' ' . $r['index'] . ' &middot; ' . $type . '</div>
+                  <div style="margin-top:2px;font-size:14px;font-weight:700;color:' . $ink . ';">' . self::money($r['subtotal']) . ' ' . $c . '</div>
                   <div style="margin-top:3px;font-size:12.5px;color:' . $muted . ';">' . $board . ' &middot; ' . $occ . '</div>
                   ' . $notesHtml . '
                 </td>
@@ -631,22 +658,20 @@ final class VAZ_Reservation {
         $tx = $cfg['tourist_tax'];
 
         $totalsHtml = '
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:4px;">
-            <tr><td style="padding:6px 0;font-size:13.5px;color:' . $ink . ';">' . VAZ_I18N::t($lang, 'ui.accommodation') . '</td>
-                <td style="padding:6px 0;font-size:13.5px;color:' . $ink . ';text-align:right;">' . self::money($accSubtotal) . ' ' . $c . '</td></tr>
-            <tr><td style="padding:6px 0;font-size:13.5px;color:' . $ink . ';">' . VAZ_I18N::t($lang, 'ui.touristTax') . '</td>
-                <td style="padding:6px 0;font-size:13.5px;color:' . $ink . ';text-align:right;">' . self::money($quote['tourist_tax']) . ' ' . $c . '</td></tr>
-          </table>
-          <p style="margin:8px 0 0;font-size:11.5px;line-height:1.5;color:' . $muted . ';">
+          <p style="margin:0;padding:4px 0;font-size:13.5px;color:' . $ink . ';">' . VAZ_I18N::t($lang, 'ui.accommodation') . ' &nbsp;&middot;&nbsp; <strong>' . self::money($accSubtotal) . ' ' . $c . '</strong></p>
+          <p style="margin:0;padding:4px 0;font-size:13.5px;color:' . $ink . ';">' . VAZ_I18N::t($lang, 'ui.touristTax') . ' &nbsp;&middot;&nbsp; <strong>' . self::money($quote['tourist_tax']) . ' ' . $c . '</strong></p>
+          <p style="margin:6px 0 0;font-size:11.5px;line-height:1.5;color:' . $muted . ';">
             ' . sprintf(VAZ_I18N::t($lang, 'details.touristTaxNote'), $tx['per_person_per_night'], $c, $tx['max_nights'], VAZ_I18N::word($lang, 'night', $tx['max_nights'])) . '
           </p>
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:18px;background:#FBF6EE;border-radius:12px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:12px;background:#FBF6EE;border-radius:12px;">
             <tr>
-              <td style="padding:16px 20px;font-size:14px;font-weight:600;color:' . $ink . ';">' . VAZ_I18N::t($lang, 'details.stayTotal') . '</td>
-              <td style="padding:16px 20px;font-size:24px;font-weight:800;color:' . $gold . ';text-align:right;">' . self::money($quote['total']) . ' ' . $c . '</td>
+              <td class="vaz-total-cell" style="padding:12px 14px;">
+                <div style="font-size:14px;font-weight:600;color:' . $ink . ';">' . VAZ_I18N::t($lang, 'details.stayTotal') . '</div>
+                <div class="vaz-total-amt" style="margin-top:3px;font-size:20px;font-weight:800;color:' . $gold . ';">' . self::money($quote['total']) . ' ' . $c . '</div>
+              </td>
             </tr>
           </table>
-          <p style="margin:10px 0 0;font-size:11.5px;line-height:1.5;color:' . $muted . ';">
+          <p style="margin:8px 0 0;font-size:11.5px;line-height:1.5;color:' . $muted . ';">
             ' . VAZ_I18N::t($lang, 'details.bottomNote') . '
           </p>';
 
@@ -662,7 +687,7 @@ final class VAZ_Reservation {
      * stay dates, special request). $heading lets the two emails address the
      * same data as "yours" vs. "the client's".
      */
-    public static function email_contact_recap_html($heading, $firstName, $lastName, $email, $phone, $checkin, $checkout, $request, $lang = null) {
+    public static function email_contact_recap_html($heading, $firstName, $lastName, $email, $phone, $checkin, $checkout, $request, $hasBaby = false, $lang = null) {
         $lang = $lang ?: VAZ_I18N::current();
         $ink = '#1F1F1F'; $muted = '#727272'; $line = '#E7E1D6';
         $rows = [
@@ -672,6 +697,7 @@ final class VAZ_Reservation {
             VAZ_I18N::t($lang, 'recap.stay')  => ($checkin && $checkout)
                 ? VAZ_I18N::format_date($checkin, $lang) . ' &rarr; ' . VAZ_I18N::format_date($checkout, $lang)
                 : '',
+            VAZ_I18N::t($lang, 'recap.hasBaby') => VAZ_I18N::t($lang, $hasBaby ? 'common.yes' : 'common.no'),
         ];
         $request = trim((string) $request);
         if ($request !== '') {
@@ -681,14 +707,14 @@ final class VAZ_Reservation {
         $rowsHtml = '';
         foreach ($rows as $label => $value) {
             if ($value === '') { continue; }
-            $rowsHtml .= '<tr>'
-                . '<td style="padding:5px 0;font-size:12.5px;color:' . $muted . ';white-space:nowrap;vertical-align:top;">' . esc_html($label) . '</td>'
-                . '<td style="padding:5px 0 5px 14px;font-size:13.5px;color:' . $ink . ';font-weight:600;word-break:break-word;overflow-wrap:break-word;">' . $value . '</td>'
-                . '</tr>';
+            $rowsHtml .= '<tr><td class="vaz-kv" style="padding:5px 0;">'
+                . '<div style="font-size:11.5px;color:' . $muted . ';">' . esc_html($label) . '</div>'
+                . '<div style="margin-top:1px;font-size:13.5px;color:' . $ink . ';font-weight:600;">' . $value . '</div>'
+                . '</td></tr>';
         }
 
-        return '<p style="margin:0 0 8px;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:' . $muted . ';">' . esc_html($heading) . '</p>'
-            . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="width:100%;max-width:100%;margin-bottom:22px;padding:16px 18px;background:#F7F5F1;border-radius:10px;">'
+        return '<p style="margin:0 0 6px;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:' . $muted . ';">' . esc_html($heading) . '</p>'
+            . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="width:100%;max-width:100%;margin-bottom:14px;padding:10px 12px;background:#F7F5F1;border-radius:10px;">'
             . $rowsHtml
             . '</table>';
     }
@@ -706,15 +732,15 @@ final class VAZ_Reservation {
         $lang = $lang ?: VAZ_I18N::current();
         $navy = '#0F2A48'; $gold = '#E9A668'; $ink = '#1F1F1F'; $muted = '#727272';
         return '
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:26px;background:#FBF6EE;border-left:3px solid ' . $gold . ';border-radius:0 10px 10px 0;">
-            <tr><td style="padding:20px 22px;">
-              <p style="margin:0 0 12px;font-family:Georgia,\'Times New Roman\',serif;font-style:italic;font-size:14.5px;line-height:1.75;color:' . $ink . ';">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:14px;background:#FBF6EE;border-left:3px solid ' . $gold . ';border-radius:0 10px 10px 0;">
+            <tr><td style="padding:12px 14px;">
+              <p style="margin:0 0 8px;font-family:Georgia,\'Times New Roman\',serif;font-style:italic;font-size:14px;line-height:1.6;color:' . $ink . ';">
                 ' . VAZ_I18N::t($lang, 'email.welcome.p1') . '
               </p>
-              <p style="margin:0;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;font-size:13.5px;line-height:1.7;color:' . $ink . ';">
+              <p style="margin:0;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;font-size:13.5px;line-height:1.6;color:' . $ink . ';">
                 ' . VAZ_I18N::t($lang, 'email.welcome.p2') . '
               </p>
-              <p style="margin:16px 0 0;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.04em;color:' . $navy . ';">
+              <p style="margin:10px 0 0;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.04em;color:' . $navy . ';">
                 ' . VAZ_I18N::t($lang, 'email.welcome.sig') . '
               </p>
             </td></tr>
@@ -740,25 +766,25 @@ final class VAZ_Reservation {
             : '<span style="font-family:\'Plus Jakarta Sans\',Arial,sans-serif;font-size:16px;font-weight:700;letter-spacing:.06em;color:' . $navy . ';">VILLA AZUR</span>';
 
         return '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-        . '<style>img{max-width:100%;} table{max-width:100%;} @media (max-width:600px){.vaz-email-card{width:100% !important;}}</style></head>'
+        . '<style>' . self::EMAIL_STYLE . '</style></head>'
         . '<body style="margin:0;padding:0;background:' . $cream . ';font-family:Georgia,\'Times New Roman\',serif;word-break:break-word;overflow-wrap:break-word;">'
-        . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:' . $cream . ';padding:32px 12px;">'
+        . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:' . $cream . ';padding:6px 4px;">'
         . '<tr><td align="center">'
-        . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" class="vaz-email-card" style="width:100%;max-width:560px;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(15,42,72,.08);">'
+        . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" class="vaz-email-card" style="width:100%;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(15,42,72,.08);">'
 
         // Letterhead: centered logo, small letter-spaced tagline, thin gold rule.
-        . '<tr><td align="center" style="background:#FBF6EE;padding:30px 32px 22px;">'
+        . '<tr><td align="center" style="background:#FBF6EE;padding:18px 14px 12px;">'
         . '<table role="presentation" cellpadding="0" cellspacing="0"><tr><td align="center">' . $logoImg . '</td></tr>'
-        . '<tr><td align="center" style="padding-top:10px;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:' . $muted . ';">Djerba &middot; Tunisie</td></tr></table>'
+        . '<tr><td align="center" style="padding-top:8px;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:' . $muted . ';">Djerba &middot; Tunisie</td></tr></table>'
         . '</td></tr>'
         . '<tr><td style="height:3px;line-height:3px;font-size:0;background:' . $gold . ';">&nbsp;</td></tr>'
 
-        . '<tr><td style="padding:34px 36px 8px;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;word-break:break-word;overflow-wrap:break-word;">'
-        . '<h1 style="margin:0 0 12px;font-size:21px;font-weight:700;line-height:1.35;color:' . $navy . ';word-break:break-word;overflow-wrap:break-word;">' . $heading . '</h1>'
-        . '<p style="margin:0 0 24px;font-size:14px;line-height:1.7;color:' . $ink . ';word-break:break-word;overflow-wrap:break-word;">' . $intro . '</p>'
+        . '<tr><td style="padding:18px 14px 6px;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;word-break:break-word;overflow-wrap:break-word;">'
+        . '<h1 style="margin:0 0 10px;font-size:18px;font-weight:700;line-height:1.3;color:' . $navy . ';word-break:break-word;overflow-wrap:break-word;">' . $heading . '</h1>'
+        . '<p style="margin:0 0 16px;font-size:14px;line-height:1.6;color:' . $ink . ';word-break:break-word;overflow-wrap:break-word;">' . $intro . '</p>'
         . '</td></tr>'
-        . '<tr><td style="padding:0 36px 24px;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;word-break:break-word;overflow-wrap:break-word;">' . $bodyHtml . '</td></tr>'
-        . '<tr><td style="padding:22px 36px 30px;border-top:1px solid #EFE9DE;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;font-size:12px;line-height:1.8;color:' . $muted . ';word-break:break-word;overflow-wrap:break-word;">' . $footerHtml . '</td></tr>'
+        . '<tr><td style="padding:0 14px 16px;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;word-break:break-word;overflow-wrap:break-word;">' . $bodyHtml . '</td></tr>'
+        . '<tr><td style="padding:12px 14px 16px;border-top:1px solid #EFE9DE;font-family:\'Plus Jakarta Sans\',Arial,sans-serif;font-size:12px;line-height:1.7;color:' . $muted . ';word-break:break-word;overflow-wrap:break-word;">' . $footerHtml . '</td></tr>'
         . '</table>'
         . '</td></tr></table>'
         . '</body></html>';

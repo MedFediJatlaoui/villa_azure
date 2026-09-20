@@ -506,6 +506,29 @@ h1.entry-title {
   padding-bottom: 84px !important;
 }
 
+/* 10f-bis. FOOTER — the address/tagline text and every icon-list line (phone,
+   WhatsApp, email, "Réservation"/"Contact"/"TripAdvisor"/"Booking.com"/
+   "Facebook VillaAzurDjerba"…) render in the site's default body-text grey
+   (#727272), which was tuned for grey-on-white reading elsewhere on the site
+   but reads as barely-visible on the footer's dark navy background. Force it
+   to white, scoped strictly to the footer so the same grey used intentionally
+   elsewhere (form hints, etc.) is untouched. The "Réserver"/"Connectés" gold
+   accents and the already-white copyright line are left alone — only the grey
+   is being replaced. Same fix applies to all five language footers, which
+   share these element/class names (see the 10e/10f notes above). */
+.ekit-template-content-footer .elementor-icon-list-text,
+.ekit-template-content-footer .elementor-widget-text-editor p,
+.ekit-template-content-footer .elementor-widget-text-editor span {
+  color: #ffffff !important;
+}
+/* The bottom-right "Contact"/"À Propos" links carry their own inline
+   `color: rgba(255,255,255,.45)` (set per-element in Elementor) — 45% opacity
+   white reads the same as grey against navy, so bump those two specifically
+   to full white without touching the inline gold "Réserver" link beside them. */
+.ekit-template-content-footer a[style*="rgba(255, 255, 255, 0.45)"] {
+  color: #ffffff !important;
+}
+
 /* 10f. FOOTER — the three footer columns stay side by side through the whole
    tablet band and get crushed: measured at 768px the Navigation column was only
    126px wide, which wrapped "Facebook VillaAzurDjerba" onto two lines hard
@@ -1232,6 +1255,14 @@ add_action('wp_head', function () { ?>
   padding-top: 56px !important;
   padding-bottom: 48px !important;
 }
+/* The submit button lives in .vaz-popup-submit-footer, a sibling of
+   #fluentform_4 (moved there by moveSubmitButtonToFooter() below, for the
+   sticky-footer layout) — so it's not inside the <form> that Fluent Forms
+   hides on a successful submission, and stayed fully visible under the
+   success message with no way to click it again meaningfully. Hidden
+   explicitly here, scoped to the same .vaz-success state that drives the
+   rest of the success experience above. */
+#popmake-3241.vaz-success .vaz-popup-submit-footer { display: none !important; }
 
 /* Matching inline ERROR experience (single banner at top of the popup, same
    visual language as the form; user stays in the popup). Injected by JS only
@@ -1355,12 +1386,27 @@ add_action('wp_footer', function () { ?>
   // overlap regardless of form/viewport height. Runs once, immediately: Popup
   // Maker renders this popup's markup in the page from first load (just
   // hidden), it does not need the popup to be open first.
+  // BUG (fixed): the structural move above takes .ff_submit_btn_wrapper (and
+  // the <button type="submit"> inside it) out of <form id="fluentform_4">
+  // entirely — it becomes a sibling of .pum-content, not a descendant of the
+  // form. A <button type="submit"> that isn't inside a <form> has no form to
+  // submit, so clicking it did nothing: no native submission, no Fluent Forms
+  // AJAX request, no error — the button was completely inert for every real
+  // visitor. Confirmed via prod's access logs (zero admin-ajax submissions
+  // from any non-admin referer) and by reproducing live (0 network requests
+  // on click; server-side entry count unaffected). Fixed with the HTML5
+  // `form="fluentform_4"` attribute, which re-associates a button with a
+  // form regardless of DOM position — the button submits the form exactly as
+  // if it were still nested inside it, so this keeps the sticky-footer
+  // layout intact while restoring a working submit.
   (function moveSubmitButtonToFooter() {
     var popup = document.getElementById('popmake-3241');
     if (!popup) { return; }
     var wrapper = popup.querySelector('.ff_submit_btn_wrapper');
     var container = popup.querySelector('.pum-content');
     if (!wrapper || !container || wrapper.parentElement.classList.contains('vaz-popup-submit-footer')) { return; }
+    var submitBtn = wrapper.querySelector('button[type="submit"], input[type="submit"]');
+    if (submitBtn) { submitBtn.setAttribute('form', 'fluentform_' + FORM_ID); }
     var footer = document.createElement('div');
     footer.className = 'vaz-popup-submit-footer';
     footer.appendChild(wrapper);
@@ -1517,3 +1563,17 @@ add_action('wp_footer', function () { ?>
 })();
 </script>
 <?php }, 20);
+
+// ── SEO: keep RSS/Atom feeds out of Google's index ───────────────────────────
+// WordPress auto-generates a /feed/ and /comments/feed/ for every post/page,
+// duplicated per language by Polylang (/de/feed/, /en/comments/feed/, etc.).
+// Google Search Console flags these as "duplicate page, no canonical" because
+// their XML content mirrors the real HTML pages — noise in the coverage report,
+// not a real problem, but worth silencing. A meta robots tag doesn't work on
+// XML output, so this uses the HTTP header Google explicitly documents for
+// exactly this case.
+add_action('send_headers', function () {
+    if (is_feed()) {
+        header('X-Robots-Tag: noindex, noarchive', true);
+    }
+});
